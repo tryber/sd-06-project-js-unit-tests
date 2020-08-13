@@ -11,22 +11,22 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
- let arr = [2, '2'];
+
 const average = (arr) => {
   let sum = 0;
-  if(arr.length !== 0){
-    for(let i = 0; i < arr.length; i += 1){
-      if(typeof(arr[i]) === "string"){
+  if (arr.length !== 0) {
+    for (let i = 0; i < arr.length; i += 1) {
+      if (typeof(arr[i]) === 'string') {
         return undefined;
-      } else{
+      } else {
         sum += arr[i];
       }
     }
-    let avg = Math.round(sum / arr.length);
+    const avg = Math.round(sum / arr.length);
     return avg;
-  } else{
+  } else {
     return undefined;
   }
 };
-console.log(average(arr));
+
 module.exports = average;
