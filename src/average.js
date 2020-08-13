@@ -14,23 +14,23 @@
 // parametric
 const assert = require('assert');
 // array for test
-const array = [1, '2']
+const array = [];
 // insert function
 const average = (array) => {
-  let sum = 0
-  let avg = 0
+  let sum = 0;
+  let avg = 0;
   if (array.length === 0) {
     return undefined;
   }
-  for (let i = 0; i < array.length; i+= 1) {
+  for ( let i = 0; i < array.length; i += 1) {
     if (typeof array[i] !== 'number') {
       return undefined;
     }
-    sum = sum + array[i];
-    avg = ((sum)/(array.length))
+    sum += array[i];
+    avg = ((sum) / (array.length));
   }
-  return Math.round(avg)
-}
+  return Math.round(avg);
+};
 
 // console.log (average(array))
 
