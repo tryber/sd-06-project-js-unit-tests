@@ -21,9 +21,9 @@ const numbers = (myArray) => {
 module.exports = numbers;
 
 
-const assert = require('assert');
-assert.equal(numbers([1, 2, 3, 4, 5]), true, 'Result should be TRUE')
-assert.equal(numbers([1, 2, "3", 4, 5]), false, 'Result should be FALSE');
-assert.equal(numbers([1, 'a', 3]), false, 'Result should be FALSE');
-assert.equal(numbers([' ']), false, 'Result should be FALSE');
+// const assert = require('assert');
+// assert.equal(numbers([1, 2, 3, 4, 5]), true, 'Result should be TRUE')
+// assert.equal(numbers([1, 2, "3", 4, 5]), false, 'Result should be FALSE');
+// assert.equal(numbers([1, 'a', 3]), false, 'Result should be FALSE');
+// assert.equal(numbers([' ']), false, 'Result should be FALSE');
 

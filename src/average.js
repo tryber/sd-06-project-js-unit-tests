@@ -14,7 +14,7 @@
 
 const average = (inputedArray) => {
   if (inputedArray.length <= 0) return undefined;
-  for (index in inputedArray) {
+  for (index = 0; index < inputedArray.length/ index += 1) {
     if (typeof (inputedArray[index]) === 'string') {
       return undefined;
     }
