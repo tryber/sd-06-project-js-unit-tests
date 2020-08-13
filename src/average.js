@@ -19,8 +19,8 @@ const average = (array) => {
     if (typeof array[i] === 'string' || array === ' ') {
       result = undefined;
     } else {
-      for (let i = 0; i < array.length; i += 1) {
-        soma += array[i];
+      for (let ndex = 0; i < array.length; index += 1) {
+        soma += array[index];
       }
     }
     result = Math.around(soma / array.length);
