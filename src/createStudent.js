@@ -16,12 +16,12 @@
 */
 
 const createStudent = (yourname) => {
-  let person = {};
+  const person = {};
   person.name = yourname;
   person.feedback = () => {
-    let string = 'Eita pessoa boa!';
+    const string = 'Eita pessoa boa!';
     return string;
-  }
+  };
   return person;
 };
 
