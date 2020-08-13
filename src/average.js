@@ -17,7 +17,7 @@ const average = (arr) => {
     let valid = true;
     let sum = 0;
 
-    arr.forEach(num => {
+    arr.forEach((num) => {
       sum += num;
       if (typeof num !== 'number') {
         valid = false;
