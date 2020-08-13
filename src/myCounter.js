@@ -15,6 +15,7 @@
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
 
+// x é o 1o de cada 3 indices, y é o 2o e 3o
 const myCounter = () => {
   var myArray = [];
   for (let x = 0; x <= 3; x += 1) {
