@@ -21,7 +21,7 @@ const average = (array) => {
     }
 
     avg += array[i];
-  };
+  }
 
   if (array.length === 0) {
     return undefined;
