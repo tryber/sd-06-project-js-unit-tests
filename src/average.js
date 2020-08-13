@@ -19,14 +19,14 @@ const isNumber = (arr) => {
     }
   }
   return true;
-}
+};
 
 const isEmpty = (arr) => {
   if (arr.length > 0) {
     return false;
   }
   return true;
-}
+};
 
 const average = (arr) => {
   if (isEmpty(arr) || !isNumber(arr)) {
