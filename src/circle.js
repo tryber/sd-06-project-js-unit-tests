@@ -23,7 +23,7 @@ const circle = (radius) => {
   if (!radius) { return undefined; }
   return {
     radius,
-    area: parseFloat((PI * radius * radius).toFixed(2)),
+    area: PI * radius * radius,
     circumference: 2 * PI * radius,
   };
 };
