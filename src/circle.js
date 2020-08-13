@@ -21,13 +21,10 @@
 const circle = (radius) => {
   const PI = 3.14;
   if (!radius) { return undefined; }
-  const circumference = Number((2 * PI * radius).toPrecision(4));
-  const area = Number((PI * radius * radius).toPrecision(4));
-
   return {
     radius,
-    area,
-    circumference,
+    area: PI * radius * radius,
+    circumference: 2 * PI * radius,
   };
 };
 
