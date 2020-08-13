@@ -6,6 +6,7 @@
 
   Parâmetros:
     - Um array. Exemplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
+    
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 2]) // Retorno: 1;
