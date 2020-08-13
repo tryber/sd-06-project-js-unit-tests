@@ -17,12 +17,11 @@ const average = (values) => {
   if (values.length === 0 || values === ['']) {
     return undefined;
   }
-    for (i = 0; i < values.length; i += 1) {
-    if (typeof values[i] === 'number') {
-      sum += values[i];
-    } else {
+  for (i = 0; i < values.length; i += 1) {
+    if (typeof values[i] !== 'number') {
       return undefined;
     }
+    sum += values[i];
   }
   return Math.round(sum / values.length);
 };
