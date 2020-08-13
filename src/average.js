@@ -19,12 +19,12 @@ const average = (numbers) => {
 
   let sum = 0;
 
-  for (let i = 0; i < array.length; i += 1) {
+  for (let i = 0; i < numbers.length; i += 1) {
     if (typeof numbers[i] === 'string') {
       return undefined;
     }
 
-    sum += numbers[number];
+    sum += numbers[i];
   }
 
   const result = sum / numbers.length;
