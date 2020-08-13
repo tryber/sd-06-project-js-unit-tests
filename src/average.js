@@ -21,13 +21,12 @@ const average = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     if (Number.isInteger(array[i])) {
       soma += array[i];
+    }  else {
+      return undefined;
     }
-     else {
-       return undefined;
-     }
-     media = soma / array.length;
+    media = soma / array.length;
   }
-   return Math.round(media); 
+  return Math.round(media);
 };
 
 module.exports = average;
