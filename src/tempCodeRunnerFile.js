@@ -1,0 +1,1 @@
+sum/roundedArr.length
