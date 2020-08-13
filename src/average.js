@@ -19,7 +19,7 @@ const average = (array) => {
     if (typeof array[i] === 'string' || array === ' ') {
       result = undefined;
     } else {
-      for (let ndex = 0; i < array.length; index += 1) {
+      for (let index = 0; i < array.length; index += 1) {
         soma += array[index];
       }
     }
