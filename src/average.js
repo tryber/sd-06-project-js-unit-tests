@@ -15,6 +15,9 @@
 const average = (array) => {
   let totalSoma = 0;
   for (let indice = 0; indice < array.length; indice += 1) {
+    if (typeof array[indice] !== 'number') {
+      return undefined;
+    }
     totalSoma += array[indice];
   }
   const mediaFinal = totalSoma / array.length;
