@@ -13,5 +13,6 @@
 */
 
 const average = () => {};
+// Implamatation
 
 module.exports = average;
