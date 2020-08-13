@@ -38,5 +38,10 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
+// const id0 = productDetails('Clayton zica 2', 'miojão 4')[0].details.productId;
+// const id1 = productDetails('Clayton zica 2', 'miojão 4')[1].details.productId;
+// assert.strictEqual(`${id0[id0.length - 3]}${id0[id0.length - 2]}${id0[id0.length - 1]}`, '123');
+// assert.strictEqual(`${id1[id1.length - 3]}${id1[id1.length - 2]}${id1[id1.length - 1]}`, '123');
+// console.log(typeof [1, 3, 4])
 
 module.exports = productDetails;
