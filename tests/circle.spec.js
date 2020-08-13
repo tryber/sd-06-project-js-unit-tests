@@ -42,6 +42,9 @@ describe('#circle', () => {
     const test4 = circle(3);
     assert.strictEqual(parseFloat(test4.area.toPrecision(4)), parseFloat((Math.PI).toPrecision(3)) * (3 ** 2));
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.deepStrictEqual(circle(3), { radius: 3, area: 28.259999999999998, circumference: 18.84 });
+    const valorArea = test4.area;
+    test4.area = parseFloat(valorArea.toPrecision(4));
+    // console.log(test4);
+    assert.deepStrictEqual(test4, { radius: 3, area: 28.26, circumference: 18.84 });
   });
 });
