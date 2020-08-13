@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (name, age) => {
+  // Recebe uma string
+  // Recebe um número
+  // Retorna um literal concatenado com a string e o número
+  if (typeof name === 'string' && typeof age === 'number') {
+    return `Oi, meu nome é ${name}!\nTenho ${age} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
+  }
+  return undefined;
+};
+
+console.log(vqv());
 
 module.exports = vqv;
