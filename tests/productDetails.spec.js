@@ -35,6 +35,7 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     assert.deepEqual(Array.isArray(productDetails()), true);
     assert.deepEqual(productDetails().length, 2);
+    assert.deepEqual(typeof productDetails()[0], 'object');
     assert.deepEqual(productDetails('Caneta', 'Papel'), [ { name: 'Caneta', details: { productId: 'Caneta123' } },
     { name: 'Papel', details: { productId: 'Papel123' } } ]);
     assert.deepEqual(productDetails("Caneta", "Lapis")[1].details.productId.replace(/\D+/g, ''), 123);
