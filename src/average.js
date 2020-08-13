@@ -2,7 +2,7 @@
   A função average recebe um array (tamanho variável) e retorna a média dos valores recebidos.
   Caso a função receba algum valor não númerico ou um array vazio,
   o valor undefined deve ser retornado.
-  Todos os resultados devem ser arredondados para valores inteiros. Ex: 4,6 vira 5; 1,3 vira 1.
+  Todos os resultados devem ser arredondados para valores inteiros. Ex: 4,6 se torna 5; 1,3 se torna 1.
 
   Parâmetros:
     - Um array. Exemplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
