@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
+const average = (arrayReceveid) => {
   let sum = 0
   if (arrayReceveid.length > 0) {
     for (let i = 0; i < arrayReceveid.length; i += 1) {
