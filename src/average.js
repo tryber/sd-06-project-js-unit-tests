@@ -17,7 +17,6 @@ const average = (array) => {
     return undefined;
   }
   let sum = 0;
-  
   for (let i = 0; i < array.length; i += 1) {
     if (typeof array[i] !== 'number') {
       return undefined;
@@ -25,8 +24,8 @@ const average = (array) => {
     sum += array[i];
   }
 
-  const average = Math.round(sum / array.length);
-  return average;
+  const result = Math.round(sum / array.length);
+  return result;
 };
 
 module.exports = average;
