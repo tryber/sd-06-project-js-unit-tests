@@ -19,5 +19,3 @@ const numbers = (myArray) => {
 };
 
 module.exports = numbers;
-
-
