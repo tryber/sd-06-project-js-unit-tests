@@ -23,7 +23,7 @@ const isUndefined = (nome, idade) => {
   return false;
 };
 
-// Essa ficou confusa, achei que era para usar a quebra de linha auto, 
+// Essa ficou confusa, achei que era para usar a quebra de linha auto,
 // consegui acertar a identação com a ajuda dos colegas no slack, a function é minha
 const vqv = (nome, idade) => {
   if (!isUndefined(nome, idade)) {
