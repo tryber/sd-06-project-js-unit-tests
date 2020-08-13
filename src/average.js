@@ -12,12 +12,12 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = array => {
+const average = (array) => {
   let soma = 0;
   // tst para saber se esta vazio
-  if(array.length===0){
-    return undefined
-  }else {
+  if (array.length === 0) {
+    return undefined;
+  } else {
   // for para caminhar na array
   for(let i =0;i<array.length;i++) {
     // teste para encontrar um valor nao numerico
@@ -35,6 +35,6 @@ const average = array => {
   return Math.round(soma);
 }
 };
-console.log(average([3,3, 4, 5, 4]));
+console.log(average([-3, -3, -4, -5, -4]));
 
 module.exports = average;
