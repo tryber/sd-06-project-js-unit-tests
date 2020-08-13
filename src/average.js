@@ -6,7 +6,7 @@
 
   Parâmetros:
     - Um array. Exemplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
-    
+
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 2]) // Retorno: 1;
@@ -20,7 +20,7 @@ const average = (arr) => {
     return undefined;
   }
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] === 'number') {
       sum += arr[i];
     } else {
