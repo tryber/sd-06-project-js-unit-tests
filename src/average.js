@@ -15,10 +15,11 @@
 const average = () => {
   const array = [1, 2, 3, 4, 5];
   let total = 0;
+  let divisor = array.length
   for (let i in array) {
     total += array[i];
-  }
-  const media = total/array.length;
+  } 
+  const media = total/divisor;
   return media;
 };
 
