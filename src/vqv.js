@@ -16,6 +16,22 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const isUndefined = (nome, idade) => {
+  if (typeof nome !== 'string' || typeof idade !== 'number') {
+    return true;
+  }
+  return false;
+};
+
+// Essa ficou confusa, achei que era para usar o string literals ${variavel} e a quebra de linha auto, consegui acertar a identação com a ajuda dos colegas no slack, a function é minha
+const vqv = (nome, idade) => {
+  if (!isUndefined(nome, idade)) {
+    return 'Oi, meu nome é ' + nome + '!\n' +
+      'Tenho ' + idade + ' anos,\n' +
+      'trabalho na Trybe e mando muito em programação!\n' +
+      '#VQV!'
+  }
+  return undefined;
+};
 
 module.exports = vqv;
