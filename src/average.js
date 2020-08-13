@@ -20,7 +20,7 @@ const average = (array) => {
     }
     totalSoma += array[indice];
   }
-  const mediaFinal = totalSoma / array.length;
+  const mediaFinal = Math.trunc(totalSoma / array.length);
   return mediaFinal;
 };
 
