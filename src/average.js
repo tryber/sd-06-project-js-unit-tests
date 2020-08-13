@@ -25,6 +25,6 @@ const average = (array) => {
   }
   return Math.round(sum / array.length);
 };
-/*  codigo baseado no link https://stackoverflow.com/questions/29544371/finding-the-average-of-an-array-using-js#:~:text=12%20Answers&text=You%20calculate%20an%20average%20by,var%20avg%20%3D%20total%20%2F%20grades. */
+/*  codigo da média do somatório baseado no link https://stackoverflow.com/questions/29544371/finding-the-average-of-an-array-using-js#:~:text=12%20Answers&text=You%20calculate%20an%20average%20by,var%20avg%20%3D%20total%20%2F%20grades. */
 
 module.exports = average;
