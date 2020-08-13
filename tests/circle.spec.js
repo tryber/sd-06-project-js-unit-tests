@@ -37,7 +37,7 @@ describe('#circle', () => {
 
     // Teste se o objeto retornado tem 3 entradas.
     // ref = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
-    assert.deepStrictEqual(Object.entries(circle(7)).length , 3);
+    assert.deepStrictEqual(Object.entries(circle(7)).length, 3);
 
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     assert.deepStrictEqual(circle(), undefined);
