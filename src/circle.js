@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-const { assert } = require('console');
+// const { assert } = require('console');
 
 /*
   Essa função recebe o raio de um círculo,
