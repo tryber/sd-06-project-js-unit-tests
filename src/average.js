@@ -12,9 +12,9 @@
     - average([1, '2']) // Retorno: undefined;
 */
 // parametric
-const assert = require('assert');
+// const assert = require('assert');
 // array for test
-const array = [];
+// const array = [];
 // insert function
 const average = (array) => {
   let sum = 0;
