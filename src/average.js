@@ -15,20 +15,20 @@
 const average = (inputedArray) => {
   if (inputedArray.length <= 0) return undefined;
   for (index in inputedArray) {
-    if (typeof(inputedArray[index]) == 'string')
+    if (typeof (inputedArray[index]) === 'string') {
       return undefined;
+    }
   }
-  let average = 0;
-  for (index in inputedArray) {
-    average += inputedArray[index];
+  let averageResult = 0;
+  for (index = 0; index < inputedArray.length; index += 1) {
+    averageResult += inputedArray[index];
   }
   const divisor = inputedArray.length;
-  const result = average / divisor;
+  const result = averageResult / divisor;
   return Math.round(result);
 };
-
-console.log(average ([1, 2, 3, 4]));
-console.log(average ([]));
-console.log(average ([1, 2, '3']));
+console.log(average([1, 2, 3, 4]));
+console.log(average([]));
+console.log(average([1, 2, '3']));
 
 module.exports = average;
