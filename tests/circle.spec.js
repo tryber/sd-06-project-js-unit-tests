@@ -3,6 +3,12 @@
 
 const assert = require('assert');
 const circle = require('../src/circle');
+const {
+  isObject
+} = require('util');
+const {
+  strict
+} = require('assert');
 
 /*
   Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência).
@@ -25,13 +31,24 @@ const circle = require('../src/circle');
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
+    assert.deepStrictEqual(typeof circle(7), 'object');
+
     // Teste se o objeto retornado tem 3 entradas.
+    // ref = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+    assert.deepStrictEqual(Object.entries(circle(7)).length , 3);
+
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    assert.deepStrictEqual(circle(), undefined);
+
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.deepStrictEqual(circle(2).circumference, 12.56);
+
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    assert.deepStrictEqual(parseFloat((circle(3).area).toPrecision(4)), 28.26);
+
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    assert.deepStrictEqual([circle(3).radius, parseFloat((circle(3).area).toPrecision(4)), circle(3).circumference], [3, 28.26, 18.84]);
   });
 });
