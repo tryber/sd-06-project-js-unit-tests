@@ -11,29 +11,28 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-// parametric 
+// parametric
 const assert = require('assert');
 // array for test
-const array = [1, 'a']
-// insert function 
+const array = [1, '2']
+// insert function
 const average = (array) => {
   let sum = 0
   let avg = 0
   if (array.length === 0) {
     return undefined;
-  } else {
-    for (let i = 0; i < array.length; i+= 1) {
-      if (typeof array[i] !== 'number') {
-        return undefined;
-      }
-      sum = sum + array[i];
-      avg = ((sum)/(array.length))
-    }
   }
-    return Math.round(avg)
+  for (let i = 0; i < array.length; i+= 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
+    sum = sum + array[i];
+    avg = ((sum)/(array.length))
+  }
+  return Math.round(avg)
 }
 
 // console.log (average(array))
 
-// No modify 
+// No modify
 module.exports = average;
