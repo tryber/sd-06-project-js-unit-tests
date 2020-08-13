@@ -16,7 +16,7 @@ const average = (arr) => {
   // add your implementation here
   let sum = 0;
   if (arr.length === 0) return undefined;
-  arr.forEach(element => {
+  arr.forEach((element) => {
     if (typeof element === 'string') {
       return undefined;
     }
