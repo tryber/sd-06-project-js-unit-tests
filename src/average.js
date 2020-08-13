@@ -19,10 +19,10 @@ const average = (array) => {
     if (typeof array[i] !== 'number') return undefined;
     newArray += array[i];
     result = Math.round(newArray / array.length);
-  };
+  }
   if (array.length === 0) return undefined;
 
   return result;
 };
 
-module.exports = average
+module.exports = average;
