@@ -25,5 +25,5 @@ const average = (arr) => {
   }
   return Math.round( sum / arr.length );
 }
-console.log(average([-11, -5, 2]));
+
 module.exports = average;
