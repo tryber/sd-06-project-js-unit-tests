@@ -18,9 +18,8 @@ const average = (arr) => {
     for (let i = 0; i < arr.length; i += 1) {
       if (typeof arr[i] === 'string') {
         return undefined;
-      } else {
-        sum += arr[i];
       }
+      sum += arr[i];
     }
   }
   const avg = Math.round(sum / arr.length);
