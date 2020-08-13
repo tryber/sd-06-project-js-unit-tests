@@ -16,9 +16,9 @@
 */
 
 const createStudent = (name) => {
-  let saudation = {}
+  const saudation = {};
   saudation.name = name;
-  saudation.feedback = () => 'Eita pessoa boa!'
+  saudation.feedback = () => 'Eita pessoa boa!';
   return saudation;
 };
 
