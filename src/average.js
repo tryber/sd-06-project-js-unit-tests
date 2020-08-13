@@ -13,26 +13,24 @@
 */
 
 const average = (arr) => {
-  let sum = 0;
-  let valid = true;
+  if (arr.includes(arr[0])) {
+    let valid = true;
 
-  if (arr.length === 0) {
-    return;
-  }
+    // copia o array para que não alteremos o de entrada (princípio de uma função)
+    const sum = arr.slice(0).reduce((start, next, index, array) => {
+      if (typeof(next) !== "number") {
+        valid = false;
+        array.splice(1); // 'quebra' o array que o reduce tá olhando, como se fosse um 'break' do loop.
+      }
+      return start + next;
+    }, 0)
 
-  arr.forEach((num) => {
-    if (typeof(num) === 'number') {
-      sum += num;
-    } else {
-      valid = false;
+    if (valid) {
+      return Math.round(sum / arr.length);
     }
-  });
-
-  if (valid) {
-    return Math.round(sum / arr.length);
   }
 };
 
 module.exports = average;
 
-console.log(average([]));
+console.log(average([2,4, 's', 5]));
