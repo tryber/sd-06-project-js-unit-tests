@@ -11,17 +11,13 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const assert = require('assert');
-
 const average = (array) => {
   if (array.length === 0) {
-    console.log("oi");
     return undefined;
   }
   let sum = 0;
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
-      console.log(typeof array[index]);
       return undefined;
     }
     sum += array[index];
