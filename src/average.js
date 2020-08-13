@@ -12,9 +12,22 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // Batman quote: "I am the night."
-  // Actually he's not, but he has beaten superman(in the original comic book, not the silly movie) soooooo... he can say what he wants
+const average = (arr) => {
+
+  // check !num or empty
+  let average = 0;
+  if (arr.length > 0) {
+    for (let i = 0; i < arr.length; i += 1) {
+      if (typeof arr[i] === 'number') {
+        average += arr[i];
+      } else {
+        return undefined;
+      }
+    }
+    average = Math.round(average / arr.length);
+    return average;
+  }
+  return undefined;
 };
 
 module.exports = average;
