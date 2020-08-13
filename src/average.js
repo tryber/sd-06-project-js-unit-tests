@@ -30,7 +30,7 @@ const average = (array) => {
   }
   /*  med receberá o valor do calculo referente à media dos valores*/
   med = total / array.length;
-  /*  Caso a média seja menor que 1, o valor será arredondado para o numero inteiro mais próximo (1)*/
+  /*  Caso a média seja menor que 1, o valor será arredondado para o numero inteiro mais próximo*/
   if (med < 1) {
     return Math.round(med);
   }
