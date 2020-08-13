@@ -38,6 +38,5 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-console.log(productDetails("Caneta", "Lapis")[1].details.productId.replace(/\D+/g, ''))
 
 module.exports = productDetails;
