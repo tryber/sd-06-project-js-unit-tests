@@ -74,10 +74,10 @@
 const createMenu = obj => ({
   fetchMenu: obj,
   consumption: [],
-  order: function(ord) {
-    this.consumption.push(ord)
+  order (ord) {
+    this.consumption.push(ord);
   },
-  pay: function() {
+  pay () {
     let amount = 0;
     this.consumption.forEach((item) => {
       if (item in this.fetchMenu.food) {
