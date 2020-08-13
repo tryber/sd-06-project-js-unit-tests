@@ -13,31 +13,25 @@
 */
 
 // iniciando o PR
-const assert = require('assert');
+// const assert = require('assert');
 
-let arrayNumbers = [3, 4, 5];
-let soma = 0;
+// // let arrayNumbers = [];
+
 const average = (array) => {
+  let soma = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof array[index] !== 'number' || array === []) {
+    if (typeof array[index] !== 'number') {
       return undefined;
     } else if (array[index] === 0) {
-      return 0
+      return 0;
     }
     soma += array[index];
   }
-  const resultado = parseInt(soma / array.length);
-  return resultado
-  // console.log(Math.round(resultado));
-
-};
+  const resultado = (soma / array.length);
+  return Math.round(resultado);
+}
 
 module.exports = average;
-
-// assert.strictEqual(typeof average, 'function');
-// assert.strictEqual(average([2, 2]), 2);
-// assert.strictEqual(average([1, 2]), 1);
-// assert.strictEqual(average([3, 4, 5]), 6);
-// assert.strictEqual(average([1, '2']), undefined);
-
-// average(arrayNumbers);
