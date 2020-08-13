@@ -16,15 +16,15 @@ const average = (arr) => {
   if (arr.length === 0) return undefined; // When array [] is empty
 
   let arrSum = 0;
-  for (let index = 0; index < arr.length; index += 1) {
+  for (let index = 0; index < arr.length; index += 1) { // Adding for to iterate the array and sum its elements
     if (typeof arr[index] !== 'number' || arr[index] === ' ') return undefined;
     arrSum += arr[index];
   }
 
-  let arrAverage = (arrSum / arr.length);
+  let arrAverage = Math.round(arrSum / arr.length);
   return (arrAverage);
 };
 
-// console.log(average([1, 2, 3, '4', 5]));
+// console.log(average([47, 63, 122]));
 
 module.exports = average;
