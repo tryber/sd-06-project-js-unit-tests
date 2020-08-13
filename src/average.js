@@ -11,7 +11,7 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-//const average = () => {};
+
 const average = (receivedValues) => {
   let valueSet = 0;
   if (receivedValues.length === 0) {
@@ -23,8 +23,8 @@ const average = (receivedValues) => {
     } else {
       return undefined;
     }
-  };
+  }
   valueSet = Math.round(valueSet / receivedValues.length);
-  return valueSet;  
+  return valueSet;
 };
 module.exports = average;
