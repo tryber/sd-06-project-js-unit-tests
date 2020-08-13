@@ -15,13 +15,14 @@
 const average = (arr) => {
   if (arr.includes(arr[0])) {
     let valid = true;
+    let sum = 0;
 
-    const sum = arr.reduce((start, next) => {
-      if (typeof next !== 'number') {
+    arr.forEach(num => {
+      sum += num;
+      if (typeof num !== 'number') {
         valid = false;
       }
-      return start + next;
-    }, 0);
+    });
 
     if (valid) {
       return Math.round(sum / arr.length);
