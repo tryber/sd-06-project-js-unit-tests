@@ -29,18 +29,17 @@ const isEmpty = (arr) => {
 }
 
 const average = (arr) => {
-  if (isNumber(arr) && !isEmpty(arr)) {
-  let average = 0;
-  for (let i = 0; i < arr.length; i += 1) {
-    if (typeof arr[i] === 'number') {
-      average += arr[i];
-    }
-  }
-  average = Math.round(average / arr.length);
-  return average;
-  } else {
+  if (isEmpty(arr) || !isNumber(arr)) {
     return undefined;
   }
+  let averageOfArray = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] === 'number') {
+      averageOfArray += arr[i];
+    }
+  }
+  averageOfArray = Math.round(averageOfArray / arr.length);
+  return averageOfArray;
 };
 
 module.exports = average;
