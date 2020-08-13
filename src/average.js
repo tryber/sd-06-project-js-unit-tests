@@ -11,19 +11,11 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-let assert = require('assert');
-
-assert.strictEqual(typeof(average), "function");
-
-function average(num) {
-  for (let index = 0; index < array.length; index+=) {
-    const element = array[index];
-  }
-    return element / array.length
+const average = (array) => {
+  let soma = 0;
+  for (l = 0; l < array.length; l += 1) {
+    soma += array[l]
+  } if (typeof array.)
 }
 
-const average = () => {
-
-};
-
-module.exports = average;
+  module.exports = average;
