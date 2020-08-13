@@ -15,7 +15,7 @@
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
 
-const myCounter = () => {
+const myCounter = _ => {
   // var myArray = [];
   // for (var counter = 0; counter <= 3; counter += 1) {
   //   myArray.push(counter);
