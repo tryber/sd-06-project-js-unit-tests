@@ -12,22 +12,35 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (arr) => {
-
-  // check !num or empty
-  let average = 0;
-  if (arr.length > 0) {
-    for (let i = 0; i < arr.length; i += 1) {
-      if (typeof arr[i] === 'number') {
-        average += arr[i];
-      } else {
-        return undefined;
-      }
+const isNumber = (arr) => {
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] !== 'number') {
+      return false;
     }
-    average = Math.round(average / arr.length);
-    return average;
   }
-  return undefined;
+  return true;
+}
+
+const isEmpty = (arr) => {
+  if (arr.length > 0) {
+    return false;
+  }
+  return true;
+}
+
+const average = (arr) => {
+  if (isNumber(arr) && !isEmpty(arr)) {
+  let average = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] === 'number') {
+      average += arr[i];
+    }
+  }
+  average = Math.round(average / arr.length);
+  return average;
+  } else {
+    return undefined;
+  }
 };
 
 module.exports = average;
