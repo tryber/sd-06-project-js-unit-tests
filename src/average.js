@@ -12,6 +12,8 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+// iniciando o PR
+
 const average = () => {};
 
 module.exports = average;
