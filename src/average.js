@@ -19,7 +19,6 @@ const average = (arrayNumbers) => {
   if (arrayNumbers.length === 0) {
     result = undefined;
   }
-    
   for (let i = 0; i < arrayNumbers.length; i += 1) {
     if (typeof arrayNumbers[i] === 'string') {
       result = undefined;
