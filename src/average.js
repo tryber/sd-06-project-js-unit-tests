@@ -19,7 +19,7 @@ const average = (arr) => {
     sum += arr[index];
   }
   if (arr.length === 0) return undefined;
-  return Math.round(sum/arr.length);
+  return Math.round(sum / arr.length);
 };
 console.log(average([-11, -5, 2]));
 
