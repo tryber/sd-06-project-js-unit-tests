@@ -14,7 +14,7 @@
 
 const average = (array) => {
   let result = 0;
-  const media;
+  const media = 0;
   for (i = 0; i < array.length; i += 1) {
     result += array[i];
   }
