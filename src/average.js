@@ -15,11 +15,11 @@
 const average = () => {
   const array = [1, 2, 3, 4, 5];
   let total = 0;
-  for (let i in array){
+  for (let i in array) {
     total += array[i];
   }
-  let average = total/array.length
-  return average
+  const media = total/array.length;
+  return media;
 };
 
 module.exports = average;
