@@ -34,4 +34,4 @@ const circle = (radius) => {
 module.exports = circle;
 
 assert.deepStrictEqual(typeof circle, 'function');
-assert.deepStrictEqual(circle(1), {radius: 1, area: 3.14, circumference: 6.28})
+assert.deepStrictEqual(circle(1), { radius: 1, area: 3.14, circumference: 6.28 });
