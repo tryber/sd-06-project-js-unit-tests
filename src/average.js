@@ -13,10 +13,6 @@
 */
 
 // iniciando o PR
-// const assert = require('assert');
-
-// // let arrayNumbers = [];
-
 const average = (array) => {
   let soma = 0;
   if (array.length === 0) {
@@ -32,6 +28,6 @@ const average = (array) => {
   }
   const resultado = (soma / array.length);
   return Math.round(resultado);
-}
+};
 
 module.exports = average;
