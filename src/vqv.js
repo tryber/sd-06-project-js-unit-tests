@@ -21,7 +21,7 @@ const vqv = (nome, idade) => {
   phrase = `Oi, meu nome é ${nome}!
   Tenho ${idade} anos,
   trabalho na Trybe e mando muito em programação!
-  #VQV!`
+  #VQV!`;
   if (nome === '' && idade === '') {
     return undefined;
   }
