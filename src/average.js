@@ -11,20 +11,18 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const arrayTest = [1, 2];
-
 const average = (array) => {
   for (let i = 0; i < array.length; i += 1) {
-    if (typeof(array[i]) !== "number" || array[i] === null) {
+    if (typeof (array[i]) !== 'number') {
       return undefined;
     }
   }
-  let totalArray = array.reduce((acumulador, valorAtual) => acumulador + valorAtual,0);
-  let result = totalArray / 2;
-  let roundResult = Math.round(result);
-  return roundResult;
+  if (array.length === 0) {
+    return undefined;
+  }
+  const totalArray = array.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+  const result = Math.round(totalArray / array.length);
+  return result;
 };
-
-console.log(average(arrayTest));
 
 module.exports = average;
