@@ -12,23 +12,19 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (arrey) => {
+const average = (array) => {
   let sum = 0;
-  let total = 0;
-  if (arrey.length > 0) {
-    for (let i = 0; i < arrey.length; i += 1){
-      if (typeof arrey[i] !== "number"){
-        return undefined;
-      } else {
-        sum += arrey[i];
-        total += 1;
-      }
-    }
-  } else {
+  if (array.length === 0) {
     return undefined;
   }
-  return Math.round(sum / total);
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
+    sum += array[i];
+  }
+
+  return Math.round(sum / array.length);
 };
-//console.log(average(['um', 'dois', 'tres']));
 
 module.exports = average;
