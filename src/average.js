@@ -20,14 +20,11 @@ const average = (array) => {
   }
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
-    return undefined;
+      return undefined;
     }
     soma += array[index];
     averageNumbers = soma / (array.length);
   }
   return Math.round(averageNumbers);
-  
 };
-console.log(average([1, 2, 4]));
-
 module.exports = average;
