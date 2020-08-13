@@ -28,4 +28,5 @@ const circle = (radius) => {
   };
 };
 
+console.log(Object.values(circle(3))[1].toPrecision(4));
 module.exports = circle;
