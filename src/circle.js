@@ -27,5 +27,11 @@ const circle = (radius) => {
     circumference: 2 * PI * radius,
   };
 };
+// console.log(circle(2).circumference)
+// console.log(typeof(circle(7)))
+// console.log(Object.keys(circle(7)).length)
+// if (typeof(circle(7)) === 'object') {
+//   console.log("ola")
+// }
 
 module.exports = circle;
