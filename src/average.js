@@ -14,11 +14,10 @@
 
 const average = (array) => {
   let result = 0;
-  const media = 0;
   for (i = 0; i < array.length; i += 1) {
     result += array[i];
   }
-  media = Math.round(result / array.length);
+  const media = Math.round(result / array.length);
   return media;
 };
 
