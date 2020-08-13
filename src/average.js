@@ -14,9 +14,10 @@
 
 const average = (arr) => {
   for (let i = 0; i < arr.length; i += 1) {
-    let soma = 0
-    return soma/(arr.length);
-}
-}
+    let soma = 0;
+    soma += arr[i];
+  return soma / (arr.length);
+  }
+};
 
 module.exports = average;
