@@ -17,16 +17,15 @@ const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
-    for (let index = 0; index < array.length; index += 1) {
-      if (typeof (array[index]) === "number") {
+  for (let index = 0; index < array.length; index += 1) {
+      if (typeof (array[index]) === 'number') {
         sum += array[index];
       } else {
         return undefined;
       }
     }
-  let media = sum / array.length;
-  let mediaRound = Math.round(media);
-  return mediaRound
- };
- 
+  const media = sum / array.length;
+  const mediaRound = Math.round(media);
+  return mediaRound;
+}; 
 module.exports = average;
