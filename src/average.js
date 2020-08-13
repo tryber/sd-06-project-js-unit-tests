@@ -12,7 +12,27 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-  // commit para subir branch
+const average = array => {
+  let total = 0;
+  if(array.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    total += array[i];
+  }
+  if(typeof(total) === 'string') {
+    return undefined
+  }
+  let resultFull = total/array.length;
+  const result = Math.round(resultFull);
 
+  return result;
+};
+
+console.log(average([10, 20]));
+console.log(average([1, 2]));
+console.log(average([1, 2, 3, 4, 5]));
+console.log(average([1, 2, '3']));
+console.log(average([]));
+console.log(average([0, 0, 0]));
 module.exports = average;
