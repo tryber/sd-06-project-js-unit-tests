@@ -21,7 +21,7 @@ const average = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     if (Number.isInteger(array[i])) {
       soma += array[i];
-    }  else {
+    }else {
       return undefined;
     }
     media = soma / array.length;
