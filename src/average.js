@@ -11,8 +11,9 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-let array=[]
+
 const average = (array) => {
+  const array=[1,2,3,4,5]
   let total=0
   for(let i in array){
     total += array[i];
