@@ -33,12 +33,20 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    assert.deepEqual(Array.isArray(productDetails()), true);
+    assert.deepEqual(productDetails().length, 2);
+    assert.deepEqual(typeof productDetails()[0], 'object');
+    assert.deepEqual(productDetails('Caneta', 'Papel'), [ { name: 'Caneta', details: { productId: 'Caneta123' } },
+    { name: 'Papel', details: { productId: 'Papel123' } } ]);
+    assert.deepEqual(productDetails("Caneta", "Lapis")[1].details.productId.replace(/\D+/g, ''), 123);
+    assert.deepEqual(productDetails("Caneta", "Lapis")[0].details.productId.replace(/\D+/g, ''), 123);
+
+    
     // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    // Teste que o retorno da função é um array. - DONE
+    // Teste que o array retornado pela função contém dois itens dentro. - DONE
+    // Teste que os dois itens dentro do array retornado pela função são objetos. - DONE
+    // Teste que os dois objetos são diferentes entre si. - DONE
+    // (Difícil) Teste que os dois productIds terminam com 123. - DONE
   });
 });
