@@ -19,13 +19,13 @@ const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
-  // repetition loop to analyze expected conditions or sum array itens
+  // repetition loop to analyze all items in array;
   for (let index = 0; index < array.length; index += 1) {
-    // analyze expected conditions of existence
-    if (typeof (array[index]) !== 'number') {// || array[index] === ' ') {
+    // analyze if the array item is not a number;
+    if (typeof (array[index]) !== 'number') {
       return undefined;
     }
-    // sum all itens of array
+    // sum all items of array
     sumArray += array[index];
   }
   // if all conditions ok, return the arithmetic mean of the items in the array
