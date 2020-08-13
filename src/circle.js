@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 
+const { assert } = require('console');
+
 /*
   Essa função recebe o raio de um círculo,
   retornando um objeto contendo suas informações (Raio, Área e Circunferência).
