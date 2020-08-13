@@ -15,16 +15,14 @@
 const average = (array) => {
   let sum = 0;
   let output;
-  if ((array === NaN) || (array.length === 0)) {
+  if ((Number.isNaN(array)) || (array.length === 0)) {
     return output;
-  } else {
-    for (let i = 0; i < array.length; i += 1) {
-      if (typeof array[i] !== 'number') {
-        return output;
-        break;
-      }
-      sum = sum + array[i];
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return output;
     }
+    sum += array[i];
   }
   output = sum / array.length;
   return Math.round(output);
