@@ -16,12 +16,12 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {
-  if (nome === undefined && idade === undefined) {
+const vqv = (name, age) => {
+  if (name === undefined && age === undefined) {
     return undefined;
   }
-  return `Oi, meu nome é ${nome}!
-  Tenho ${idade} anos,
+  return `Oi, meu nome é ${name}!
+  Tenho ${age} anos,
   trabalho na Trybe e mando muito em programação!
   #VQV!`;
 };
