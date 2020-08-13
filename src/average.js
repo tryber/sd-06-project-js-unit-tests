@@ -20,17 +20,17 @@ const average = (values) => {
     return undefined;
   } else if (values === ['']) {
     return undefined;
-  } else {
-    for (i = 0; i < values.length; i += 1) {
-      if (typeof values[i] === 'number') {
-        sum += values[i];
-      } else {
-        return undefined;
-      }
-    }
-    totalAverage = sum / values.length;
-    return Math.round(totalAverage);
   }
+  for (i = 0; i < values.length; i += 1) {
+    if (typeof values[i] === 'number') {
+      sum += values[i];
+    } else {
+      return undefined;
+    }
+  }
+  totalAverage = sum / values.length;
+  return Math.round(totalAverage);
+
 };
 
 module.exports = average;
