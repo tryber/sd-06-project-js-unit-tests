@@ -13,10 +13,20 @@
 */
 
 const average = () => {
-  if(/*valor é NaN ou vazio*/) {
-    return  undefined
+  let sum = 0
+  if (arrayReceveid.length > 0) {
+    for (let i = 0; i < arrayReceveid.length; i += 1) {
+      if (typeof arrayReceveid[i] !== 'number') {
+        return undefined;
+      }
+    }
+    for (let i = 0; i < arrayReceveid.length; i += 1) {
+      sum += arrayReceveid[i];
+    }
+    let avg = sum / arrayReceveid.length;
+    return Math.round(avg);
   } else {
-    /*retorna a média dos valores recebidos pela array*/
+    return undefined;
   }
 };
 
