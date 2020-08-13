@@ -19,6 +19,13 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (x, y) => x + y,
+  mult: (x, y) => x * y,
+
+  //Não sabia arredondar para baixo ainda, aprendi aqui: https://www.w3schools.com/jsref/jsref_floor.asp
+  div: (x, y) => Math.floor(x / y),
+  sub: (x, y) => x - y,
+};
 
 module.exports = calculator;
