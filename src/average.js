@@ -15,13 +15,18 @@
 const average = (arrayNumbers) => {
   let soma = 0;
   let result = 0;
+
+  if (arrayNumbers.length === 0) {
+    result = undefined;
+  }
+    
   for (let i = 0; i < arrayNumbers.length; i += 1) {
-    if ((arrayNumbers.length === 0) || (typeof arrayNumbers[i] === 'string')) {
+    if (typeof arrayNumbers[i] === 'string') {
       result = undefined;
       break;
     } else {
       soma += arrayNumbers[i];
-      result = (soma / (arrayNumbers.length)).toFixed(1);
+      result = Math.round(soma / (arrayNumbers.length));
     }
   }
   return result;
