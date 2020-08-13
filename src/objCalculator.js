@@ -23,7 +23,7 @@ const calculator = {
   add: (x, y) => x + y,
   mult: (x, y) => x * y,
 
-  //Não sabia arredondar para baixo ainda, aprendi aqui: https://www.w3schools.com/jsref/jsref_floor.asp
+  // Não sabia arredondar para baixo ainda, aprendi aqui: https://www.w3schools.com/jsref/jsref_floor.asp
   div: (x, y) => Math.floor(x / y),
   sub: (x, y) => x - y,
 };
