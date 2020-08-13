@@ -16,7 +16,7 @@ const average = (arr) => {
   if (arr.includes(arr[0])) {
     let valid = true;
 
-    const sum = arr.slice(0).reduce((start, next, index, array) => {
+    const sum = arr.slice(0).reduce((start, next) => {
       if (typeof next !== 'number') {
         valid = false;
       }
