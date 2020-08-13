@@ -17,11 +17,10 @@
 */
 
 const vqv = (nome, idade) => {
-  const paragraph;
   if (nome === undefined || idade === undefined) {
     return undefined;
   }
-  paragraph = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
+  const paragraph = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
   return paragraph;
 };
 
