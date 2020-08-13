@@ -12,6 +12,12 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = () => {
+  if(/*valor é NaN ou vazio*/) {
+    return  undefined
+  } else {
+    /*retorna a média dos valores recebidos pela array*/
+  }
+};
 
 module.exports = average;
