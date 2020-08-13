@@ -12,6 +12,9 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = () => {
+  // Batman quote: "I am the night."
+  // Actually he's not, but he has beaten superman(in the original comic book, not the silly movie) soooooo... he can say what he wants
+};
 
 module.exports = average;
