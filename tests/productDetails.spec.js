@@ -36,7 +36,7 @@ describe('#productDetails', () => {
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.equal(typeof (productDetails('tes', 'tes')), 'object', 'Function result should be an Array');
+    assert.equal(Array.isArray(productDetails('tes', 'tes')), true, 'Function result should be an Array');
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.equal(productDetails('tes', 'tes').length, 2, 'array should have 2 items');
     // Teste que os dois itens dentro do array retornado pela função são objetos.
