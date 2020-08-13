@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um restaurante. 
-  Deve ser possível, através desse sistema, cadastrar um menu. 
+  Você é responsável por escrever o código do sistema de pedidos de um restaurante.
+  Deve ser possível, através desse sistema, cadastrar um menu.
   Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
   - fazer pedidos;
@@ -10,7 +10,7 @@
   - somar o valor da conta.
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
-  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. 
+  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema.
   Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
@@ -28,7 +28,7 @@
   meuRestaurante.pay() // Retorno: 3.9
 
   Uma função createMenu retorna um objeto com as seguintes características:
-  - Uma chave `fetchMenu` retorna o objeto que a função `createMenu` recebe por parâmetro. 
+  - Uma chave `fetchMenu` retorna o objeto que a função `createMenu` recebe por parâmetro.
   O menu tem sempre duas chaves, `food` e `drink`, no seguinte formato:
 
   const meuRestaurante = createMenu({
@@ -81,7 +81,4 @@ const createMenu = (objectParameter) => {
   };
   return object;
 };
-
-
-
 module.exports = createMenu;
