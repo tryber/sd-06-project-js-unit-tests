@@ -16,20 +16,17 @@ const average = (array) => {
   
   let sum = 0;
   
-  if (array.length === 0)  return undefined;
+  if (array.length === 0) return undefined;
  
-  for (let index = 0; index < array.length; index += 1){
-    if (typeof array[index] !== 'number' || typeof array[index] === ' '){
-      return undefined;
-    } else {
-      sum += array[index];
-    }
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number' || typeof array[index] === ' ') return undefined;
+    sum += array[index];
   };
-  
-  if (typeof sum === 'number'){
+
+  if (typeof sum === 'number') {
     let averageSum = Math.round(sum / array.length);
     return (averageSum);
-  }
+  };
 };
- console.log (average([1, 2, 3, '4', 5]));
+ 
 module.exports = average;
