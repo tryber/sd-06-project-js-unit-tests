@@ -13,7 +13,21 @@
 */
 
 const average = (e) => {
-  
+  let sumArray = 0;
+  let avgArray = 0;
+  let numOfNotEqualZeroItens = 0;
+  for (let r = 0; r < e.length; r += 1) {
+    if (e[r] !== 0) {
+      sumArray += e[r];
+      numOfNotEqualZeroItens += 1;
+    }
+  }
+  if (e.length === 0 || typeof (sumArray) === 'string' || sumArray === 0) return undefined;
+  avgArray = Math.round(sumArray / numOfNotEqualZeroItens);
+  return avgArray;
 };
-
+console.log(average([1, 2]));
+console.log(average([1, 2, 3, 4, 5]));
+console.log(average([1, 2, '3']));
+console.log(average([]));
 module.exports = average;
