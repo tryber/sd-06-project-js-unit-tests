@@ -17,6 +17,8 @@
   Comportamento:
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
+
+  Minha observação - função matemática Math.trunc: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
 */
 
 const calculator = {
