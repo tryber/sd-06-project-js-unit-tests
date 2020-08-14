@@ -20,12 +20,12 @@
 */
 
 const calculator = {
-  add: add = (num1, num2) => num1 + num2,
-  mult: mult = (num1, num2) => num1 * num2,
+  add: (num1, num2) => num1 + num2,
+  mult: (num1, num2) => num1 * num2,
   //  Math.round asia baixo
   //  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
-  div: div = (num1, num2) => Math.round((num1 / num2) - 0.1),
-  sub: sub = (num1, num2) => num1 - num2,
+  div: (num1, num2) => Math.round((num1 / num2) - 0.1),
+  sub: (num1, num2) => num1 - num2,
 };
 
 module.exports = calculator;
