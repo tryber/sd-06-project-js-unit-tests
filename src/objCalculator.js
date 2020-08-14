@@ -19,6 +19,13 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const numbers = require("./numbers");
 
+const calculator = {
+  add: (number1, number2) => number1 + number2,
+  mult: (number1, number2) => number1 * number2,
+  div: (number1, number2) => Math.floor(number1 / number2),
+  sub: (number1, number2) => number1 - number2,
+};
+console.log(calculator.div(5,2));
 module.exports = calculator;
