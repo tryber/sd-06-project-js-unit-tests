@@ -45,7 +45,7 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepEqual(productDetails('tes', 'test')[0], productDetails('tes', 'test')[1], 'Objects should not be equal');
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.match(productDetails('tes', 'tes')[0].details.productId, /^.*123$/, 'ProductID should end with 123');
-    assert.match(productDetails('tes', 'tes')[1].details.productId, /^.*123$/, 'ProductID should end with 123');
+    assert.equal(productDetails('tes', 'tes')[0].details.productId.endsWith('123'), true, 'ProductID should end with 123');
+    assert.equal(productDetails('tes', 'tes')[1].details.productId.endsWith('123'), true, 'ProductID should end with 123');
   });
 });
