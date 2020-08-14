@@ -49,6 +49,6 @@ describe('#productDetails', () => {
     // (Difícil) Teste que os dois productIds terminam com 123.
     const end = array[0]["details"]["productID"].endsWith(123); 
     const finishs = array[1]['details']['productID'].endsWith(123);
-    assert.strictEqual(end && finishs, true);
+    assert.deepStrictEqual(end && finishs, true);
   });
 });
