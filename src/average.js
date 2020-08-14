@@ -20,11 +20,11 @@ const average = (array) => {
   }
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] === 'string') {
-  return undefined;
+      return undefined;
     }
-  soma += array[index];
-  media = soma / array.length;
-};
+    soma += array[index];
+    media = soma / array.length;
+  }
   return Math.round(media);
 }
 
