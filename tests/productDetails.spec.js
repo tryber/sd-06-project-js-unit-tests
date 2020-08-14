@@ -35,15 +35,22 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.deepStrictEqual(productDetails('1','2'),[{"details": {"productId": "1123"}, "name": "1"}, {"details": {"productId": "2123"}, "name": "2"}]);
+    assert.deepStrictEqual(Array.isArray(productDetails()) , true);
+    // Refatorado com o código do plantão(Ícaro)
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.deepStrictEqual(productDetails('1','2'), productDetails('1','2'));
+    assert.notDeepStrictEqual(productDetails('1','2')[1]['name'], undefined);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.deepStrictEqual(typeof(productDetails('1','2')), 'object');
+    assert.deepStrictEqual(typeof(productDetails('1','2')[0]), 'object');
+    assert.deepStrictEqual(typeof(productDetails('1','2')[1]), 'object');
     // Teste que os dois objetos são diferentes entre si.
-    assert.notDeepStrictEqual(productDetails('1','2'), ('1','2'));
+    const productOne = productDetails('1','2')[0];
+    const productTwo = productDetails('1','2')[1];
+    assert.notDeepStrictEqual(productOne, productTwo);
+    // Refatorado com dica do Plantão (Ícaro)
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.deepStrictEqual(productDetails('1','2')[0]['details']['productId'], '1123');
-    assert.deepStrictEqual(productDetails('1','2')[1]['details']['productId'], '2123');
+    const firstValue = productDetails('mascara','bota');
+    const secondValue = productDetails('mascara','bota');
+    assert.deepStrictEqual(firstValue[0]['details']['productId'], `${firstValue[0]['name']}123`);
+    assert.deepStrictEqual(secondValue[1]['details']['productId'], `${secondValue[1]['name']}123`);
   });
 });
