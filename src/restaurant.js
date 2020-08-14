@@ -81,19 +81,23 @@ const createMenu = (menu) => {
     this.consumption.push(item);
   };
   const entries = Object.entries(menu);
-  myMenu.pay = () => {
-    return 1;
-  }
-  
+  myMenu.pay = function () {
+    let total = 0;
+    for (let i = 0; i < this.consumption.length; i += 1) {
+      total += 1;
+    }
+    return total;
+  };
+
   return myMenu;
 };
 
-const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
+const myRestaurant = { food: { 'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9 }};
 output = createMenu(myRestaurant);
 console.log(output.fetchMenu);
 output.order('coxinha');
 output.order('agua');
 output.order('coxinha');
-console.log(output.pay);
+console.log(output.pay());
 
 module.exports = createMenu;
