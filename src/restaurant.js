@@ -85,10 +85,10 @@ const createMenu = (obj) => {
     let somaF = 0;
     let somaD = 0;
     for (let index = 0; index < objT.consumption.length; index += 1) {
-        const item = objT.consumption[index];
-        compare(item);
-        somaF += objT.fetchMenu.food[item];
-        somaD += objT.fetchMenu.drink[item];
+      const item = objT.consumption[index];
+      compare(item);
+      somaF += objT.fetchMenu.food[item];
+      somaD += objT.fetchMenu.drink[item];
     }
     return somaF + somaD;
   };
