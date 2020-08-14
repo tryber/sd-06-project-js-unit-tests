@@ -14,11 +14,10 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 
 */
-
-const createStudent = (nome) => {
+const createStudent = (firstname) => {
   const letter = {
-    name: nome,
-    feedback() { return 'Eita pessoa boa!' },
+    name: firstname,
+    feedback: feedbacks = () => 'Eita pessoa boa!',
   };
   return letter;
 };
