@@ -46,5 +46,6 @@ describe('#productDetails', () => {
     assert.notDeepEqual(productDetails('tes', 'test')[0], productDetails('tes', 'test')[1], 'Objects should not be equal');
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.match(productDetails('tes', 'tes')[0].details.productId, /^.*123$/, 'ProductID should end with 123');
+    assert.match(productDetails('tes', 'tes')[1].details.productId, /^.*123$/, 'ProductID should end with 123');
   });
 });
