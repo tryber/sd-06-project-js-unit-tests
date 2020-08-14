@@ -25,7 +25,7 @@ const circle = require('../src/circle');
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    assert.fail();
+    //assert.fail(); Vi no Slack que estava de propósito aqui para falhar enquanto não há implantação
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
     assert.strictEqual(typeof circle(1), 'object');
