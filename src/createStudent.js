@@ -16,7 +16,7 @@
 */
 
 const createStudent = (name) => {
-  const student = {                   // Tive que colocar esse student aqui porque o codeclimate estava reclamando.
+  const student = { // Tive que colocar esse student aqui porque o codeclimate estava reclamando.
     name,
     feedback: () => 'Eita pessoa boa!',
   };
