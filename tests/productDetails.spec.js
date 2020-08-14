@@ -36,7 +36,6 @@ describe('#productDetails', () => {
     // ESCREVA SEUS TESTES ABAIXO:
 
     // Teste que o retorno da função é um array.
-    //assert.deepStrictEqual(typeof productDetails('Alcool gel', 'Máscara'), 'array')
 
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.deepStrictEqual(Object.entries(productDetails('Alcool gel', 'Máscara')).length, 2);
