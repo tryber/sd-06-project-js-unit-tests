@@ -79,19 +79,19 @@ const createMenu = (obj) => {
     pay: () => {
       let somaF = 0;
       let somaD = 0;
-      const compare = (item) => {
-        if (objT.fetchMenu.food[item] === undefined) objT.fetchMenu.food[item] = 0;
-        else if (objT.fetchMenu.drink[item] === undefined) objT.fetchMenu.drink[item] = 0;
-      }
       for (let index = 0; index < objT.consumption.length; index += 1) {
         const item = objT.consumption[index];
-        compare(item)
+        compare(item);
         somaF += objT.fetchMenu.food[item];
         somaD += objT.fetchMenu.drink[item];
-      }
-      return somaF + somaD; 
+      };
+      return somaF + somaD;
     },
   };
+  const compare = (item) => {
+    if (objT.fetchMenu.food[item] === undefined) objT.fetchMenu.food[item] = 0;
+    else if (objT.fetchMenu.drink[item] === undefined) objT.fetchMenu.drink[item] = 0;
+  }
   return objT;
 };
 
