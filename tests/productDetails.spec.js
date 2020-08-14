@@ -36,7 +36,7 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
-    assert.deepStrictEqual(typeof 'return', typeof 'array');
+    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara'), typeof 'array');
     assert.deepStrictEqual(typeof 'return', typeof '2');
     assert.deepStrictEqual(typeof 'return', typeof 'object');
     
