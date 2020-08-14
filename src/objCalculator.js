@@ -18,12 +18,27 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
+const isInteger = (val1, val2) => (Number.isInteger(val1) && Number.isInteger(val2) ?
+  'yes'
+  : 'no');
 
 const calculator = {
-  add: (num1, num2) => num1 + num2,
-  mult: (num1, num2) => num1 * num2,
-  div: (num1, num2) => Math.floor(num1 / num2),
-  sub: (num1, num2) => num1 - num2,
+  add: (num1, num2) => {
+    if (isInteger(num1, num2) === 'yes') return num1 + num2;
+    return undefined;
+  },
+  mult: (num1, num2) => {
+    if (isInteger(num1, num2) === 'yes') return num1 * num2;
+    return undefined;
+  },
+  div: (num1, num2) => {
+    if (isInteger(num1, num2) === 'yes') return Math.floor(num1 / num2);
+    return undefined;
+  },
+  sub: (num1, num2) => {
+    if (isInteger(num1, num2) === 'yes') return num1 - num2;
+    return undefined;
+  },
 };
 
 module.exports = calculator;
