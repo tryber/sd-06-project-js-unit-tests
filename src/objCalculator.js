@@ -36,7 +36,7 @@ const calculator = {
   },
   div: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
-      const resultDiv = parseInt(num1 / num2);
+      const resultDiv = Math.trunc(num1 / num2);
       return resultDiv;
     }
     return false;
