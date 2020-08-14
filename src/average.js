@@ -12,16 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const size = (test) => {
-  let answer = 0
+  let answer = 0;
   if (test.length === 0) {
     answer = undefined;
   }
   return answer;
-}
+};
 const average = (array) => {
   let sum = 0;
   let result = size(array);
-  let i = 0;  
+  let i = 0;
   while (array.length !== 0 && i < array.length) {
     if (typeof array[i] !== 'number') {
       result = undefined;
