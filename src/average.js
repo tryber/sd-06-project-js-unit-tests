@@ -12,9 +12,9 @@
     - average([1, '2']) // Retorno: undefined;
 */
 // parametric
-// const assert = require('assert');
+// const assert = require('assert'); veio junto com o codigo, eu apaguei
 // array for test
-// const array = [];
+// const array = [1, 2, 3, 4] alterei algumas vezes
 // insert function
 const average = (array) => {
   let sum = 0;
@@ -27,8 +27,8 @@ const average = (array) => {
       return undefined;
     }
     sum += array[i];
-    avg = ((sum) / (array.length));
   }
+  avg = ((sum) / (array.length));
   return Math.round(avg);
 };
 

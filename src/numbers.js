@@ -9,6 +9,7 @@
     - numbers([2, 'errado', 5]); // Retorna: false
 */
 
+// let myArray = [1, 2, 3, 4, 5]
 const numbers = (myArray) => {
   for (let i = 0; i < myArray.length; i += 1) {
     if (typeof myArray[i] !== 'number') {
@@ -18,4 +19,6 @@ const numbers = (myArray) => {
   return true;
 };
 
+// console.log(numbers (myArray = [1, 2, 3, 4, 5])) // teste de ferificação da saida
+// console.log(`teste de indexação dos arquivos`)
 module.exports = numbers;
