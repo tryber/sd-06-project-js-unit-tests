@@ -1,5 +1,5 @@
-/* eslint-disable no-var */
-/* eslint-disable block-scoped-var */
+/* eslint-disable no-let */
+/* eslint-disable block-scoped-let */
 /* eslint-disable no-redeclare */
 /* eslint-disable vars-on-top */
 
@@ -16,19 +16,15 @@
 */
 
 const myCounter = () => {
-  for (var counter = 0; counter <= 3; counter += 1) {
-    const myArray = [];
+  const myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
-      if (myArray.length === 3) counter = 0;
-      if (myArray.length === 7) counter = 1;
+    for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
+      myArray.push(counter2);
     }
-    console.log(counter);
-    if (myArray.length === 6) counter = 1;
-    if (myArray.length === 9) counter = 2;
   }
   return myArray;
 };
+console.log(myCounter());
 
 module.exports = myCounter;
