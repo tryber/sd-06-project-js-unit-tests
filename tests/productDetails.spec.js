@@ -47,8 +47,8 @@ describe('#productDetails', () => {
     const equality = Object.is(array[0], array[1]);
     assert.strictEqual(equality, false);
     // (Difícil) Teste que os dois productIds terminam com 123.
-    const ends = array[0]['details']['productID']; 
-    const finishs = array[1]['details']['productID'];
-    assert.strictEqual(ends.endsWith(123) && finishs.endsWith(123), true);
+    const end = array[0]["details"]["productID"].endsWith(123); 
+    const finishs = array[1]['details']['productID'].endsWith(123);
+    assert.strictEqual(end && finishs, true);
   });
 });
