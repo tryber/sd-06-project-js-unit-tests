@@ -12,8 +12,21 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  //add my code
-};
+const average = (array) => {
+  let soma = 0;
+  let media = 0;
+  if (array.length === 0)
+    return undefined
+  for (let index = 0 ;index < array.length; index++) {
+    if (typeof array[index] == 'string')
+  return undefined;
+  soma += array[index];
+  media = soma / array.length;
+  }
+  return Math.round(media);
+  }
 
+//font:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+//font:https://pt.stackoverflow.com/questions/13720/como-fa%C3%A7o-para-arredondar-um-valor-de-39-54-para-39/13724
+//font: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 module.exports = average;
