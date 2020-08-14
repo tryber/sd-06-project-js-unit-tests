@@ -38,7 +38,7 @@ describe('#productDetails', () => {
     const testFunction = productDetails('firstProd','secondProd');
 
     // Teste que o retorno da função é um array.
-    assert.deepEqual(Array.isArray(testFunction), true);
+    assert.deepStrictEqual(Array.isArray(testFunction), true);
 
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual(Object.keys(testFunction).length, 2);
