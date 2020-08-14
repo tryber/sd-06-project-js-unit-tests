@@ -10,12 +10,17 @@
     - Um número.
   Comportamento:
     vqv(Tunico, 30) // Retorna:
-      'Oi, meu nome é Tunico!
-      Tenho 30 anos,
-      trabalho na Trybe e mando muito em programação!
-      #VQV!'
+     typeof nome ==='string'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  if (typeof nome === 'string' && typeof idade === 'number') {
+    return `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  } return undefined;
+};
+
 
 module.exports = vqv;
