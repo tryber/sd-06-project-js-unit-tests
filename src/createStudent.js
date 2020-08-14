@@ -17,10 +17,14 @@
 
 const createStudent = (name) => {
   const student = {
-    nome: name,
-    feedback: () => 'Eita pessoa boa!',
+    name: name,
+    feedback: () => {
+      return 'Eita pessoa boa!';
+    },
   };
   return student;
 };
+
+console.log(createStudent('Leandrão, o Lobo Solitário'));
 
 module.exports = createStudent;
