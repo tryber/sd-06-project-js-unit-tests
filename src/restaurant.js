@@ -72,25 +72,27 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (obj) => {
-  const objT = { fetchMenu: obj };
-  objT.consumption = [];
-  objT.order = request => objT.consumption.push(request);
-  objT.pay = () => {
-    let somaF = 0;
-    let somaD = 0;
-    for (let index = 0; index < objT.consumption.length; index += 1) {
-      const item = objT.consumption[index];
-      if (objT.fetchMenu.food[item] === undefined) {
-        objT.fetchMenu.food[item] = 0;
+  const objT = { fetchMenu: obj,
+    consumption: [],
+    order: request => objT.consumption.push(request),
+    pay: () => {
+      let somaF = 0;
+      let somaD = 0;
+      for (let index = 0; index < objT.consumption.length; index += 1) {
+        const item = objT.consumption[index];
+        if (objT.fetchMenu.food[item] === undefined) {
+          objT.fetchMenu.food[item] = 0;
+        }
+        if (objT.fetchMenu.drink[item] === undefined) {
+          objT.fetchMenu.drink[item] = 0;
+        }
+        somaF += objT.fetchMenu.food[item];
+        somaD += objT.fetchMenu.drink[item];
       }
-      if (objT.fetchMenu.drink[item] === undefined) {
-        objT.fetchMenu.drink[item] = 0;
-      }
-      somaF += objT.fetchMenu.food[item];
-      somaD += objT.fetchMenu.drink[item];
-    }
-    return somaF + somaD;
+      return somaF + somaD;
+    },
   };
+ 
   return objT;
 };
 
