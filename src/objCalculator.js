@@ -22,22 +22,26 @@
 const calculator = {
   add: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
-      return num1 + num2;
+      const resultAdd = num1 + num2;
+      return resultAdd;
     }
   },
   mult: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
-      return num1 * num2;
+      const resultMult = num1 * num2;
+      return resultMult;
     }
   },
   div: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
-      return parseInt(num1 / num2);
+      const resultDiv = parseInt(num1 / num2);
+      return resultDiv;
     }
   },
   sub: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
-      return num1 - num2;
+      const resultSub = num1 - num2;
+      return resultSub;
     }
   },
 };
