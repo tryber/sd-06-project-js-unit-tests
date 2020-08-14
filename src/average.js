@@ -24,9 +24,8 @@ const average = (array) => {
   }
 
   // parte realmente da média
-  const averageSum = Math.floor(sum / array.length);
+  const averageSum = Math.round(sum / array.length);
   return (averageSum);
 };
-
 
 module.exports = average;
