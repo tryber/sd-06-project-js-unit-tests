@@ -40,7 +40,8 @@ describe('#productDetails', () => {
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.ok(Object.keys(productDetails('Alcool gel', 'Máscara')).length === 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.equal(typeof Object.values(productDetails('Alcool gel', 'Máscara')),'object')
+    assert.ok(typeof Object.values(productDetails('Alcool gel', 'Máscara'))[0] === 'object' &&
+    typeof Object.values(productDetails('Alcool gel', 'Máscara'))[1] === 'object');
     // Teste que os dois objetos são diferentes entre si.
     const obj1 = Object.values(productDetails('Alcool gel', 'Máscara'))[0];
     const obj2 = Object.values(productDetails('Alcool gel', 'Máscara'))[1];
