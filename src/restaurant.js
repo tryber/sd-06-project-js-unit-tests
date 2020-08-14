@@ -75,15 +75,19 @@ const createMenu = (object) => {
   const obj = {
     fetchMenu: object,
     consumption: [],
-    order: (string) => obj.consumption.push(string),
+    order: (string) => {
+      return obj.consumption.push(string);
+    },
     pay: () => {
       let bill = 0;
       for (let i = 0; i < obj.consumption.length; i += 1) {
         if (obj.consumption[i] in obj.fetchMenu.food) {
           bill += obj.fetchMenu.food[obj.consumption[i]];
         }
-        if (obj.consumption[i] in obj.fetchMenu.drinks) {
-          bill += obj.fetchMenu.drinks[obj.consumption[i]];
+      }
+      for (let j = 0; j < obj.consumption.length; j += 1) {
+        if (obj.consumption[j] in obj.fetchMenu.drinks) {
+          bill += obj.fetchMenu.drinks[obj.consumption[j]];
         }
       }
       return (bill * 1.1).toFixed(2);
