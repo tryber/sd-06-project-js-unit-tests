@@ -6,7 +6,7 @@
     - sub.
   Para cada uma delas atribua uma função que realiza a respectiva operação.
   A função deve receber dois inteiros e retornar um inteiro.
-  Os resultados das divisões devem sempre ser arredondados para baixo.
+  Os resultados das divisões devem sempre ser arredondados para baixo. //Math.floor
 
   Faça as funções com arrow functions!
 
@@ -19,6 +19,13 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (num1, num2) => num1 + num2,
+  mult: (num1, num2) => num1 * num2,
+  div: (num1, num2) => Math.floor(num1 / num2),
+  sub: (num1, num2) => num1 - num2
+};
 
 module.exports = calculator;
+
+calculator.add(1, 3); //4
