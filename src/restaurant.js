@@ -82,17 +82,17 @@ const createMenu = (obj) => {
         const item = objT.consumption[index];
         if (objT.fetchMenu.food[item] === undefined) {
           objT.fetchMenu.food[item] = 0;
-        }
-        if (objT.fetchMenu.drink[item] === undefined) {
+        } else if (objT.fetchMenu.drink[item] === undefined) {
           objT.fetchMenu.drink[item] = 0;
-        }
-        somaF += objT.fetchMenu.food[item];
-        somaD += objT.fetchMenu.drink[item];
+        } 
+          somaF += objT.fetchMenu.food[item];
+          somaD += objT.fetchMenu.drink[item];
+        
       }
       return somaF + somaD;
     },
   };
- 
+
   return objT;
 };
 
