@@ -16,7 +16,7 @@ const average = (array) => {
   let check = false;
   let avg = 0;
 
-  array.forEach(e => {
+  array.forEach((e) => {
     if (typeof e === 'string') {
       check = true;
     }
