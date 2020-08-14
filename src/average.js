@@ -19,7 +19,7 @@ const average = (array) => {
     return sum;
   }
   for (let i = 0; i < array.length; i += 1) {
-    if (typeof array[i] === 'string'){
+    if (typeof array[i] === 'string') {
       sum = undefined;
       return sum;
     }
