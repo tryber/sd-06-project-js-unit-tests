@@ -3,6 +3,7 @@
 
 const assert = require('assert');
 const productDetails = require('../src/productDetails');
+const { type } = require('os');
 
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
@@ -30,15 +31,52 @@ const productDetails = require('../src/productDetails');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+const answer = productDetails('mascara','alcool');
+
+function isElementsObj(elements) {
+  objectElements = elements.map((element) => { return element.name })
+  if (objectElements.length === 2) {
+       
+    return true;
+  }
+  
+  return  false;
+}
+
+function idNumberMatch(element, match) {    
+  let id = element.details.productId;
+  if (getNumbersInString(id)=== match) {
+    return true;
+  }
+  return false;       
+}
+function getNumbersInString(string) {
+  let numbers = string.split('').filter((element) => {    
+    if (Number(element) - Number(element) === 0) {          
+        return element;
+    }
+  });
+  return Number(numbers.join(''));
+}
+
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    
     // ESCREVA SEUS TESTES ABAIXO:
+    assert.ok(typeof((productDetails()) === Array));    
     // Teste que o retorno da função é um array.
+    assert.ok(productDetails().length === 2);
     // Teste que o array retornado pela função contém dois itens dentro.
+    
+    assert.ok(isElementsObj(answer)) 
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    
+    assert.notDeepStrictEqual(answer[0], answer[1]);
     // Teste que os dois objetos são diferentes entre si.
+    assert.ok(idNumberMatch(answer[0],123) === idNumberMatch(answer[1],123))
     // (Difícil) Teste que os dois productIds terminam com 123.
-  });
+    });
 });
+
+
