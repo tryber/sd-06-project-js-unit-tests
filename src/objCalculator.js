@@ -19,6 +19,24 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (integerOne, integerTwo) => {
+    const resultAdd = integerOne + integerTwo;
+    return resultAdd;
+  },
+  mult: (integerOne, integerTwo) => {
+    const resultMult = integerOne * integerTwo;
+    return resultMult;
+  },
+  // A Math.floor()função retorna o maior inteiro menor ou igual a um determinado número
+  div: (integerOne, integerTwo) => {
+    const resultDiv = integerOne / integerTwo;
+    return Math.floor(resultDiv);
+  },
+  sub: (integerOne, integerTwo) => {
+    const resultSub = integerOne - integerTwo;
+    return resultSub;
+  },
+};
 
 module.exports = calculator;
