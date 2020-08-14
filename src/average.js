@@ -12,15 +12,22 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  const array = [1, 2, 3, 4, 5];
-  let total = 0;
-  let divisor = array.length
-  for (let i in array) {
-    total += array[i];
-  } 
-  const media = total/divisor;
-  return media;
-};
+const average = (array) => {
+    let total = 0;
+    let divisor = array.length
+    if (array.length == 0) {
+      return undefined
+    } else {
+      for (let i = 0; i < divisor; i += 1) {
+        if (array.length == 0) {
+          if (typeof (array[i]) !== 'number') {
+            return undefined;
+          }
+          total += array[i];
+        }
+        return Math.round(total / array.length);
+      }
+    };
 
-module.exports = average;
+    module.exports = average;
+  }
