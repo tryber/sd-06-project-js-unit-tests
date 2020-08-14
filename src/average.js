@@ -13,17 +13,18 @@
 */
 
 const average = (array) => {
+  let check = false;
   let avg = 0;
 
-  for (let i = 0; i < array.length; i += 1) {
-    if (typeof array[i] !== 'number' || array[i] === '') {
-      return undefined;
+  array.forEach(e => {
+    if (typeof e === 'string') {
+      check = true;
     }
 
-    avg += array[i];
-  }
+    avg += e;
+  });
 
-  if (array.length === 0) {
+  if (check || array.length === 0) {
     return undefined;
   }
 
