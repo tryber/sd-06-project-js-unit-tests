@@ -30,15 +30,20 @@ const { isArray } = require('util');
   ]
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
+
+  Minhas observações: encontrei a função array.isarray e endsWith( ) verificando as threads e encontrei uma da turma 5 com esses assuntos: https://trybecourse.slack.com/archives/C013105FU2C/p1592265458224100
 */
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
-    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara'), typeof 'array');
-    assert.deepStrictEqual(typeof 'return', typeof '2');
-    assert.deepStrictEqual(typeof 'return', typeof 'object');
+    assert(Array.isArray(productDetails('Alcool gel', 'Máscara')));
+    assert(productDetails('Alcool gel', 'Máscara').length, 2);
+    assert(typeof productDetails('Alcool gel', 'Máscara')[0] === 'object');
+    assert(typeof productDetails('Alcool gel', 'Máscara')[1] === 'object');
+    assert.notDeepStrictEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Máscara')[1]);
+
     
     
     // Teste que o retorno da função é um array.
