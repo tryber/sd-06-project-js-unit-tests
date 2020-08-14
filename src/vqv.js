@@ -17,16 +17,18 @@
 */
 
 const vqv = (nome, idade) => {
+  let string = '';
   if (nome === '' && idade === '') {
     return undefined;
   }
   if (nome !== '' && idade !== '') {
-    return `
+    string =  `
     Oi, meu nome é ${nome}!
     Tenho ${idade} anos,
     trabalho na Trybe e mando muito em programação!
-    #VQV!`
+    #VQV!`;
   }
+  return string;
 };
 
 module.exports = vqv;
