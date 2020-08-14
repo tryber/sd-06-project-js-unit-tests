@@ -22,10 +22,9 @@ const vqv = (nome, idade) => {
     Tenho ${idade} anos,
     trabalho na Trybe e mando muito em programação!
     #VQV!`.replace(/^ {4}/gm, '');
-  } else {
-    return undefined;
   }
-};
+  return undefined;
+}
 
 // console.log(vqv('Tunico', 30));
 
