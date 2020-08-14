@@ -81,7 +81,7 @@ const createMenu = (obj) => {
     if (objT.fetchMenu.food[item] === undefined) objT.fetchMenu.food[item] = 0;
     else if (objT.fetchMenu.drink[item] === undefined) objT.fetchMenu.drink[item] = 0;
   };
-    objT.pay = () => {
+  objT.pay = () => {
       let somaF = 0;
       let somaD = 0;
       for (let index = 0; index < objT.consumption.length; index += 1) {
@@ -89,10 +89,10 @@ const createMenu = (obj) => {
         compare(item);
         somaF += objT.fetchMenu.food[item];
         somaD += objT.fetchMenu.drink[item];
-      };
+      }
       return somaF + somaD;
-    };
-  
+  };
+
   return objT;
 };
 
