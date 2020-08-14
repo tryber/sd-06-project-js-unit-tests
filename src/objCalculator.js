@@ -25,24 +25,28 @@ const calculator = {
       const resultAdd = num1 + num2;
       return resultAdd;
     }
+    return false;
   },
   mult: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
       const resultMult = num1 * num2;
       return resultMult;
     }
+    return false;
   },
   div: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
       const resultDiv = parseInt(num1 / num2);
       return resultDiv;
     }
+    return false;
   },
   sub: (num1, num2) => {
     if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
       const resultSub = num1 - num2;
       return resultSub;
     }
+    return false;
   },
 };
 
