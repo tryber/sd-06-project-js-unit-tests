@@ -21,24 +21,24 @@
 
 const calculator = {
   add: (num1, num2) => {
-    if (Number.isInteger(num1) == true && Number.isInteger(num1) == true) {
+    if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
       return num1 + num2;
-    };
+    }
   },
   mult: (num1, num2) => {
-    if (Number.isInteger(num1) == true && Number.isInteger(num1) == true) {
+    if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
       return num1 * num2;
-    };
+    }
   },
   div: (num1, num2) => {
-    if (Number.isInteger(num1) == true && Number.isInteger(num1) == true) {
+    if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
       return parseInt(num1 / num2);
-    };
+    }
   },
-  sub:(num1, num2) => {
-    if (Number.isInteger(num1) == true && Number.isInteger(num1) == true) {
+  sub: (num1, num2) => {
+    if (Number.isInteger(num1) === true && Number.isInteger(num1) === true) {
       return num1 - num2;
-    };
+    }
   },
 };
 
