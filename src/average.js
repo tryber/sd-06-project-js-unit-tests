@@ -27,6 +27,6 @@ const average = (array) => {
   if (result != undefined) {
     result = Math.round((sum) / array.length);
   }
-  return result;
+  return result
 };
 module.exports = average;
