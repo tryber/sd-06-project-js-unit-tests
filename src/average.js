@@ -12,8 +12,18 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-
+const average = (numbers) => {
+  let sum = 0;
+  let result = undefined;
+  for (number of numbers) {
+    if (typeof(number) === 'number') {
+      sum = sum + number;
+    } else if (typeof(number) === 'string') {
+      return undefined;
+    }
+    result = Math.round(sum / numbers.length);
+  }
+  return result;
 };
 
 average([1, 2, 3]);
