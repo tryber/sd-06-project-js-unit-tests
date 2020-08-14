@@ -29,3 +29,9 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
+// console.log(typeof circle(1));
+// console.log(Object.entries(circle(1)).length, 3);
+// console.log((circle()));
+// console.log((circle(2)).circumference);
+// console.log((circle(3)).area, 28.259999999999998);
+// console.log((circle(3)));
