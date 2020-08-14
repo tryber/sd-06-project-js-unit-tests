@@ -39,7 +39,4 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
-const tes = productDetails('prod1', 'prod2');
-console.log(Object.values(tes)[0]['details']['productId'].slice(-3));
-
 module.exports = productDetails;

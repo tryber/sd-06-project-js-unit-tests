@@ -50,7 +50,7 @@ describe('#productDetails', () => {
     assert.notDeepEqual(testFunction[0], testFunction[1]);
 
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.deepEqual(Object.values(testFunction)[0]['details']['productId'].slice(-3), Object.values(testFunction)[1]['details']['productId'].slice(-3));
+    assert.deepEqual(Object.values(testFunction)[0].details.productId.slice(-3), Object.values(testFunction)[1].details.productId.slice(-3));
 
   });
 });
