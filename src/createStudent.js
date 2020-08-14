@@ -18,8 +18,8 @@
 const createStudent = (nickName) => {
   return {
     name: nickName,
-    feedback: () => 'Eita pessoa boa!'
-  }
+    feedback: () => 'Eita pessoa boa!',
+  };
 };
 const estudante = createStudent('Leandrão, o Lobo Solitário');
 console.log(estudante.name);
