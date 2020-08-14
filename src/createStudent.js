@@ -12,7 +12,7 @@
     const estudante = createStudent('Leandrão, o Lobo Solitário')
 
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
-    estudante.feedback() // Retorna: 
+    estudante.feedback() // Retorna:
 */
 const createStudent = (firstname) => {
   const letter = {
