@@ -41,7 +41,7 @@ describe('#productDetails', () => {
       { name: 'Máscara', details: { productId: 'Máscara123' } },
     ];
     // Teste que o retorno da função é um array.
-    assert.equal(typeof retorno, 'array');
+    assert.strictEqual(Array.isArray(input), true);
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.deepStrictEqual(input, retorno);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
