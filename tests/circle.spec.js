@@ -38,6 +38,7 @@ describe('#circle', () => {
     // Teste que a função retorna, dentro de um objeto, a área (3,14 * 3 * 3) correta para um círculo de raio 3.
     assert.strictEqual(circle(3).area, 28.259999999999998);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.deepStrictEqual(Object.values(circle(3)), [{ radius: 3, area: 28.26, circumference: 18.84 }]);
+    assert.deepStrictEqual(Object.values(circle(3)), [3, 28.259999999999998, 18.84]);
+    //assert.deepStrictEqual(circle(3), [`${radius} ${area} ${circumference}`]);
   });
 });
