@@ -80,12 +80,32 @@ const createMenu = (menu) => {
   myMenu.order = function (item) {
     this.consumption.push(item);
   };
-  const entries = Object.entries(menu);
+  myMenu.entries = Object.entries(menu);
   myMenu.pay = function () {
     let total = 0;
     for (let i = 0; i < this.consumption.length; i += 1) {
-      total += 1;
+      switch (this.consumption[i]) {
+        case 'coxinha':
+          total += parseInt(this.entries[0][1].coxinha);
+          break;
+        case 'sopa':
+          total += parseInt(this.entries[0][1].sopa);
+          break;
+        case 'agua':
+          total += this.entries[1][1].agua;
+          break;
+        case 'cerveja':
+          total += this.entries[1][1].cerveja;
+          break;
+        default:
+          break;
+      }
     }
+    total *= 1.1;
+
+    // Eu queria no maximo dois decimais mas não sabia fazer, pesquisei e aprendi a fazer neste link: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
+    // Já havíamos usado 'parseInt' e o total estava retornando string. Então 'parseFloat' faz sentido para validar e com dois decimais.
+    total = parseFloat(total.toFixed(2));
     return total;
   };
 
@@ -94,7 +114,6 @@ const createMenu = (menu) => {
 
 const myRestaurant = { food: { 'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9 }};
 output = createMenu(myRestaurant);
-console.log(output.fetchMenu);
 output.order('coxinha');
 output.order('agua');
 output.order('coxinha');
