@@ -21,5 +21,5 @@ const average = (array) => {
     } else { return undefined; }
   }
   return Math.round(acc / array.length);
-}
+};
 module.exports = average;
