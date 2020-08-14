@@ -14,16 +14,15 @@
 
 const average = (arrayReceveid) => {
   let sum = 0;
-  if (arrayReceveid.length > 0) {
+  if (arrayReceveid.length === 0) {
     return undefined;
   }
   for (let i = 0; i < arrayReceveid.length; i += 1) {
-    if (typeof arrayReceveid[i] !== 'number') {
+    if (typeof arrayReceveid[i] === 'number') {
+      sum += arrayReceveid[i];
+    } else {
       return undefined;
     }
-  }
-  for (let i = 0; i < arrayReceveid.length; i += 1) {
-    sum += arrayReceveid[i];
   }
   const avg = sum / arrayReceveid.length;
   return Math.round(avg);

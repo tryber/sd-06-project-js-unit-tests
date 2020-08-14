@@ -17,18 +17,15 @@
 */
 
 const vqv = (nome, idade) => {
-  //código aqui
-  if (vqv.length === 0) {
+  if (!nome || typeof (nome) !== 'string' || !idade || typeof (idade) !== 'number') {
     return undefined;
-  } else {
-    const vqvMsg = (name, age) => (
-      `Oi, meu nome é ${name}!
-      Tenho ${age} anos,
-      trabalho na Trybe e mando muito em programação!
-      #VQV!`)
-    let resultado = `${vqvMsg(nome, idade)}`
-    return resultado;
   }
+  const vqvMsg = (name, age) => (`Oi, meu nome é ${name}!
+Tenho ${age} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`);
+  const resultado = `${vqvMsg(nome, idade)}`;
+  return resultado;
 };
 
 module.exports = vqv;
