@@ -20,9 +20,7 @@
 */
 
 const calculator = {
-  add: add = (num1, num2) => {
-    return num1 + num2;
-  },
+  add: add = (num1, num2) => { return num1 + num2; },
   mult: mult = (num1, num2) => {
     return num1 * num2;
   },
@@ -37,4 +35,3 @@ const calculator = {
 };
 
 module.exports = calculator;
-console.log(calculator.add(1, 3))
