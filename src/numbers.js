@@ -12,8 +12,6 @@
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
     // Escreva um teste em que a função recebe [' '] e retorna false
 */
-const assert = require('assert');
-
 const numbers = (myArray) => {
   for (let i = 0; i < myArray.length; i += 1) {
     if (typeof myArray[i] !== 'number') {
@@ -21,10 +19,6 @@ const numbers = (myArray) => {
     }
   }
   return true;
-  };
+};
 
 module.exports = numbers;
-
-
-
-
