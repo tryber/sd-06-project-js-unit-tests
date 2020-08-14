@@ -25,7 +25,6 @@ const average = (array) => {
       return undefined;
     }
     /*  variavel total receberá os valores contidos em array, segundo o index*/
-
     total += array[i];
   }
   /*  med receberá o valor do calculo referente à media dos valores*/
