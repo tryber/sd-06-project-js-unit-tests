@@ -19,10 +19,10 @@
 */
 
 
-// OBS.: Para registro. O assert.fail foi comentado no arquivo circle.spec.js. 
-// Segui a sugestão dada pelo caro Vinícius Vasconcelos numa
-// thread no slack. Segue a resposta do Vinícius. "sim sim, o assert.fail() foi colocado 
-// para estourar um erro mesmo, só comentar e continuar a escrita dos testes". 
+ /*OBS.: Para registro. O assert.fail foi comentado no arquivo circle.spec.js. 
+ Segui a sugestão dada pelo caro Vinícius Vasconcelos numa
+ thread no slack. Segue a resposta do Vinícius. "sim sim, o assert.fail() foi colocado 
+ para estourar um erro mesmo, só comentar e continuar a escrita dos testes".*/ 
 
 const assert = require('assert');
 
