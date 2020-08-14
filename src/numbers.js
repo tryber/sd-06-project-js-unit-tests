@@ -19,3 +19,5 @@ const numbers = (myArray) => {
 };
 
 module.exports = numbers;
+
+console.log(numbers([1, 'a', 3]));
