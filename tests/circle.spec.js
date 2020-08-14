@@ -26,33 +26,32 @@ const circle = require('../src/circle');
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     // ESCREVA SEUS TESTES ABAIXO:
+    const objectCheck = circle(1);
+    const undefinedCheck = circle();
+    const infoCheck = circle(3);
+    
     // Teste se circle retorna um objeto.
-    let objectCheck = circle(1);
-    assert.ok(typeof objectCheck, 'object');
+    assert.ok(typeof objectCheck === 'object');
 
-    // Teste se o objeto retornado tem 3 entradas.
+    // // Teste se o objeto retornado tem 3 entradas.
     assert.strictEqual(Object.keys(objectCheck).length, 3);
 
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    let undefinedCheck = circle()
-    assert.deepEqual(typeof undefinedCheck, 'undefined');
+    // // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    assert.strictEqual(typeof undefinedCheck, 'undefined');
 
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    let radiusCheck = circle(3);
-    assert.deepEqual(radiusCheck.circumference, 3.14*2*3);
+    // // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.strictEqual(infoCheck.circumference, 3.14*2*3);
 
-    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    let areaCheck = circle(3);
-    assert.deepEqual(areaCheck.area, 3.14*3*3);
+    // // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    assert.strictEqual(infoCheck.area, 3.14*3*3);
 
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    let infoCheck = circle(3);
-    let circleInfoCheck = {
+    const circleInfoCheck = {
       radius: 3,
       area: 3.14 * 3 * 3,
       circumference: 2 * 3.14 * 3,
     };
-    assert.deepEqual(infoCheck, circleInfoCheck)
+    assert.deepStrictEqual(infoCheck, circleInfoCheck)
 
   });
 });
