@@ -19,6 +19,13 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: add = (num1, num2) => {return num1 + num2},
+  mult: mult = (num1, num2) => {return num1 * num2},
+  //  Math.round asia baixo
+  //  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+  div: div = (num1, num2) => {return Math.round(num1 / num2 - 0.1)},
+  sub: sub = (num1, num2) => {return num1 - num2},
+};
 
 module.exports = calculator;
