@@ -19,6 +19,19 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add : (value1, value2) => {
+    return value1 + value2
+  },
+  mult : (value1, value2) => {
+    return value1 *value2
+  },
+  div : (value1, value2) => {
+    return Math.floor(value1 / value2); // searched at https://stackoverflow.com/questions/1435975/how-can-i-round-down-a-number-in-javascript
+  },
+  sub : (value1, value2)  => {
+    return value1 - value2
+  }
+};
 
 module.exports = calculator;
