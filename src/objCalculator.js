@@ -22,7 +22,13 @@
 const calculator = {
   add: (num1, num2) => num1 + num2,
   mult: (num1, num2) => num1 * num2,
-  div: (num1, num2) => num2 !== 0 ? Math.floor(num1 / num2) : undefined,
+  div: (num1, num2) => {
+    if (num2 !== 0) {
+      return num1 / num2;
+    } else {
+      return undefined;
+    }
+  },
   sub: (num1, num2) => num1 - num2,
 };
 
