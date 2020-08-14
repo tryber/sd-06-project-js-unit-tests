@@ -86,10 +86,10 @@ const createMenu = (menu) => {
     for (let i = 0; i < this.consumption.length; i += 1) {
       switch (this.consumption[i]) {
         case 'coxinha':
-          total += parseInt(this.entries[0][1].coxinha);
+          total += this.entries[0][1].coxinha;
           break;
         case 'sopa':
-          total += parseInt(this.entries[0][1].sopa);
+          total += this.entries[0][1].sopa;
           break;
         case 'agua':
           total += this.entries[1][1].agua;
@@ -111,12 +111,5 @@ const createMenu = (menu) => {
 
   return myMenu;
 };
-
-const myRestaurant = { food: { 'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9 }};
-output = createMenu(myRestaurant);
-output.order('coxinha');
-output.order('agua');
-output.order('coxinha');
-console.log(output.pay());
 
 module.exports = createMenu;
