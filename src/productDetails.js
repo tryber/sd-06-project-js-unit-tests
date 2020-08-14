@@ -41,7 +41,7 @@ const productDetails = (firstProduct, secondProduct) => [
 
 module.exports = productDetails;
 
-assert = require ('assert');
+const assert = require('assert');
 assert.equal(Array.isArray(productDetails('tes', 'tes')), true, 'Function result should be an Array');
 // Teste que o array retornado pela função contém dois itens dentro.
 assert.equal(productDetails('tes', 'tes').length, 2, 'array should have 2 items');
