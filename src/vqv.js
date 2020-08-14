@@ -24,7 +24,7 @@ const vqv = (nome, idade) => {
     #VQV!`.replace(/^ {4}/gm, '');
   }
   return undefined;
-}
+};
 
 // console.log(vqv('Tunico', 30));
 
