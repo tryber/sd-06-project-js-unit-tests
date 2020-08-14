@@ -13,16 +13,21 @@
 */
 
 const average = (numbers) => {
+  if (numbers.length === 0) {
+    return undefined;
+  }
+
   let sum = 0;
-  let result = undefined;
-  for (number of numbers) {
-    if (typeof(number) === 'number') {
-      sum = sum + number;
-    } else if (typeof(number) === 'string') {
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (typeof (numbers[i]) === 'number') {
+      sum += numbers[i];
+    } else if (typeof (numbers[i]) === 'string') {
       return undefined;
     }
-    result = Math.round(sum / numbers.length);
   }
+  const result = Math.round(sum / numbers.length);
+
   return result;
 };
 
