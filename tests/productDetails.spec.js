@@ -3,6 +3,7 @@
 
 const assert = require('assert');
 const productDetails = require('../src/productDetails');
+const { isArray } = require('util');
 
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
@@ -33,8 +34,13 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
+    assert.deepStrictEqual(typeof 'return', typeof 'array');
+    assert.deepStrictEqual(typeof 'return', typeof '2');
+    assert.deepStrictEqual(typeof 'return', typeof 'object');
+    
+    
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
