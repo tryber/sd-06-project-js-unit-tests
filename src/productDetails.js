@@ -40,10 +40,3 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
-
-assert = require('assert');
-
-console.log(productDetails('tes','test')[0]);
-console.log(productDetails('tes','test')[1]);
-
-assert.notDeepEqual(productDetails('tes', 'test')[0], productDetails('tes', 'test')[1], 'Objects should not be equal');
