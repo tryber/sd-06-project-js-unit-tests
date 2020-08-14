@@ -1,8 +1,10 @@
-/* eslint-disable max-len*/
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
 const productDetails = require('../src/productDetails');
+const { isArray } = require('util');
+const { compileFunction } = require('vm');
 
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
@@ -33,12 +35,18 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    const STR1 = 'tomate';
+    const STR2 = 'abacate';
+    const COMBO = ['tomate', 'abacate'];
+
+    assert.deepEqual(isArray(productDetails(STR1, STR2)), true, 'productDetails() must return an array');
+    assert.deepEqual(productDetails(STR1, STR2).length, 2, 'productDetails().length must match 2');
+    productDetails(COMBO).map(element => {
+      assert.deepEqual(typeof(element), 'object', 'productDetails() should return an object');
+    });
+    assert.notDeepEqual(productDetails(STR1, STR2)[0], productDetails(STR1, STR2)[1], 'productDetails(STR1, STR2)[0] should not be equal of productDetails(STR1, STR2)[1]');
+    productDetails(COMBO).map(element => {
+      assert.strictEqual(element.details.productId.slice(-3), '123');
+    });
   });
 });
