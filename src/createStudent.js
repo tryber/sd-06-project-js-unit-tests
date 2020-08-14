@@ -23,8 +23,8 @@ printName: () => {
 
 const createStudent = (param) => {
   const estudante = { name: param,
-                      feedback: () => 'Eita pessoa boa!';
-                    }
+    feedback: () => 'Eita pessoa boa!',
+  };
   return estudante;
 };
 
