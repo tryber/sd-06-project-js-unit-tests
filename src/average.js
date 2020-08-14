@@ -14,13 +14,19 @@
 
 const average = (array) => {
   let sum = 0;
+
+  // if para definir se o tamanho é ()
   if (array.length === 0) return undefined;
   for (let index = 0; index < array.length; index += 1) {
+    // if para olhar se é uma string ou '' e voltar indefinido caso contrario faz a soma
     if (typeof array[index] !== 'number' || typeof array[index] === 'string') return undefined;
     sum += array[index];
   }
-  const averageSum = Math.round(sum / array.length);
+
+  // parte realmente da média
+  const averageSum = Math.floor(sum / array.length);
   return (averageSum);
 };
+
 
 module.exports = average;
