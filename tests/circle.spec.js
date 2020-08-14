@@ -38,5 +38,6 @@ describe('#circle', () => {
     assert.strictEqual(circle(), undefined);
     assert.strictEqual(parseFloat(circle(2)['circumference'].toPrecision(4)), 12.56);
     assert.strictEqual(parseFloat(circle(3)['area'].toPrecision(4)), 28.26);
+    assert.deepStrictEqual([ parseFloat(Object.values(circle(3))[0].toPrecision(4)), parseFloat(Object.values(circle(3))[1].toPrecision(4)), parseFloat(Object.values(circle(3))[2].toPrecision(4)) ], [ 3, 28.26, 18.84 ]);
   });
 });
