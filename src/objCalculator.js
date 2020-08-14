@@ -18,13 +18,12 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
- let result = 0;
-const calculator = {
-    add: (value, value1) =>  result = value+ value1,
-    mult: (value, value1) =>  result = value * value1,
-    div: (value, value1) =>  result = Math.floor(result=(value / value1)),
-    sub: (value, value1) =>  result = value- value1,
-  
+
+ const calculator = {
+  add: (value, value1) => value+ value1,
+  mult: (value, value1) => value * value1,
+  div: (value, value1) => Math.floor(value / value1),
+  sub: (value, value1) => value- value1,
 };
 
-module.exports = calculator;
+ module.exports = calculator;
