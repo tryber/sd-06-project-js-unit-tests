@@ -11,7 +11,7 @@
 
 const numbers = (myArray) => {
   for (let i = 0; i < myArray.length; i += 1) {
-    if (typeof myArray[i] !== 'number') {
+    if (typeof myArray[i] !== 'number'|| myArray[i]='') {
       return false;
     }
   }

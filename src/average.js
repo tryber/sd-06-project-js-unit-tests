@@ -13,21 +13,15 @@
 */
 
 const average = (array) => {
-    let total = 0;
-    let divisor = array.length
-    if (array.length == 0) {
-      return undefined
-    } else {
-      for (let i = 0; i < divisor; i += 1) {
-        if (array.length == 0) {
-          if (typeof (array[i]) !== 'number') {
-            return undefined;
-          }
-          total += array[i];
-        }
-        return Math.round(total / array.length);
-      }
-    };
+  let total = 0;
+  let divisor = array.length
+  for (let i = 0; i < divisor; i += 1) {
+    if (typeof (array[i]) !== 'number' || array.length == 0) {
+      return undefined;
+    }
+    total += array[i];
+    return Math.round(total / array.length);
+  };
 
-    module.exports = average;
-  }
+  module.exports = average;
+}
