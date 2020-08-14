@@ -25,7 +25,7 @@ const calculator = {
   //  Math.round asia baixo
   //  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
   div: div = (num1, num2) => Math.round((num1 / num2) - 0.1),
-  sub: sub = (num1, num2) => num1 - num2
+  sub: sub = (num1, num2) => num1 - num2,
 };
 
 module.exports = calculator;
