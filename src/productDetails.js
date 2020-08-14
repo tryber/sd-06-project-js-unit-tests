@@ -24,8 +24,7 @@
   ]
 */
 
-const productDetails = (firstProduct, secondProduct) => [
-  {
+const productDetails = (firstProduct, secondProduct) => [{
     name: firstProduct,
     details: {
       productId: `${firstProduct}123`,
@@ -40,3 +39,5 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
+
+console.log(productDetails('Alcool gel', 'Máscara')[0].details['productId'].substr((productDetails('Alcool gel', 'Máscara')[0].details['productId'].length - 3), productDetails('Alcool gel', 'Máscara')[0].details['productId'].length));
