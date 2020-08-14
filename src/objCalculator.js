@@ -20,9 +20,9 @@
 */
 
 const calculator = {};
-calculator.add = (number1, number2) => { return number1 + number2 };
-calculator.mult = (number1, number2) => { return number1 * number2 };
-calculator.div = (number1, number2) => { return Math.trunc(number1 / number2) };
-calculator.sub = (number1, number2) => { return number1 - number2 };
+calculator.add = (number1, number2) => number1 + number2;
+calculator.mult = (number1, number2) => number1 * number2;
+calculator.div = (number1, number2) => Math.trunc(number1 / number2);
+calculator.sub = (number1, number2) => number1 - number2;
 
 module.exports = calculator;
