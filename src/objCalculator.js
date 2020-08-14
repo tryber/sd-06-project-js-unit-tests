@@ -22,7 +22,7 @@ const calculator = {};
 
 calculator.add = (n1, n2) => n1 + n2;
 calculator.mult = (n3, n4) => n3 * n4;
-calculator.div = (n5, n6) => Math.trunc(n5/n6);
+calculator.div = (n5, n6) => Math.trunc(n5 / n6);
 calculator.sub = (n7, n8) => n7 - n8;
 
 module.exports = calculator;
