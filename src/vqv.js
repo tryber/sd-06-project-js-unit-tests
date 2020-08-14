@@ -22,8 +22,8 @@ const vqv = (nome, idade) => {
   }
   const mensageVqv = `Oi, meu nome é ${nome}!\n` +
     `Tenho ${idade} anos,\n` +
-    `trabalho na Trybe e mando muito em programação!\n` +
-    `#VQV!`;
+    'trabalho na Trybe e mando muito em programação!\n' +
+    '#VQV!';
   return mensageVqv;
 };
 console.log(vqv('clayton', 18));
