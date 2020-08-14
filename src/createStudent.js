@@ -15,13 +15,13 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const { TestScheduler } = require("jest");
+// const { TestScheduler } = require("jest");
 
 const createStudent = (teste) => {
   const estudante = {
-    name: teste, 
-    feedback: () => { return 'Eita pessoa boa!';}
-  }
+    name:teste, 
+    feedback: () => {return 'Eita pessoa boa!';},
+  };
   return estudante;
 };
 
