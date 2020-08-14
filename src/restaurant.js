@@ -77,11 +77,11 @@ const createMenu = (menu) => {
   myMenu.consumption = [];
 
   // Essa function 'order', eu aprendi observando o Ícaro Harry ajudando os colegas no plantão. Fez todo o sentido, eu ainda não havia usado 'this'.
-  myMenu.order = function (item) {
+  myMenu.order = function addItem(item) {
     this.consumption.push(item);
   };
   myMenu.entries = Object.entries(menu);
-  myMenu.pay = function () {
+  myMenu.pay = function sum() {
     let total = 0;
     for (let i = 0; i < this.consumption.length; i += 1) {
       switch (this.consumption[i]) {
