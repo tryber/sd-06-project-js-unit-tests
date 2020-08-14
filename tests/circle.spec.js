@@ -36,9 +36,8 @@ describe('#circle', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     assert.equal(circle(2).circumference, 12.56, 'Deveria retornar circumference: 12.56')
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    assert.equal(circle(3).area, 28.26, 'Deveria retornar area: 28.26')
+    assert.equal(parseFloat((circle(3).area).toFixed(2)), 28.26, 'Deveria retornar area: 28.26')
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.equal(circle(3).radius, 3, 'Deveria retornar radius: 3')
-
+    assert.equal(parseFloat((circle(3).radius).toFixed(2)), 3, 'Deveria retornar radius: 3');
   });
 });
