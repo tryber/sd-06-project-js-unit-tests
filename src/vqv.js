@@ -17,10 +17,7 @@
 */
 
 const vqv = (nome, idade) => {
-  return {
-    nome,
-    idade
-  }
+  return `nome, idade`
 };
 
 module.exports = vqv;
