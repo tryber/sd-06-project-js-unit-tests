@@ -17,7 +17,12 @@
 */
 
 const vqv = (nome, idade) => {
-  return `nome, idade`
+  const fraseFinal = `Oi, meu nome é ${nome}!\n` +
+  `Tenho ${idade} anos,\n` +
+  `trabalho na Trybe e mando muito em programação!\n` +
+  `#VQV!`
+  
+  return fraseFinal 
 };
 
 module.exports = vqv;
