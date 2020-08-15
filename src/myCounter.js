@@ -19,7 +19,7 @@ const myCounter = () => {
   const myArray = [];
   for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (let counterA = 2; counter <= 3; counter += 1) {
+    for (let counterA = 2; counterA <= 3; counterA += 1) {
       myArray.push(counterA);
     }
   }
