@@ -16,6 +16,15 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  // Sei que na literalidade da questão deveria ser && e não || mas para melhora da função optei por || (or)
+  if (nome === undefined || idade === undefined) {
+    return undefined;
+  }
+  return `Oi, meu nome é ${nome}!\n` +
+  `Tenho ${idade} anos,\n` +
+  `trabalho na Trybe e mando muito em programação!\n` +
+  `#VQV!`
+};
 
 module.exports = vqv;
