@@ -28,11 +28,11 @@ describe('#circle', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     let radius;
     const PI = 3.14;
-    const area = (radius) => parseFloat((Math.floor(PI * radius * radius  * 100) / 100).toPrecision(4));
+    const area = radius => parseFloat((Math.floor(PI * radius * radius  * 100) / 100).toPrecision(4));
     const circumference = (radius) => parseFloat((Math.floor(2 * PI * radius * 100) / 100).toPrecision(4));
-    const areaExp = (radius) => parseFloat((Object.values(circle(radius))[1]).toPrecision(4));
-    const circumExp = (radius) => parseFloat((Object.values(circle(radius))[2]).toPrecision(4));
-    const obj = (radius) => [radius, areaExp(radius), circumExp(radius)];
+    const areaExp = radius => parseFloat((Object.values(circle(radius))[1]).toPrecision(4));
+    const circumExp = radius => parseFloat((Object.values(circle(radius))[2]).toPrecision(4));
+    const obj = radius => [radius, areaExp(radius), circumExp(radius)];
     // Teste se circle retorna um objeto.
     assert.deepEqual(typeof circle(2), 'object');
 
@@ -51,6 +51,6 @@ describe('#circle', () => {
     assert.strictEqual(areaExp(radius), area(radius));
 
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.strictEqual(obj(radius), [radius, area(radius), circumference(radius)]);
+    assert.deepEqual(obj(radius), [radius, area(radius), circumference(radius)]);
   });
 });
