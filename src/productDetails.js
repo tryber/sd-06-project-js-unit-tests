@@ -39,4 +39,7 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+assert.strictEqual(parseInt(productDetails('Arroz', 'Frango')[0].details.productId.slice(-3), 123) &&
+parseInt(productDetails('Arroz', 'Frango')[1].details.productId.slice(-3), 123), 123);
+
 module.exports = productDetails;
