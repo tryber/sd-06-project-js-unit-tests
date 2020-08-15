@@ -69,7 +69,7 @@ const getItemPrice = (menu, currentItem) => {
       itemPrice = Object.values(menu)[x];
     }
   }
-  
+
   return itemPrice;
 };
 
