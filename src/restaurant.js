@@ -73,7 +73,7 @@ const payFromMenu = () => {
       }
     }
   }
-  return orderSum;
+  return parseFloat((orderSum * 1.10).toFixed(2));
 };
 
 const createMenu = (myMenu) => {
