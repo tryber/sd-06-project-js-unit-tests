@@ -66,9 +66,8 @@ const payFromMenu = () => {
   let orderSum = 0;
 
   for (let i = 0; i < restaurant.consumption.length; i += 1) {
-    const currentConsumption = restaurant.consumption[i];
     for (let x = 0; x < Object.keys(menu).length; x += 1) {
-      if (Object.keys(menu)[x] === currentConsumption) {
+      if (Object.keys(menu)[x] === restaurant.consumption[i]) {
         orderSum += Object.values(menu)[x];
       }
     }
