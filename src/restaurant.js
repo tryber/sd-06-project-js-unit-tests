@@ -61,18 +61,27 @@ const restaurant = {};
 
 const orderFromMenu = item => restaurant.consumption.push(item);
 
+const getItemPrice = (menu, currentItem) => {
+  let itemPrice = 0;
+
+  for (let x = 0; x < Object.keys(menu).length; x += 1) {
+    if (Object.keys(menu)[x] === currentItem) {
+      itemPrice = Object.values(menu)[x];
+    }
+  }
+  
+  return itemPrice;
+};
+
 const payFromMenu = () => {
   const menu = Object.assign({}, restaurant.fetchMenu.food, restaurant.fetchMenu.drink);
   let orderSum = 0;
 
   for (let i = 0; i < restaurant.consumption.length; i += 1) {
     const currentConsumption = restaurant.consumption[i];
-    for (let x = 0; x < Object.keys(menu).length; x += 1) {
-      if (Object.keys(menu)[x] === currentConsumption) {
-        orderSum += Object.values(menu)[x];
-      }
-    }
+    orderSum += getItemPrice(menu, currentConsumption);
   }
+
   return parseFloat((orderSum * 1.10).toFixed(2));
 };
 
