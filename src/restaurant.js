@@ -74,7 +74,7 @@ const getItemPrice = (menu, currentItem) => {
 };
 
 const payFromMenu = () => {
-  const menu = Object.assign({}, restaurant.fetchMenu.food, restaurant.fetchMenu.drink);
+  const menu = Object.assign({}, restaurant.fetchMenu().food, restaurant.fetchMenu().drink);
   let orderSum = 0;
 
   for (let i = 0; i < restaurant.consumption.length; i += 1) {
@@ -86,7 +86,7 @@ const payFromMenu = () => {
 };
 
 const createMenu = (myMenu) => {
-  restaurant.fetchMenu = myMenu;
+  restaurant.fetchMenu = () => myMenu;
   restaurant.consumption = [];
   restaurant.order = orderFromMenu;
   restaurant.pay = payFromMenu;
