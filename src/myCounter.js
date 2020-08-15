@@ -15,11 +15,11 @@
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
 const myCounter = () => {
-  let myArray = [];
-  for (let counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter);
-    for (let counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+  const myArray = [];
+  for (let i = 0; i <= 3; i += 1) {
+    myArray.push(i);
+    for (let j = 2; j <= 3; j += 1) {
+      myArray.push(j);
     }
   }
   return myArray;
