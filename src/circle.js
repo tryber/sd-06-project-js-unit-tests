@@ -28,4 +28,7 @@ const circle = (radius) => {
   };
 };
 
+// parseFloat((PI * radius * radius).toFixed(2))
+// console.log(circle(3));
+
 module.exports = circle;

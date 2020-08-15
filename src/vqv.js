@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  if (typeof nome !== 'undefined' && typeof idade !== 'undefined') {
+    return `Oi, meu nome é ${nome}!
+    Tenho ${idade} anos,
+    trabalho na Trybe e mando muito em programação!
+    #VQV!`.replace(/^ {4}/gm, '');
+  }
+  return undefined;
+};
+
+// console.log(vqv('Tunico', 30));
 
 module.exports = vqv;
