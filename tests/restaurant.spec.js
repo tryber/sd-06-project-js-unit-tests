@@ -65,8 +65,8 @@ describe('#createMenu', () => {
     // ```
     // objetoRetornado.fetchMenu // Retorno: { food: {}, drink: {}}
     // ```
-    
-    assert.deepStrictEqual(createMenu(anyObject).fetchMenu(), anyObject);
+    const fetchMenuKeys = Object.keys(returnedObject.fetchMenu());
+    assert.deepStrictEqual(fetchMenuKeys, [ 'food', 'drink' ]);
     // Agora faça o TESTE 3 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 3: Verifique que o menu passado pra função createMenu é idêntico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
