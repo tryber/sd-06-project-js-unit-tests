@@ -1,5 +1,5 @@
 const createMenu = (menu) => {
-  return {
+  const register = {
     fetchMenu: () => menu,
     consumption: [],
     order(product) {
@@ -8,13 +8,13 @@ const createMenu = (menu) => {
     pay() {
       const consumptionList = this.consumption;
       let bill = 0;
-      for (let i = 0; i < consumptionList.length; i += 1) {
-        if (menu.food[consumptionList[i]]) {
-          bill += menu.food[consumptionList[i]];
-        } else if (menu.drink[consumptionList[i]]) {
-          bill += menu.drink[consumptionList[i]];
+      consumptionList.forEach((item) => {
+        if (menu.food[item]) {
+          bill += menu.food[item];
+        } else if (menu.drink[item]) {
+          bill += menu.drink[item];
         }
-      }
+      });
       // * When adding floating number, JS does not behave as expected:
       // * Ex.: 0.1 + 0.2 != 0.3 (not expected)
       // ? source: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
@@ -22,6 +22,7 @@ const createMenu = (menu) => {
       return bill;
     },
   };
+  return register;
 };
 
 module.exports = createMenu;
