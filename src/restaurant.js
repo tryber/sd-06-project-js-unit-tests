@@ -66,15 +66,15 @@ const createMenu = (myMenu) => {
   restaurant.consumption = [];
   restaurant.order = orderFromMenu;
   restaurant.pay = () => {
-    let menu = Object.assign({}, restaurant.fetchMenu['food'], restaurant.fetchMenu['drink']);
+    const menu = Object.assign({}, restaurant.fetchMenu.food, restaurant.fetchMenu.drink);
     let orderSum = 0;
 
     for (let i = 0; i < restaurant.consumption.length; i += 1) {
       const currentConsumption = restaurant.consumption[i];
-      for (let i = 0; i < Object.keys(menu).length; i += 1) {
-        if (Object.keys(menu)[i] === currentConsumption) {
-          orderSum += Object.values(menu)[i];
-        };
+      for (let x = 0; x < Object.keys(menu).length; x += 1) {
+        if (Object.keys(menu)[x] === currentConsumption) {
+          orderSum += Object.values(menu)[x];
+        }
       }
     }
     return orderSum;
