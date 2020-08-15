@@ -11,17 +11,16 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+var array = [3,4,5];
+
 const average = (array) => {
   let soma = 0;
-  let resultado = 0;
-  if (array.length === 0) { return undefined; }
-  for (let c = 0; c < array.length; c += 1) {
-    if (typeof (array[c]) !== 'number') {
-      return undefined;
-    } soma += array[c];
+  for (let c = 0; c < array.length; c =+ 1) {
+    soma += array[c];
   }
-  soma /= array.length;
-  resultado = Math.round(soma);
-  return resultado;
+  let resultado = soma / array.length;
+  
+  console.log(resultado);
 };
-module.exports = average;
+average(array);
+// module.exports = average;
