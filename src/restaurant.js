@@ -92,7 +92,7 @@ const createMenu = (object) => {
   restaurant.consumption = [];
   restaurant.order = orderFromMenu;
   restaurant.pay = payTheBill;
-  
+
   return restaurant;
 };
 
