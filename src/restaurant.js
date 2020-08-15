@@ -77,7 +77,7 @@ const createMenu = obj => {
   restaurant.order = str => restaurant.consumption.push(str);
   restaurant.pay = () => {
     let total = 0;
-    restaurant.consumption.forEach(element => total += (Object.keys(restaurant.fetchMenu.food).includes(element)) ? restaurant.fetchMenu.food[element] : restaurant.fetchMenu.drink[element]);
+    restaurant.consumption.forEach(element => (total += (Object.keys(restaurant.fetchMenu.food).includes(element)) ? restaurant.fetchMenu.food[element] : restaurant.fetchMenu.drink[element]));
     return total;
   };
   return restaurant;
