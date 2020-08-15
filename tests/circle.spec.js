@@ -28,7 +28,7 @@ describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
-    assert.deepStrictEqual(typeof 'return', typeof 'object');
+    assert(typeof circle(2) === 'object');
     assert.deepStrictEqual(typeof 'return', typeof '3');
     assert.deepStrictEqual(typeof circle(), typeof undefined);
     assert.deepStrictEqual(circle(2), {'area': 12.56, 'circumference': 12.56, 'radius': 2});
