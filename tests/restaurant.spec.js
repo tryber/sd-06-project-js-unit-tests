@@ -112,7 +112,7 @@ describe('#createMenu', () => {
     assert.deepStrictEqual(returnedObject.consumption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha']);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
-    // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
+    // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado no `objetoRetornado.consumption`
     // ```
     const objetoRetornado2 = createMenu(anyObject);
     objetoRetornado2.order('coxinha');
