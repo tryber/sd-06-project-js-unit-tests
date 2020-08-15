@@ -129,7 +129,7 @@ describe('#createMenu', () => {
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
 
-    assert.strictEqual(myObj3.pay(), 11.70.toPrecision(4));
+    assert.strictEqual(myObj3.pay(), 11.70);
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
     // objetoRetornado.order('coxinha');

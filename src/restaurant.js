@@ -94,13 +94,7 @@ const createMenu = obj => ({
         }
       }
     }
-    if (this.priceToPay < 10) {
-      return this.priceToPay.toPrecision(3);
-    } else if (this.priceToPay < 100) {
-      return this.priceToPay.toPrecision(4);
-    } else {
-      return this.priceToPay.toPrecision(5);
-    }
+    return this.priceToPay
   },
 });
 
