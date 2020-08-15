@@ -77,7 +77,7 @@ const createMenu = (object) => {
   restaurant = {
     fetchMenu: object,
     consumption: [],
-    order: orderFromMenu = (string) => restaurant.consumption.push(string),
+    order: string => restaurant.consumption.push(string),
     pay: () => {
       let bill = 0;
       for (let i = 0; i < restaurant.consumption.length; i += 1) {
