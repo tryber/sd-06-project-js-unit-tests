@@ -84,7 +84,7 @@ describe('#createMenu', () => {
     // objetoRetornado.consumption // Retorno: []
     // ```
     const objeto4 = createMenu('objetoQualquer');
-    assert.deepEqual(objeto4.consumption, []);
+    assert.deepStrictEqual(objeto4.consumption, []);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
