@@ -15,6 +15,28 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = student => ({
+
+  name: `${student}`,
+  feedback: () =>
+  ('Eita pessoa boa!'),
+
+});
+
+// console.log(createStudent());
+const studentA = createStudent('Leandrão, o Lobo Solitário');
+console.log(studentA.name);
+
+
+// const circle = (radius) => {
+//   const PI = 3.14;
+//   if (!radius) { return undefined; }
+//   return {
+//     radius,
+//     area: PI * radius * radius,
+//     circumference: 2 * PI * radius,
+//   };
+// };
+
 
 module.exports = createStudent;
