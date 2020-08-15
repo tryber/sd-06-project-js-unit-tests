@@ -26,8 +26,4 @@ const circle = (radius) => {
   };
 };
 
-const bola = circle(2);
-
-console.log (bola);
-
 module.exports = circle;
