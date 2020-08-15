@@ -71,27 +71,26 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-// food: {'coxinha': 3.90, 'sanduiche', 9.90},
-// drinks: {'agua': 3.90, 'cerveja': 6.90}
-
 const createMenu = obj => ({
   fetchMenu: obj,
   consumption: [],
   order: function (food) { this.consumption.push(food) },
   priceToPay: 0,
   pay: function () {
-    foodItems = Object.values(this.fetchMenu)[0];
-    drinkItems = Object.values(this.fetchMenu)[1];
+    foodItemsKeys = Object.keys(Object.values(this.fetchMenu)[0]);
+    foodItemsValues = Object.values(Object.values(this.fetchMenu)[0]);
+    drinkItemsKeys = Object.keys(Object.values(this.fetchMenu)[1]);
+    drinkItemsValues = Object.values(Object.values(this.fetchMenu)[1]);
 
     for (let item = 0; item < this.consumption.length; item += 1) {
-      for (let foods = 0; foods < Object.keys(foodItems).length; foods += 1) {
-        if (this.consumption[item] === Object.keys(foodItems)[foods]) {
-          this.priceToPay += parseFloat(Object.values(foodItems)[foods]);
+      for (let foods = 0; foods < foodItemsKeys.length; foods += 1) {
+        if (this.consumption[item] === foodItemsKeys[foods]) {
+          this.priceToPay += parseFloat(foodItemsValues[foods]);
         }
       }
-      for (let drinks = 0; drinks < Object.keys(drinkItems).length; drinks += 1) {
-        if (this.consumption[item] === Object.keys(drinkItems)[drinks]) {
-          this.priceToPay += parseFloat(Object.values(drinkItems)[drinks]);
+      for (let drinks = 0; drinks < drinkItemsKeys.length; drinks += 1) {
+        if (this.consumption[item] === drinkItemsKeys[drinks]) {
+          this.priceToPay += parseFloat(drinkItemsValues[drinks]);
         }
       }
     }
@@ -107,14 +106,12 @@ const createMenu = obj => ({
 
 module.exports = createMenu;
 
-const meuRestaurante = createMenu({
+const myObj3 = createMenu({
   food: { 'coxinha': 3.90, 'sanduiche': 9.90 },
   drinks: { 'agua': 3.90, 'cerveja': 6.90 }
 });
-meuRestaurante.order('coxinha');
-meuRestaurante.order('agua');
-meuRestaurante.order('coxinha');
+myObj3.order('coxinha');
+myObj3.order('agua');
+myObj3.order('coxinha');
 
-meuRestaurante.pay();
-
-
+myObj3.pay();
