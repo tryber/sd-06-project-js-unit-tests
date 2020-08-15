@@ -41,7 +41,7 @@ describe('#productDetails', () => {
     const obj02 = productDetails('bola', 'gato')[1];
     assert.notDeepEqual(obj01 === obj02, true);
     
-    assert.deepStrictEqual(obj01.details.productId.slice(-3), '123')
-    assert.deepStrictEqual(obj02.details.productId.slice(-3), '123')
+    assert.deepStrictEqual(obj01.details.productId.slice(-3), '123');
+    assert.deepStrictEqual(obj02.details.productId.slice(-3), '123');
   });
 });
