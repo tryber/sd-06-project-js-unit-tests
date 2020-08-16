@@ -73,9 +73,13 @@
 
 const createMenu = (menu) => {
   const myRestaurant = {
-    fetchMenu: () => {
+    fetchMenu: function() {
       return menu;
     },
+    order: (item) => {
+      myRestaurant.consumption.push(item);
+    },
+    consumption: [],
   };
   return myRestaurant;
 };
