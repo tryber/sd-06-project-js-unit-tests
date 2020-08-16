@@ -17,7 +17,7 @@
 */
 
 const vqv = (nome, idade) => {
-  // Sei que na literalidade da questão deveria ser && e 
+  // Sei que na literalidade da questão deveria ser && e
   // não || mas para melhora da função optei por || (or)
   if (nome === undefined || idade === undefined) {
     return undefined;
