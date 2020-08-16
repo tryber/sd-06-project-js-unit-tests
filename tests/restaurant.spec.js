@@ -5,14 +5,17 @@ const assert = require('assert');
 const createMenu = require('../src/restaurant');
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
+  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, 
+  através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar 
+  um objeto através do qual se consegue:
   - ler o menu cadastrado;
   - fazer pedidos;
   - verificar o que foi pedido;
   - somar o valor da conta.
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
-  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. Eles guiarão você pelo desenvolvimento.
+  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o 
+  bom desenvolvimento do sistema. Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
