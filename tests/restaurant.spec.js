@@ -57,7 +57,8 @@ describe('#createMenu', () => {
     // ```
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
     let output = createMenu('objetoQualquer');
-    // !!PAROU DE FUNCIONAR DEPOIS DAS OUTRAS IMPLEMENTAÇÕES 
+    // !!PAROU DE FUNCIONAR DEPOIS DAS OUTRAS IMPLEMENTAÇÕES
+    // Eu vi que colegas transformaram a propriedade fetchMenu em uma função para poder passar aqui, mas não quis fazer alteração que não está especificada.
     // assert.deepStrictEqual(output, { fetchMenu: 'objetoQualquer' });
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
