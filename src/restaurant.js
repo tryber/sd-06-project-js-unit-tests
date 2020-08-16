@@ -78,25 +78,16 @@ const createMenu = (menu) => {
 
   // Essa function 'order', eu aprendi observando o Ícaro Harry ajudando os colegas no plantão. Fez todo o sentido, eu ainda não havia usado 'this'.
   // Depois, eu descobri com meu colega de grupo, Mário Duarte, que eu posso referenciar o objeto com arrow function, 'this' não funciona com arrow.
-  myMenu.order = (item) => myMenu.consumption.push(item);
+  myMenu.order = item => myMenu.consumption.push(item);
   myMenu.pay = function sum() {
     let total = 0;
     for (let i = 0; i < myMenu.consumption.length; i += 1) {
       switch (myMenu.consumption[i]) {
-        case 'coxinha':
-          total += menu.food.coxinha;
-          break;
-        case 'sopa':
-          total += menu.food.sopa;
-          break;
-        case 'agua':
-          total += menu.drink.agua;
-          break;
-        case 'cerveja':
-          total += menu.drink.cerveja;
-          break;
-        default:
-          break;
+        case 'coxinha': total += menu.food.coxinha; break;
+        case 'sopa': total += menu.food.sopa; break;
+        case 'agua': total += menu.drink.agua; break;
+        case 'cerveja': total += menu.drink.cerveja; break;
+        default: break;
       }
     }
     total *= 1.1;
