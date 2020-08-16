@@ -77,25 +77,23 @@ const createMenu = (menu) => {
   myMenu.consumption = [];
 
   // Essa function 'order', eu aprendi observando o Ícaro Harry ajudando os colegas no plantão. Fez todo o sentido, eu ainda não havia usado 'this'.
-  myMenu.order = function addItem(item) {
-    this.consumption.push(item);
-  };
-  myMenu.entries = Object.entries(menu);
+  // Depois, eu descobri com meu colega de grupo, Mário Duarte, que eu posso referenciar o objeto com arrow function, 'this' não funciona com arrow.
+  myMenu.order = (item) => myMenu.consumption.push(item);
   myMenu.pay = function sum() {
     let total = 0;
-    for (let i = 0; i < this.consumption.length; i += 1) {
-      switch (this.consumption[i]) {
+    for (let i = 0; i < myMenu.consumption.length; i += 1) {
+      switch (myMenu.consumption[i]) {
         case 'coxinha':
-          total += this.entries[0][1].coxinha;
+          total += menu.food.coxinha;
           break;
         case 'sopa':
-          total += this.entries[0][1].sopa;
+          total += menu.food.sopa;
           break;
         case 'agua':
-          total += this.entries[1][1].agua;
+          total += menu.drink.agua;
           break;
         case 'cerveja':
-          total += this.entries[1][1].cerveja;
+          total += menu.drink.cerveja;
           break;
         default:
           break;
@@ -105,11 +103,16 @@ const createMenu = (menu) => {
 
     // Eu queria no maximo dois decimais mas não sabia fazer, pesquisei e aprendi a fazer neste link: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
     // Já havíamos usado 'parseInt' e o total estava retornando string. Então 'parseFloat' faz sentido para validar e com dois decimais.
-    total = parseFloat(total.toFixed(2));
-    return total;
+    return parseFloat(total.toFixed(2));
   };
-
   return myMenu;
 };
+
+// const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
+// output = createMenu(myRestaurant);
+// output.order('coxinha');
+// output.order('agua');
+// output.order('coxinha');
+// console.log(output.pay());
 
 module.exports = createMenu;
