@@ -51,7 +51,7 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    // assert.fail();
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
     // ```
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
@@ -114,5 +114,32 @@ describe('#createMenu', () => {
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+
+    const myObject = { food: { 'coxinha': 3.9, 'sopa': 9.9, 'sashimi': 19.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } };
+    var objetoRetornado = createMenu(myObject);
+
+    assert.equal(JSON.stringify(objetoRetornado), "{\"consumption\":[],\"fetchMenu\":{\"food\":{\"coxinha\":3.9,\"sopa\":9.9,\"sashimi\":19.9},\"drink\":{\"agua\":3.9,\"cerveja\":6.9}}}"); // Test 1
+
+    assert.deepStrictEqual(objetoRetornado.fetchMenu, myObject); // Test 2
+
+    assert.deepStrictEqual(myObject, objetoRetornado.fetchMenu); // Test 3 // Equal to previous test
+
+    assert.deepStrictEqual(objetoRetornado.consumption, []); // Test 4
+
+    const food = 'coxinha';
+    objetoRetornado.order(food);
+    assert.equal(objetoRetornado.consumption[0], food); // Test 5
+
+    objetoRetornado.order("agua");
+    objetoRetornado.order("sopa");
+    objetoRetornado.order("sashimi");
+
+    assert.deepStrictEqual(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "sashimi"]); // Test 6
+
+    objetoRetornado.order('coxinha');
+
+    assert.deepStrictEqual(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "sashimi", "coxinha"]); // Test 7
+
+    assert.strictEqual(objetoRetornado.pay(), 45.65); //Test 8
   });
 });

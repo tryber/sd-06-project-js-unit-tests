@@ -29,3 +29,6 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
+
+console.log(parseFloat(Object.values(circle(3))[1]).toPrecision(4));
+console.log(Object.values(3));
