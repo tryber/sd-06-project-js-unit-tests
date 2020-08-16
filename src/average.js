@@ -25,8 +25,8 @@ const average = (array) => {
         return undefined;
       } else {
       // acumular tudo em soma
-       soma += array[i];
-     }
+        soma += array[i];
+      }
     }
   // tira a media
     soma /= array.length;
