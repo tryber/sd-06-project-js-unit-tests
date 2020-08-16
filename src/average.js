@@ -22,8 +22,8 @@ const average = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     // teste para encontrar um valor nao numerico
     if (typeof array[i] !== 'number') {
-        return undefined;
-      }
+      return undefined;
+    }
       // acumular tudo em soma
     soma += array[i];
   }
