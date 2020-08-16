@@ -87,22 +87,24 @@ const createMenu = (menu) => {
       return sum;
     },
     price: (item) => {
+      let myPrice = 0;
       if (Object.values(myRestaurant.fetchMenu())[0][item]) {
-        return Object.values(myRestaurant.fetchMenu())[0][item];
+        myPrice = Object.values(myRestaurant.fetchMenu())[0][item];
       } else if (Object.values(myRestaurant.fetchMenu())[1][item]) {
-        return Object.values(myRestaurant.fetchMenu())[1][item];
-      };
+        myPrice = Object.values(myRestaurant.fetchMenu())[1][item];
+      }
+      return myPrice;
     },
   };
   return myRestaurant;
 };
-let menu = {
-  food: { coxinha: 3.9, sopa: 9.9 },
-  drink: { agua: 3.9, cerveja: 6.9 },
-};
-let myRestaurant = createMenu(menu);
-myRestaurant.order('coxinha');
-myRestaurant.order('sopa');
-myRestaurant.order('agua');
-console.log(myRestaurant.pay());
+// let menu = {
+//   food: { coxinha: 3.9, sopa: 9.9 },
+//   drink: { agua: 3.9, cerveja: 6.9 },
+// };
+// let myRestaurant = createMenu(menu);
+// myRestaurant.order('coxinha');
+// myRestaurant.order('sopa');
+// myRestaurant.order('agua');
+// console.log(myRestaurant.pay());
 module.exports = createMenu;
