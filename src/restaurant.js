@@ -89,7 +89,7 @@ const checkout = (consumption, fetchMenu) => {
     count += sumPay(i, consumption, keysPrice, prices);
   }
   count += (count * 0.1);
-  return Number.parseFloat(count.toPrecision(4));
+  return Number.parseFloat(count.toPrecision(4)); // arredonda e converte para número novamente
 };
 
 const createMenu = (menu) => {
