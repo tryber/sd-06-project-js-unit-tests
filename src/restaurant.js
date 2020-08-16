@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
+  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
+  cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
   - fazer pedidos;
   - verificar o que foi pedido;
@@ -70,7 +71,29 @@
 //------------------------------------------------------------------------------------------
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+const assert = require('assert');
 
-const createMenu = () => {};
+const createMenu = (obj) => {
+  const IDONTKNOW = {
+    fetchMenu: () => obj,
+    consumption: [],
+    order: (...string) => IDONTKNOW.consumption = string.map((item) => { return item; }),
+  };
 
-module.exports = createMenu;
+  return IDONTKNOW;
+};
+
+const MENU = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+const RESTAURANTE = createMenu(MENU);
+
+assert.deepStrictEqual(`${RESTAURANTE.fetchMenu()}`, '[object Object]'); 
+
+
+
+
+/* RESTAURANTE.order("coxinha", "agua", "sopa", "sashimi");
+assert.deepStrictEqual(RESTAURANTE.consumption, ["coxinha", "agua", "sopa", "sashimi"]); */
+
+
+
+/* module.exports = createMenu; */

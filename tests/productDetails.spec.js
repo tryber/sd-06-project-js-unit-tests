@@ -38,12 +38,13 @@ describe('#productDetails', () => {
     assert.equal(Array.isArray([obj1, obj2]), true);
     assert.equal([obj1, obj2].length, 2);
 
-    assert.deepStrictEqual(typeof [obj1, obj2], 'object');
+    assert.deepStrictEqual([obj1, obj2].map(item => {
+      return typeof item;
+    }), ['object', 'object']);
     assert.notDeepEqual(obj1, obj2);
 
     assert.deepStrictEqual([obj1, obj2].map(e => {
       return e.details.productId.slice(-3);
     }), ['123', '123']);
-
   });
 });
