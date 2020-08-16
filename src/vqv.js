@@ -15,18 +15,20 @@
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
-const assert = require('assert');
+// const assert = require('assert');
 
 const vqv = (nome, idade) => {
   // retorna undefined
-  if(nome === undefined && idade === undefined){
+  if (nome === undefined && idade === undefined) {
     return undefined;
   }
   // retorna a frase
- return (`Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`);
-  };
+  return (`Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`);
+};
 
-console.log(vqv('Tunico',30))
+// console.log(vqv('Tunico',30))
+// console.log(vqv('Hamaji', 29))
+// console.log(vqv('Alberto', 30))
 module.exports = vqv;
 
 // assert.strictEqual(typeof vqv, 'function');
