@@ -45,9 +45,9 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(productDetails('Alcool', 'Mascara')[0], productDetails('Alcool', 'Mascara')[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
-    let endString = productDetails('Alcool', 'Mascara')[0].details.productId;
-    assert.strictEqual(endString.substring(endString.length-3, endString.length), '123');
-    let endString2 = productDetails('Alcool', 'Mascara')[1].details.productId;
-    assert.strictEqual(endString2.substring(endString2.length-3, endString2.length), '123');
-    });
+    const endString = productDetails('Alcool', 'Mascara')[0].details.productId;
+    assert.strictEqual(endString.substring(endString.length - 3, endString.length), '123');
+    const endString2 = productDetails('Alcool', 'Mascara')[1].details.productId;
+    assert.strictEqual(endString2.substring(endString2.length - 3, endString2.length), '123');
+  });
 });
