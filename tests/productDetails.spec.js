@@ -48,5 +48,10 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     assert.notStrictEqual(execGeneric[0], execGeneric[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
+    assert.deepStrictEqual(
+      execGeneric[0].details.productId.endsWith('123') &&
+        execGeneric[1].details.productId.endsWith('123'),
+      true,
+    );
   });
 });
