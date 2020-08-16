@@ -79,7 +79,7 @@ const returnCheck = (menu, totalConsumption) => {
   const foodValues = Object.values(menu.food);
   const drinkValues = Object.values(menu.drink);
   let total = 0;
-  for (let item in totalConsumption) {
+  for (let item = 0; item < totalConsumption.length; item += 1) {
     for (let food = 0; food < foodKeys.length; food += 1) {
       if (totalConsumption[item] === foodKeys[food]) {
         total += foodValues[food];
