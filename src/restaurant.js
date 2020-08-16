@@ -82,24 +82,27 @@ const createMenu = (menu) => {
     pay: () => {
       let sum = 0;
       for (let index = 0; index < myRestaurant.consumption.length; index += 1) {
-        if (Object.values(myRestaurant.fetchMenu())[0][myRestaurant.consumption[index]]) {
-          sum += Object.values(myRestaurant.fetchMenu())[0][myRestaurant.consumption[index]];
-        } else if (Object.values(myRestaurant.fetchMenu())[1][myRestaurant.consumption[index]]) {
-          sum += Object.values(myRestaurant.fetchMenu())[1][myRestaurant.consumption[index]];
-        }
+        sum += myRestaurant.price(myRestaurant.consumption[index]);
       }
       return sum;
-    }
+    },
+    price: (item) => {
+      if (Object.values(myRestaurant.fetchMenu())[0][item]) {
+        return Object.values(myRestaurant.fetchMenu())[0][item];
+      } else if (Object.values(myRestaurant.fetchMenu())[1][item]) {
+        return Object.values(myRestaurant.fetchMenu())[1][item];
+      };
+    },
   };
   return myRestaurant;
 };
-// let menu = {
-//   food: { coxinha: 3.9, sopa: 9.9 },
-//   drink: { agua: 3.9, cerveja: 6.9 },
-// };
-// let myRestaurant = createMenu(menu);
-// myRestaurant.order('agua');
-// myRestaurant.order('sopa');
-// myRestaurant.order('sashimi');
-// console.log(myRestaurant.pay());
+let menu = {
+  food: { coxinha: 3.9, sopa: 9.9 },
+  drink: { agua: 3.9, cerveja: 6.9 },
+};
+let myRestaurant = createMenu(menu);
+myRestaurant.order('coxinha');
+myRestaurant.order('sopa');
+myRestaurant.order('agua');
+console.log(myRestaurant.pay());
 module.exports = createMenu;
