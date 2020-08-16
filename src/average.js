@@ -19,19 +19,18 @@ const average = (array) => {
     return undefined;
   }
   // for para caminhar na array
-    for (let i = 0; i < array.length; i += 1) {
+  for (let i = 0; i < array.length; i += 1) {
     // teste para encontrar um valor nao numerico
       if (typeof array[i] !== 'number') {
         return undefined;
       }
       // acumular tudo em soma
-        soma += array[i];
-      
+      soma += array[i];
     }
   // tira a media
-    soma /= array.length;
+  soma /= array.length;
   // passa p/ int
-    return Math.round(soma); 
+  return Math.round(soma); 
 };
 console.log(average([-3, -3, -4, -5, -4]));
 
