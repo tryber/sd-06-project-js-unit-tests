@@ -105,8 +105,7 @@ describe('#createMenu', () => {
     // objetoRetornado.order("coxinha");
     // objetoRetornado.comsuption // Retorno: ["coxinha"]
     // ```
-    myItem = 'coxinha';
-    myRestaurant.order(myItem);
+    myRestaurant.order('coxinha');
     assert.deepStrictEqual(myRestaurant.consumption, ['coxinha']);
         // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -118,6 +117,10 @@ describe('#createMenu', () => {
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
+    myRestaurant.order('agua');
+    myRestaurant.order('sopa');
+    myRestaurant.order('sashimi');
+    assert.deepStrictEqual(myRestaurant.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
