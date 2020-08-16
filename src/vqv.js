@@ -16,6 +16,15 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
-
+const vqv = (nome, idade) => {
+  let text;
+  if ((nome) && (idade)) {
+    text = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  }
+  return text;
+};
+// console.log(vqv('Tunico', 29));
 module.exports = vqv;
