@@ -33,6 +33,6 @@ const calculator = {
     return a - b;
   },
 };
-console.log(calculator.div(3, 2));
+console.log(calculator.div(4, 2));
 
 module.exports = calculator;
