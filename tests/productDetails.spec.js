@@ -36,9 +36,10 @@ describe('#productDetails', () => {
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.strictEqual(Array.isArray(productDetails()), true);
+    const execEmpty = productDetails();
+    assert.strictEqual(Array.isArray(execEmpty), true);
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(Object.keys(productDetails()).length, 2);
+    assert.strictEqual(Object.keys(execEmpty).length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     const execGeneric = productDetails('prod1', 'prod2');
     assert.deepStrictEqual(
