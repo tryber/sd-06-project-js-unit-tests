@@ -76,16 +76,13 @@
 const returnCheck = (menu, totalConsumption) => {
   const foodKeys = Object.keys(menu.food);
   const drinkKeys = Object.keys(menu.drink);
-  const foodValues = Object.values(menu.food);
-  const drinkValues = Object.values(menu.drink);
-  const arrLength = totalConsumption.length;
   let total = 0;
-  for (let item = 0; item < arrLength; item += 1) {
+  for (let item = 0; item < totalConsumption.length; item += 1) {
     for (let index = 0; index < foodKeys.length; index += 1) {
       if (totalConsumption[item] === foodKeys[index]) {
-        total += foodValues[index];
+        total += Object.values(menu.food)[index];
       } else if (totalConsumption[item] === drinkKeys[index]) {
-        total += drinkValues[index];
+        total += Object.values(menu.drink)[index];
       }
     }
   }
@@ -109,11 +106,11 @@ const createMenu = (menu) => {
 };
 
 // Testes para ver se a função estava funcionando
-const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
-output = createMenu(myRestaurant);
-output.order('coxinha');
-output.order('agua');
-output.order('coxinha');
-console.log(output.pay());
+// const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
+// output = createMenu(myRestaurant);
+// output.order('coxinha');
+// output.order('agua');
+// output.order('coxinha');
+// console.log(output.pay());
 
 module.exports = createMenu;
