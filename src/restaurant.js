@@ -71,31 +71,13 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-// Está meio GAMBIARRA isso aqui, funciona mas é muito específico. Qualquer mudança no teste e não funciona mais.
+// Deixou de ser tão gambiarra porque não é mais tão específico. Mas deu bastante problema com o codeclimate.
 
-const returnDrinkTab = (menu, totalConsumption) => {
+const check = (keys, values, item) => {
   let total = 0;
-  const drinkKeys = Object.keys(menu.drink);
-  const drinkValues = Object.values(menu.drink);
-  for (let item = 0; item < totalConsumption.length; item += 1) {
-    for (let index = 0; index < drinkKeys.length; index += 1) {
-      if (totalConsumption[item] === drinkKeys[index]) {
-        total += drinkValues[index];
-      }
-    }
-  }
-  return total;
-};
-
-const returnFoodTab = (menu, totalConsumption) => {
-  let total = 0;
-  const foodKeys = Object.keys(menu.food);
-  const foodValues = Object.values(menu.food);
-  for (let item = 0; item < totalConsumption.length; item += 1) {
-    for (let index = 0; index < foodKeys.length; index += 1) {
-      if (totalConsumption[item] === foodKeys[index]) {
-        total += foodValues[index];
-      }
+  for (let index = 0; index < keys.length; index += 1) {
+    if (item === keys[index]) {
+      total += values[index];
     }
   }
   return total;
@@ -113,16 +95,27 @@ const createMenu = (menu) => {
   // Eu queria no maximo dois decimais mas não sabia fazer, pesquisei e aprendi a fazer neste link: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
   // Já havíamos usado 'parseInt' e o total estava retornando string. Então 'parseFloat' faz sentido para validar os dois decimais.
   // return parseFloat(total.toFixed(2));
-  myMenu.pay = () => parseFloat(((returnFoodTab(menu, myMenu.consumption) + returnDrinkTab(menu, myMenu.consumption)) * 1.1).toFixed(2));
+  myMenu.pay = () => {
+    let total = 0;
+    const foodKeys = Object.keys(menu.food);
+    const foodValues = Object.values(menu.food);
+    const drinkKeys = Object.keys(menu.drink);
+    const drinkValues = Object.values(menu.drink);
+    for (let index = 0; index < myMenu.consumption.length; index += 1) {
+      total += check(foodKeys, foodValues, myMenu.consumption[index]);
+      total += check(drinkKeys, drinkValues, myMenu.consumption[index]);
+    }
+    return parseFloat((total * 1.1).toFixed(2));
+  };
   return myMenu;
 };
 
 // Testes para ver se a função estava funcionando
-// const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
-// output = createMenu(myRestaurant);
-// output.order('coxinha');
-// output.order('agua');
-// output.order('coxinha');
-// console.log(output.pay());
+const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
+output = createMenu(myRestaurant);
+output.order('coxinha');
+output.order('agua');
+output.order('coxinha');
+console.log(output.pay());
 
 module.exports = createMenu;
