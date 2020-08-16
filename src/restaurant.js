@@ -85,7 +85,7 @@ const returnDrinkTab = (menu, totalConsumption) => {
     }
   }
   return total;
-}
+};
 
 const returnFoodTab = (menu, totalConsumption) => {
   let total = 0;
@@ -118,11 +118,11 @@ const createMenu = (menu) => {
 };
 
 // Testes para ver se a função estava funcionando
-const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
-output = createMenu(myRestaurant);
-output.order('coxinha');
-output.order('agua');
-output.order('coxinha');
-console.log(output.pay());
+// const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
+// output = createMenu(myRestaurant);
+// output.order('coxinha');
+// output.order('agua');
+// output.order('coxinha');
+// console.log(output.pay());
 
 module.exports = createMenu;
