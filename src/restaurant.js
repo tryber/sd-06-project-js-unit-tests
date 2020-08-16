@@ -72,6 +72,32 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 // Está meio GAMBIARRA isso aqui, funciona mas é muito específico. Qualquer mudança no teste e não funciona mais.
+
+const returnCheck = (menu, totalConsumption) => {
+  const foodKeys = Object.keys(menu.food);
+  const drinkKeys = Object.keys(menu.drink);
+  const foodValues = Object.values(menu.food);
+  const drinkValues = Object.values(menu.drink);
+  let total = 0;
+  for (let item in totalConsumption) {
+    for (let food = 0; food < foodKeys.length; food += 1) {
+      if (totalConsumption[item] === foodKeys[food]) {
+        total += foodValues[food];
+      }
+    }
+    for (let drink = 0; drink < drinkKeys.length; drink += 1) {
+      if (totalConsumption[item] === drinkKeys[drink]) {
+        total += drinkValues[drink];
+      }
+    }
+  }
+  total *= 1.1;
+
+  // Eu queria no maximo dois decimais mas não sabia fazer, pesquisei e aprendi a fazer neste link: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
+  // Já havíamos usado 'parseInt' e o total estava retornando string. Então 'parseFloat' faz sentido para validar os dois decimais.
+  return parseFloat(total.toFixed(2));
+};
+
 const createMenu = (menu) => {
   const myMenu = {};
   myMenu.fetchMenu = menu;
@@ -80,30 +106,7 @@ const createMenu = (menu) => {
   // Essa function 'order', eu aprendi observando o Ícaro Harry ajudando os colegas no plantão. Fez todo o sentido, eu ainda não havia usado 'this'.
   // Depois, eu descobri com meu colega de grupo, Mário Duarte, que eu posso referenciar o objeto com arrow function, 'this' não funciona com arrow.
   myMenu.order = item => myMenu.consumption.push(item);
-  myMenu.pay = function check() {
-    const foodKeys = Object.keys(menu.food);
-    const drinkKeys = Object.keys(menu.drink);
-    const foodValues = Object.values(menu.food);
-    const drinkValues = Object.values(menu.drink);
-    let total = 0;
-    for (let item in myMenu.consumption) {
-      for (let food = 0; food < foodKeys.length; food += 1) {
-        if (myMenu.consumption[item] === foodKeys[food]) {
-          total += foodValues[food];
-        }
-      }
-      for (let drink = 0; drink < drinkKeys.length; drink += 1) {
-        if (myMenu.consumption[item] === drinkKeys[drink]) {
-          total += drinkValues[drink];
-        }
-      }
-    }
-    total *= 1.1;
-
-    // Eu queria no maximo dois decimais mas não sabia fazer, pesquisei e aprendi a fazer neste link: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
-    // Já havíamos usado 'parseInt' e o total estava retornando string. Então 'parseFloat' faz sentido para validar os dois decimais.
-    return parseFloat(total.toFixed(2));
-  };
+  myMenu.pay = () => returnCheck(menu, myMenu.consumption);
   return myMenu;
 };
 
