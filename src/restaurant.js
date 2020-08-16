@@ -73,24 +73,32 @@
 
 // Está meio GAMBIARRA isso aqui, funciona mas é muito específico. Qualquer mudança no teste e não funciona mais.
 
-const returnCheck = (menu, totalConsumption) => {
-  const foodKeys = Object.keys(menu.food);
-  const drinkKeys = Object.keys(menu.drink);
+const returnDrinkTab = (menu, totalConsumption) => {
   let total = 0;
+  const drinkKeys = Object.keys(menu.drink);
+  const drinkValues = Object.values(menu.drink);
   for (let item = 0; item < totalConsumption.length; item += 1) {
-    for (let index = 0; index < foodKeys.length; index += 1) {
-      if (totalConsumption[item] === foodKeys[index]) {
-        total += Object.values(menu.food)[index];
-      } else if (totalConsumption[item] === drinkKeys[index]) {
-        total += Object.values(menu.drink)[index];
+    for (let index = 0; index < drinkKeys.length; index += 1) {
+      if (totalConsumption[item] === drinkKeys[index]) {
+        total += drinkValues[index];
       }
     }
   }
-  total *= 1.1;
+  return total;
+}
 
-  // Eu queria no maximo dois decimais mas não sabia fazer, pesquisei e aprendi a fazer neste link: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
-  // Já havíamos usado 'parseInt' e o total estava retornando string. Então 'parseFloat' faz sentido para validar os dois decimais.
-  return parseFloat(total.toFixed(2));
+const returnFoodTab = (menu, totalConsumption) => {
+  let total = 0;
+  const foodKeys = Object.keys(menu.food);
+  const foodValues = Object.values(menu.food);
+  for (let item = 0; item < totalConsumption.length; item += 1) {
+    for (let index = 0; index < foodKeys.length; index += 1) {
+      if (totalConsumption[item] === foodKeys[index]) {
+        total += foodValues[index];
+      }
+    }
+  }
+  return total;
 };
 
 const createMenu = (menu) => {
@@ -101,16 +109,20 @@ const createMenu = (menu) => {
   // Essa function 'order', eu aprendi observando o Ícaro Harry ajudando os colegas no plantão. Fez todo o sentido, eu ainda não havia usado 'this'.
   // Depois, eu descobri com meu colega de grupo, Mário Duarte, que eu posso referenciar o objeto com arrow function, 'this' não funciona com arrow.
   myMenu.order = item => myMenu.consumption.push(item);
-  myMenu.pay = () => returnCheck(menu, myMenu.consumption);
+
+  // Eu queria no maximo dois decimais mas não sabia fazer, pesquisei e aprendi a fazer neste link: https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
+  // Já havíamos usado 'parseInt' e o total estava retornando string. Então 'parseFloat' faz sentido para validar os dois decimais.
+  // return parseFloat(total.toFixed(2));
+  myMenu.pay = () => parseFloat(((returnFoodTab(menu, myMenu.consumption) + returnDrinkTab(menu, myMenu.consumption)) * 1.1).toFixed(2));
   return myMenu;
 };
 
 // Testes para ver se a função estava funcionando
-// const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
-// output = createMenu(myRestaurant);
-// output.order('coxinha');
-// output.order('agua');
-// output.order('coxinha');
-// console.log(output.pay());
+const myRestaurant = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}};
+output = createMenu(myRestaurant);
+output.order('coxinha');
+output.order('agua');
+output.order('coxinha');
+console.log(output.pay());
 
 module.exports = createMenu;
