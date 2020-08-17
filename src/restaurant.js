@@ -72,23 +72,23 @@
 
 function payment(itemkey) {
   let sum = 0;
-  for (const i in itemkey) {
+  for (let i = 0; i < itemkey.length; i += 1) {
     if (object.fetchMenu.food[itemkey[i]] !== undefined) {
       sum += (object.fetchMenu.food[itemkey[i]]);
     }
     if (object.fetchMenu.drink[itemkey[i]] !== undefined) {
       sum += (object.fetchMenu.drink[itemkey[i]]);
-    };
-  };
-  return parseFloat((sum*1.1).toFixed(2));
-};
+    }
+  }
+  return parseFloat((sum * 1.1).toFixed(2));
+}
 
 const createMenu = (menu) => {
   object = {
     fetchMenu: menu,
     consumption: [],
     order: item => object.consumption.push(item),
-    pay: () => payment (object.consumption),
+    pay: () => payment(object.consumption),
   };
   return object;
 };
