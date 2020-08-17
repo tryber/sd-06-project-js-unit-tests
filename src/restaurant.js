@@ -8,19 +8,19 @@ const createMenu = (meuMenu) => {
     pay: () => {
       let soma = 0;
       const menuSize = Object.keys(restaurant.fetchMenu().drink).length + Object.keys(restaurant.fetchMenu().food).length;
-      for (let index = 0; index < menuSize; index += 1) {
-        restaurant.consumption.forEach((element) => {
+      restaurant.consumption.forEach((element) => {
+        for (let index = 0; index < menuSize; index += 1) {
           if (element === Object.keys(restaurant.fetchMenu().food)[index]) {
             soma += parseFloat(Object.values(restaurant.fetchMenu().food)[index]);
           }
           if (element === Object.keys(restaurant.fetchMenu().drink)[index]) {
             soma += parseFloat(Object.values(restaurant.fetchMenu().drink)[index]);
           }
-        });
-      }
+        }
+      });
       return soma * 1.1;
     },
-  }
+  };
   return restaurant;
 }
 
