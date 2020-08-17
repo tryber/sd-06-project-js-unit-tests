@@ -33,7 +33,7 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
     assert.strictEqual(typeof productDetails("milho", "arroz"), 'object');
@@ -45,10 +45,12 @@ describe('#productDetails', () => {
     assert.notDeepEqual(productDetails("milho", "arroz")[0], productDetails("milho", "arroz")[1])
     // (Difícil) Teste que os dois productIds terminam com 123.
     if(productDetails("milho", "arroz")[0].details.productId.toString().endsWith("123") === true && productDetails("milho", "arroz")[1].details.productId.toString().endsWith("123") === true){
-      const result = 'true';
-      return result;
-   }
-   assert(result === 'true')
+      var resultado = 'true'
+      // utilizando o VAR intencionalmente para que o test possa identifica-lo fora do bloco de codigo
+      console.log(resultado)
+    }
+    
+    assert.strictEqual(resultado, 'true')
 
   });
 });
