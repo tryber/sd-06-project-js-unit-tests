@@ -61,7 +61,7 @@ describe('#createMenu', () => {
     const RESTAURANTE = createMenu(MENU);
 
     // Test #1
-    assert.deepStrictEqual(`${RESTAURANTE.fetchMenu()}`, '[object Object]'); 
+    assert.deepStrictEqual(`${RESTAURANTE.fetchMenu()}`, '[object Object]');
 
     // Test #2
     assert.deepStrictEqual(Object.keys(RESTAURANTE.fetchMenu()), ['food', 'drink']);
@@ -73,31 +73,19 @@ describe('#createMenu', () => {
     assert.deepStrictEqual(RESTAURANTE.consumption, []);
 
     // Test #5
-    RESTAURANTE.order("coxinha");
-    assert.deepStrictEqual(RESTAURANTE.consumption, ["coxinha"]);
+    RESTAURANTE.order('coxinha');
+    assert.deepStrictEqual(RESTAURANTE.consumption, ['coxinha']);
 
     // Test #6
-    RESTAURANTE.order("coxinha", "agua", "sopa", "sashimi");
-    assert.deepStrictEqual(RESTAURANTE.consumption, ["coxinha", "agua", "sopa", "sashimi"]);   
+    RESTAURANTE.order('coxinha', 'agua', 'sopa', 'sashimi');
+    assert.deepStrictEqual(RESTAURANTE.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
 
-    // Agora faça o TESTE 7 deste arquivo.
-    // --------------------------------------------------------------------------------------
-    // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
-    // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
-    // ```
-    // Agora faça o TESTE 8 deste arquivo.
-    // --------------------------------------------------------------------------------------
-    // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
-    // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
-    // ```
-    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    // Test #7
+    RESTAURANTE.order('coxinha', 'agua', 'coxinha');
+    assert.deepStrictEqual(RESTAURANTE.consumption, ['coxinha', 'agua', 'coxinha']);
+
+    // Test #8
+    assert.deepStrictEqual(RESTAURANTE.pay(), 11.7);
+
   });
 });

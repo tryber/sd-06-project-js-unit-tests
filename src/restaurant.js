@@ -71,29 +71,23 @@
 //------------------------------------------------------------------------------------------
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-const assert = require('assert');
-
-const createMenu = (obj) => {
+const createMenu = (menu) => {
   const IDONTKNOW = {
-    fetchMenu: () => obj,
+    fetchMenu: () => menu,
     consumption: [],
-    order: (...string) => IDONTKNOW.consumption = string.map((item) => { return item; }),
+    order: (...string) => IDONTKNOW.consumption = string,
+    pay: () => {
+      const obj = Object.assign(IDONTKNOW.fetchMenu().food, IDONTKNOW.fetchMenu().drink);
+      let sum = 0.0;
+      IDONTKNOW.consumption.forEach((item) => {
+        if (Object.keys(obj).includes(item)) {
+          sum += obj[item];
+        }
+      });
+      return sum;
+    },
   };
-
   return IDONTKNOW;
 };
 
-const MENU = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
-const RESTAURANTE = createMenu(MENU);
-
-assert.deepStrictEqual(`${RESTAURANTE.fetchMenu()}`, '[object Object]'); 
-
-
-
-
-/* RESTAURANTE.order("coxinha", "agua", "sopa", "sashimi");
-assert.deepStrictEqual(RESTAURANTE.consumption, ["coxinha", "agua", "sopa", "sashimi"]); */
-
-
-
-/* module.exports = createMenu; */
+module.exports = createMenu;
