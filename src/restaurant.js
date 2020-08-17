@@ -31,11 +31,11 @@ const orderFromMenu = (request) => {
   meuRestaurante.order(request);
 };
 
-// orderFromMenu('coxinha');
-// orderFromMenu('sopa');
-// orderFromMenu('cerveja');
-// orderFromMenu('coxinha');
-// orderFromMenu('agua');
+orderFromMenu('coxinha');
+orderFromMenu('sopa');
+orderFromMenu('cerveja');
+orderFromMenu('coxinha');
+orderFromMenu('agua');
 
 // console.log('Eu pedi: ', meuRestaurante.consumption);
 // console.log('Minha conta ficou em (acrescidos 10%): ', meuRestaurante.pay());
