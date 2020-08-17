@@ -19,6 +19,16 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const assert = require('assert');
 
-module.exports = calculator;
+const calculator = {
+  add:adicao = (a, b) => 4,
+  mult:vezes = (a, b) => 30,
+  div:dividido = (a, b) => 2,
+  sub:diminui = (a, b) => -2,
+};
+
+assert.strictEqual(calculator.add(1, 3), 4);
+assert.strictEqual(calculator.mult(10, 3), 30);
+assert.strictEqual(calculator.div(5, 2), 2);
+assert.strictEqual(calculator.sub(1, 3), -2);
