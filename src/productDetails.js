@@ -53,8 +53,8 @@ const productDetails = (firstProduct, secondProduct) => [
 // const finalString1 = idProduto1.substring(idProduto1.length -3, idProduto1.length);
 // const finalString2 = idProduto2.substring(idProduto2.length -3, idProduto2.length);
 
-assert.strictEqual(finalString1, '123');
-assert.strictEqual(finalString2, '123');
+// assert.strictEqual(finalString1, '123');
+// assert.strictEqual(finalString2, '123');
 
 
 module.exports = productDetails;
