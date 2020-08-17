@@ -39,7 +39,7 @@ const calculator = {
     let result = 0;
     result = Math.floor(num1 - num2);
     return result;
-  }
+  },
 };
 
 module.exports = calculator;
