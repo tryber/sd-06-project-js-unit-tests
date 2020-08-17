@@ -79,7 +79,7 @@ const createMenu = (myMenu) => {
   };
   restaurant.pay = () => {
     let sum = 0;
-    for (let index in Object.keys(restaurant.consumption)) {
+    for (let index = 0; index < Object.keys(restaurant.consumption).length; index += 1) {
       switch (restaurant.consumption[index]) {
         case 'coxinha': sum += restaurant.fetchMenu.food.coxinha; break;
         case 'sopa': sum += restaurant.fetchMenu.food.sopa; break;
