@@ -24,7 +24,7 @@
   ]
 */
 
-const assert = require('assert');
+// const assert = require('assert');
 
 const productDetails = (firstProduct, secondProduct) => [
   {
@@ -50,9 +50,9 @@ module.exports = productDetails;
 //  assert.strictEqual(typeof productDetails("milho", "arroz"), 'object');
 //  assert.strictEqual(productDetails("milho", "arroz").length,2);
 //  assert.notDeepEqual(productDetails("milho", "arroz")[0], productDetails("milho", "arroz")[1])
-//  if(productDetails("milho", "arroz")[0].details.productId.toString().endsWith("123") === true && productDetails("milho", "arroz")[1].details.productId.toString().endsWith("123") === true){
+//  if(productDetails("milho", "arroz")[0].details.productId.toString().endsWith("123") === true && productDetails("milho", "arroz")[1].
+//details.productId.toString().endsWith("123") === true){
 //     const result = 'true';
 //     return result;
 //  }
 //  assert(result === 'true')
- 
