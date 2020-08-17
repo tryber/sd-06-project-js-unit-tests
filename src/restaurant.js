@@ -79,15 +79,13 @@ const createMenu = (myMenu) => {
   };
   restaurant.pay = () => {
     let sum = 0;
-    for (let index in restaurant.consumption) {
-      if (restaurant.consumption[index] === 'coxinha') {
-        sum += restaurant.fetchMenu.food.coxinha;
-      } else if (restaurant.consumption[index] === 'sopa') {
-        sum += restaurant.fetchMenu.food.sopa;
-      } else if (restaurant.consumption[index] === 'agua') {
-        sum += restaurant.fetchMenu.drink.agua;
-      } else if (restaurant.consumption[index] === 'cerveja') {
-        sum += restaurant.fetchMenu.drink.cerveja;
+    for (let index in Object.keys(restaurant.consumption)) {
+      switch (restaurant.consumption[index]) {
+        case 'coxinha': sum += restaurant.fetchMenu.food.coxinha; break;
+        case 'sopa': sum += restaurant.fetchMenu.food.sopa; break;
+        case 'agua': sum += restaurant.fetchMenu.drink.agua; break;
+        case 'cerveja': sum += restaurant.fetchMenu.drink.cerveja; break;
+        default: break;
       }
     }
     return (sum * 1.1).toFixed(2);
