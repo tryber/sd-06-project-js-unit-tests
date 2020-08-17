@@ -5,7 +5,8 @@ const assert = require('assert');
 const productDetails = require('../src/productDetails');
 
 /*
-  Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
+  Dadas duas strings que representam nomes de produtos, retorne um array contendo dois 
+  objetos com os detalhes dos respectivos produtos.
 
   Parâmetros:
   - Uma string;
@@ -28,17 +29,22 @@ const productDetails = require('../src/productDetails');
     }
   ]
 
-  OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    const [obj1, obj2] = productDetails('Alguma coisa', 'Outra coisa');
+
+    assert.equal(Array.isArray([obj1, obj2]), true);
+    assert.equal([obj1, obj2].length, 2);
+
+    assert.deepStrictEqual([obj1, obj2].map(item => {
+      return typeof item;
+    }), ['object', 'object']);
+    assert.notDeepEqual(obj1, obj2);
+
+    assert.deepStrictEqual([obj1, obj2].map(e => {
+      return e.details.productId.slice(-3);
+    }), ['123', '123']);
   });
 });
