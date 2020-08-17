@@ -20,11 +20,11 @@ const createMenu = (meuMenu) => {
       }
       return soma * 1.1;
     }
-  }
+  };
   return restaurant;
 };
 
-const objetoInicial = { food: {coxinha: 3.9, sopa: 9.9}, drink: {agua: 3.9, cerveja: 6.9 } };
+const objetoInicial = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
 const meuRestaurante = createMenu(objetoInicial);
 
 const orderFromMenu = (request) => {
@@ -37,7 +37,7 @@ orderFromMenu('cerveja');
 orderFromMenu('coxinha');
 orderFromMenu('agua');
 
-console.log('Eu pedi: ' ,meuRestaurante.consumption);
-console.log('Minha conta ficou em (acrescidos 10%): ' ,meuRestaurante.pay());
+console.log('Eu pedi: ', meuRestaurante.consumption);
+console.log('Minha conta ficou em (acrescidos 10%): ', meuRestaurante.pay());
 
 module.exports = createMenu;
