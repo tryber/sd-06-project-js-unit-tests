@@ -79,17 +79,18 @@ const createMenu = object => ({
     this.consumption.push(request);
   },
   pay: function naoEstouEntendendoOThis() {
+    const keysDrink = Object.keys(this.fetchMenu.drink);
+    const keysFood = Object.keys(this.fetchMenu.food);
     let somaDosPreçosDosPedidos = 0;
     const barMenu = this;
-    if (barMenu.consumption.length >= 1) {
-      barMenu.consumption.forEach((orderedItem) => {
-        if (orderedItem === 'agua' || orderedItem === 'whisky') {
-          somaDosPreçosDosPedidos += barMenu.fetchMenu.drink[orderedItem];
-        } else {
-          somaDosPreçosDosPedidos += barMenu.fetchMenu.food[orderedItem];
-        }
-      });
-    }
+    barMenu.consumption.forEach((item) => {
+      if (keysDrink.includes(item)) {
+        somaDosPreçosDosPedidos += barMenu.fetchMenu.drink[item];
+      }
+      if (keysFood.includes(item)) {
+        somaDosPreçosDosPedidos += barMenu.fetchMenu.food[item];
+      }
+    });
     return somaDosPreçosDosPedidos;
   },
 });

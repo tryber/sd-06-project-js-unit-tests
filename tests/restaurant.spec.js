@@ -107,7 +107,7 @@ describe('#createMenu', () => {
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
-    const menuDelta = createMenu({ food: { coxinha: 3.90, sashimi: 19.65, sopa: 15.20 }, drink: { agua: 2.90 } });
+    const menuDelta = createMenu({ food: { coxinha: 3.90, sashimi: 19.65, sopa: 15.20 }, drink: { agua: 2.90, whisky: 170.12 } });
     menuDelta.order('coxinha');
     menuDelta.order('agua');
     menuDelta.order('sopa');
@@ -142,6 +142,7 @@ describe('#createMenu', () => {
     checkMenu.order('agua');
     checkMenu.order('coxinha');
     assert.deepStrictEqual(checkMenu.pay(), 10.7);
+    
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
