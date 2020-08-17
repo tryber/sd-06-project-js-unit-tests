@@ -71,6 +71,49 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// const objParameter = {
+//   food: { 'coxinha': 3.9, 'sopa': 9.9 },
+//   drinks: {'agua': 3.90, 'cerveja': 6.90},
+// }
 
+const toCompare = (iten, menuKeys, menuValues) => {
+  let sum = 0;
+  for (let j = 0; j < menuKeys.length; j += 1) {
+    if (iten === menuKeys[j]) {
+      sum += menuValues[j];
+    }
+  }
+  return sum;
+};
+
+const createMenu = (objParameter) => {
+  const obj = {
+    fetchMenu: objParameter,
+    consumption: [],
+    order: (item) => { obj.consumption.push(item); },
+    pay: () => {
+      let sum = 0;
+      const arrayFood = Object.keys(obj.fetchMenu.food);
+      const arrayDrinks = Object.keys(obj.fetchMenu.drinks);
+      const valuesFood = Object.values(obj.fetchMenu.food);
+      const valuesDrinks = Object.values(obj.fetchMenu.drinks);
+      for (let i = 0; i < Object.values(obj.consumption).length; i += 1) {
+        sum += toCompare(Object.values(obj.consumption)[i], arrayFood, valuesFood);
+        sum += toCompare(Object.values(obj.consumption)[i], arrayDrinks, valuesDrinks);
+      }
+
+      const total = parseFloat((sum * 1.1).toFixed(2));
+      return total;
+    },
+  };
+  return obj;
+};
+// const teste = createMenu(objParameter);
+// teste.order("coxinha");
+// teste.order('agua');
+// console.log(teste);
+// console.log(Object.entries(teste.fetchMenu.food));
+// console.log(teste.consumption[0]);
+// console.log(teste.fetchMenu.food['coxinha']);
+// console.log(Object.keys(teste.fetchMenu.food));
 module.exports = createMenu;
