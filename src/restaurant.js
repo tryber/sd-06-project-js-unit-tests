@@ -1,39 +1,4 @@
 /* eslint-disable max-len */
-
-//Abstração do projeto - INTRODUÇÃO:
-
-// const menu = { 
-//   food: {
-//     'coxinha': 3.9, 
-//     'sopa': 9.9
-//   }, 
-  
-//   drink: {
-//     'agua': 3.9, 
-//     'cerveja': 6.9
-//   } 
-// }
-
-// function createMenu(menu) {
-//   const object = {
-//     fetchMenu: () => {
-//       //retorna o menu
-//     },
-
-
-//     order: (item) => {
-//       //VOID function que apenas aplica o pedido no consumption
-//     },
-  
-  
-//     pay: () => {
-//       //registra o valor do pedido
-//     } 
-  
-//   }
-  
-//   return object
-// }
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
@@ -105,27 +70,28 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-
+function payment(itemkey) {
+  let sum = 0;
+  for (const i in itemkey) {
+    if (object.fetchMenu.food[itemkey[i]] !== undefined) {
+      sum += (object.fetchMenu.food[itemkey[i]]);
+    }
+    if (object.fetchMenu.drink[itemkey[i]] !== undefined) {
+      sum += (object.fetchMenu.drink[itemkey[i]]);
+    };
+  };
+  return parseFloat((sum*1.1).toFixed(2));
+};
 
 const createMenu = (menu) => {
-
   object = {
     fetchMenu: menu,
     consumption: [],
-    order: (item) => object.consumption.push(item),
-    pay: () => {
-      let sum = 0;
-      for (let i in object.consumption) {
-        if (object.fetchMenu.food[object.consumption[i]] != undefined) {
-          sum += (object.fetchMenu.food[object.consumption[i]])
-        } 
-        if (object.fetchMenu.drink[object.consumption[i]] != undefined) {
-          sum += (object.fetchMenu.drink[object.consumption[i]])
-        }
-      }
-      return parseFloat((sum*1.1).toFixed(2));
-    }
-  }
+    order: item => object.consumption.push(item),
+    pay: () => payment (object.consumption),
+  };
   return object;
-}
+};
 module.exports = createMenu;
+
+/* IMPORTANTE: EXERCÍCIO FEITO EM DUPLA, LOGO A ABSTRAÇÃO DESSA FUNÇÃO ABAIXO FOI COLETIVA*/
