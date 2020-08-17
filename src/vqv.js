@@ -26,6 +26,5 @@ trabalho na Trybe e mando muito em programação!
   }
   return dados;
 };
-      
 
 module.exports = vqv;
