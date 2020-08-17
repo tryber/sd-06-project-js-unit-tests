@@ -111,7 +111,7 @@ describe('#createMenu', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // Agora faça o TESTE 8 deste arquivo.
-    // --------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     const restaurantTest8 = createMenu({ food: { coxinha: 5, sopa: 9.9 }, drink: { agua: 1, cerveja: 6.9 } });
     restaurantTest8.order('coxinha');
