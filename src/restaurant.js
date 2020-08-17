@@ -19,7 +19,7 @@ const createMenu = (meuMenu) => {
         }
       }
       return soma * 1.1;
-    }
+    },
   };
   return restaurant;
 };
@@ -29,7 +29,7 @@ const meuRestaurante = createMenu(objetoInicial);
 
 const orderFromMenu = (request) => {
   meuRestaurante.order(request);
-}
+};
 
 orderFromMenu('coxinha');
 orderFromMenu('sopa');
