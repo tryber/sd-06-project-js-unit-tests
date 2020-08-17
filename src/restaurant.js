@@ -90,7 +90,7 @@ const createMenu = (obj) => {
         }
         return total;
       }, 0);
-      return sum;
+      return sum * 1.1;
     },
   };
   return menu;
