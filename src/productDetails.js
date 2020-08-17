@@ -42,17 +42,3 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
-
-// console.log(productDetails("milho", "arroz"));
-// const productOne = productDetails("milho", "arroz")[0].details.productId
-// console.log()
-
-//  assert.strictEqual(typeof productDetails("milho", "arroz"), 'object');
-//  assert.strictEqual(productDetails("milho", "arroz").length,2);
-//  assert.notDeepEqual(productDetails("milho", "arroz")[0], productDetails("milho", "arroz")[1])
-//  if(productDetails("milho", "arroz")[0].details.productId.toString().endsWith("123") === true && productDetails("milho", "arroz")[1].
-//details.productId.toString().endsWith("123") === true){
-//     const result = 'true';
-//     return result;
-//  }
-//  assert(result === 'true')
