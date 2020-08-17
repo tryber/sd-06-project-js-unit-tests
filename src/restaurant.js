@@ -89,7 +89,7 @@ const createMenu = (obj) => {
           }
         }
       });
-      return resultado;
+      return resultado * 1.1;
     },
   };
   return objeto;
