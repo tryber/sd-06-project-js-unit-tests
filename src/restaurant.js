@@ -70,7 +70,50 @@
 //------------------------------------------------------------------------------------------
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+const restaurant = {};
+const createMenu = (myMenu) => {
+  restaurant.fetchMenu = myMenu;
+  restaurant.consumption = [];
+  restaurant.order = (item) => {
+    restaurant.consumption.push(item);
+  };
+  restaurant.pay = () => {
+    let sum = 0;
+    for (let index = 0; index < Object.keys(restaurant.consumption).length; index += 1) {
+      switch (restaurant.consumption[index]) {
+        case 'coxinha': sum += restaurant.fetchMenu.food.coxinha; break;
+        case 'sopa': sum += restaurant.fetchMenu.food.sopa; break;
+        case 'agua': sum += restaurant.fetchMenu.drink.agua; break;
+        case 'cerveja': sum += restaurant.fetchMenu.drink.cerveja; break;
+        default: break;
+      }
+    }
+    return (sum * 1.1).toFixed(2);
+  };
+  return restaurant;
+};
 
-const createMenu = () => {};
+// const meuRestaurante = createMenu({ food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } });
 
+// meuRestaurante.fetchMenu() // Retorno: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }
+
+// meuRestaurante.order('coxinha') // Retorno: undefined
+
+// meuRestaurante.consumption // Retorno: ['coxinha']
+
+// meuRestaurante.pay() // Retorno: 3.9
+
+// const someObject = { food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } };
+// const returnedObject = createMenu(someObject);
+// const item = 'coxinha';
+// returnedObject.consumption = [];
+// const items2 = ['coxinha', 'agua', 'coxinha'];
+// for (index in items2) {
+//   returnedObject.order(items2[index]);
+// }
+// const sum = returnedObject.pay();
+// console.log(returnedObject.pay());
+
+// console.log(createMenu({ fetchMenu: { food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } } }));
+// console.log(Object.values({ fetchMenu: { food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } } })[0].food);
 module.exports = createMenu;
