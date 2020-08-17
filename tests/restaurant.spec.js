@@ -76,18 +76,20 @@ describe('#createMenu', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
-    menu.order('agua')
-    menu.order('sopa')
-    menu.order('sashimi');
+    menu
+      .order('agua')
+      .order('sopa')
+      .order('sashimi');
     assert.deepEqual(menu.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     const menu2 = createMenu(obj1);
-    menu2.order('coxinha')
-    menu2.order('agua')
-    menu2.order('coxinha')
+    menu2
+      .order('coxinha')
+      .order('agua')
+      .order('coxinha')
     assert.deepEqual(menu2.consumption, ['coxinha', 'agua', 'coxinha']);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------

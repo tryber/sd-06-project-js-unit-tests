@@ -76,6 +76,7 @@ const createMenu = obj => ({
   consumption: [],
   order(ord) {
     this.consumption.push(ord);
+    return this;
   },
   pay() {
     let amount = 0;
