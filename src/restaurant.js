@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
-  cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
   - fazer pedidos;
   - verificar o que foi pedido;
@@ -75,7 +73,7 @@ const createMenu = (menu) => {
   const IDONTKNOW = {
     fetchMenu: () => menu,
     consumption: [],
-    order: (...string) => IDONTKNOW.consumption = string,
+    order: function(...string) { IDONTKNOW.consumption = string },
     pay: () => {
       const obj = Object.assign(IDONTKNOW.fetchMenu().food, IDONTKNOW.fetchMenu().drink);
       let sum = 0.0;
