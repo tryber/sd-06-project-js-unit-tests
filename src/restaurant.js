@@ -90,7 +90,7 @@ const checkConsumption = () => {
   for (let index = 0; index < restaurant.consumption.length; index += 1) {
     sumValue += checkValue(restaurant.consumption[index]);
   }
-  const total = sumValue * 1.1;
+  const total = sumValue + (sumValue * 0.1);
   return total;
 };
 
