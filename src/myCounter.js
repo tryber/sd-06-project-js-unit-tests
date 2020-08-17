@@ -20,7 +20,8 @@ const myCounter = () => {
   // Aqui o contador é adicionado ao array uma vez e entra no proximo for
   for (let outsideCounter = 0; outsideCounter <= 3; outsideCounter += 1) {
     myArray.push(outsideCounter);
-    // Aqui o contador é adicionado e repete até satisfazer toda sua condição e só ai volta ao for anterior
+    // Aqui o contador é adicionado e repete até satisfazer toda sua condição
+    // e só ai volta ao for anterior
     for (let insideCounter = 2; insideCounter <= 3; insideCounter += 1) {
       myArray.push(insideCounter);
     }
