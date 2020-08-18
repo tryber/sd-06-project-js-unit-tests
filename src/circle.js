@@ -17,7 +17,7 @@
         Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
-const assert = require('assert');
+// const assert = require('assert');
 
 const circle = (radius) => {
   const PI = 3.14;

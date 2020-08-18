@@ -25,7 +25,7 @@ const calculator = {
   mult: (a, b) => a * b,
   div: (a, b) => Math.floor(a / b),
   sub: (a, b) => a - b,
-  
+
 };
 // função math.floor encontrada no link https://www.geeksforgeeks.org/javascript-math-floor-method/
 
