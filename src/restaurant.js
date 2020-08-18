@@ -82,14 +82,29 @@ const createMenu = (menu) => {
       let amount = 0;
       for (let i = 0; i < objeto.consumption.length; i += 1) {
         const itemConsumed = objeto.consumption[i];
-        if (objeto.fetchMenu().food.itemConsumed) {
-          amount += objeto.fetchMenu().food.itemConsumed;
+        if (objeto.fetchMenu()['food'][itemConsumed]) {
+          amount += objeto.fetchMenu()['food'][itemConsumed];
+        } else if (objeto.fetchMenu()['drink'][itemConsumed]) {
+          amount += objeto.fetchMenu()['drink'][itemConsumed];
         }
       }
-      return amount * 1.10;
+      return (amount * 1.10).toFixed(2);
     },
   };
   return objeto;
 };
+
+const menuTest8 = {
+  food: {'coxinha': 3.9, 'sopa': 9.9,},
+  drink: {'agua': 3.9,'cerveja': 6.9,},
+};
+const restaurantTest8 = createMenu(menuTest8);
+restaurantTest8.order('coxinha');
+restaurantTest8.order('agua');
+restaurantTest8.order('coxinha');
+// 12,87
+const inputTest8 = restaurantTest8.pay();
+console.log(inputTest8);
+const expectedTest8 = 12.78;
 
 module.exports = createMenu;
