@@ -74,8 +74,10 @@
 function orderFromMenu(food) {
   this.consumption.push(food);
 }
+
 function payFromMenu() {
   let payValue = 0;
+
   const foodObject = this.fetchMenu.food;
   const foodObjArray = Object.entries(foodObject);
   for (let j = 0; j < this.consumption.length; j += 1) {
@@ -86,6 +88,7 @@ function payFromMenu() {
       }
     }
   }
+
   const drinkObject = this.fetchMenu.drinks;
   const drinkObjArray = Object.entries(drinkObject);
   for (let j = 0; j < this.consumption.length; j += 1) {
@@ -96,9 +99,9 @@ function payFromMenu() {
       }
     }
   }
+
   const payWithTaxes = payValue + (payValue * 0.10);
   console.log(`O valor acrescido de 10% é de ${payWithTaxes}.`)
-  return payWithTaxes;
 }
 
 const createMenu = obj => ({
