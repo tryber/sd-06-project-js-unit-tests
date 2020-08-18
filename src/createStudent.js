@@ -22,7 +22,7 @@ const createStudent = (nameOfStudent) => {
     feedback: () => 'Eita pessoa boa!',
   };
   return student;
-  };
+};
 //  console.log(createStudent('Leandrão, o Lobo Solitário'))
 
 // const estudante = createStudent('Leandrão, o Lobo Solitário');
