@@ -94,17 +94,4 @@ const createMenu = (menu) => {
   return objeto;
 };
 
-const menuTest8 = {
-  food: {'coxinha': 3.9, 'sopa': 9.9,},
-  drink: {'agua': 3.9,'cerveja': 6.9,},
-};
-const restaurantTest8 = createMenu(menuTest8);
-restaurantTest8.order('coxinha');
-restaurantTest8.order('agua');
-restaurantTest8.order('coxinha');
-// 12,87
-const inputTest8 = restaurantTest8.pay();
-console.log(inputTest8);
-const expectedTest8 = 12.78;
-
 module.exports = createMenu;
