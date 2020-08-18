@@ -37,5 +37,4 @@ const calculator = {
     return a;
   },
 };
-console.log(calculator.add(1, 1));
 module.exports = calculator;

@@ -36,11 +36,11 @@ describe('#productDetails', () => {
    // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.ok(typeof productDetails() === 'object')
+    assert.ok(Array.isArray(productDetails()))
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.ok(productDetails().length);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.ok(typeof productDetails()[0] === 'object')
+    assert.ok(typeof productDetails()[0] === 'object' && !Array.isArray(productDetails))
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepEqual(productDetails()[0].name, productDetails()[0].details)
     // (Difícil) Teste que os dois productIds terminam com 123.
