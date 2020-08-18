@@ -12,8 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // change to first commit and open PR
+const average = (arr) => {
+  let arraySum = 0;
+  let arrayAverage = 0;
+  if (!arr.length) {
+    return undefined;
+  }
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] !== 'number') {
+      return undefined;
+    }
+    arraySum += arr[i];
+  }
+  arrayAverage = Math.round(arraySum / arr.length);
+  return arrayAverage;
 };
 
 module.exports = average;
