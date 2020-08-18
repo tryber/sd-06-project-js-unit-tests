@@ -80,14 +80,13 @@ const createMenu = (menu) => {
     },
     pay() {
       let amount = 0;
-      for (let i = 0; i < objeto.consumption.length; i += 1) {
-        const itemConsumed = objeto.consumption[i];
-        if (objeto.fetchMenu()['food'][itemConsumed]) {
-          amount += objeto.fetchMenu()['food'][itemConsumed];
-        } else if (objeto.fetchMenu()['drink'][itemConsumed]) {
-          amount += objeto.fetchMenu()['drink'][itemConsumed];
+      objeto.consumption.forEach((item => {
+        if (objeto.fetchMenu().food.item) {
+          amount += objeto.fetchMenu().food.item;
+        } else if (objeto.fetchMenu().drink.item) {
+          amount += objeto.fetchMenu().drink.item;
         }
-      }
+      }));
       return (amount * 1.10).toFixed(2);
     },
   };
