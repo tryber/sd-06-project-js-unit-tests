@@ -18,7 +18,19 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
+// const assert = require('assert');
 
-const calculator = {};
+const calculator = {
+  add: (a, b) => a + b,
+  mult: (a, b) => a * b,
+  div: (a, b) => Math.floor(a / b),
+  sub: (a, b) => a - b,
+  
+};
+// função math.floor encontrada no link https://www.geeksforgeeks.org/javascript-math-floor-method/
 
+// assert.strictEqual(calculator.add(1, 3), 4);
+// assert.strictEqual(calculator.mult(10, 3), 30);
+// assert.strictEqual(calculator.div(5, 2), 2);
+// assert.strictEqual(calculator.sub(1, 3), -2);
 module.exports = calculator;

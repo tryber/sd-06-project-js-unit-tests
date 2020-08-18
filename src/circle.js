@@ -28,6 +28,7 @@ const circle = (radius) => {
     circumference: 2 * PI * radius,
   };
 };
+// console.log(circle.area)
 // console.log(circle(1).value)
 // console.log(circle(3))
 // console.log(circle(2))
@@ -35,7 +36,7 @@ const circle = (radius) => {
 module.exports = circle;
 
 
-assert.deepStrictEqual(Object.values(circle(1)).length, 3);
+// assert.deepStrictEqual(Object.values(circle(1)).length, 3);
 // assert(circle(1), 'object')
 // assert(circle(1), 'object')
 

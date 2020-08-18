@@ -14,7 +14,7 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-// const assert = require('assert');
+ const assert = require('assert');
 
 const createStudent = (nameOfStudent) => {
   const student = {
@@ -25,9 +25,9 @@ const createStudent = (nameOfStudent) => {
 };
 //  console.log(createStudent('Leandrão, o Lobo Solitário'))
 
-//  const estudante = createStudent('Leandrão, o Lobo Solitário');
+ const estudante = createStudent('Leandrão, o Lobo Solitário');
 // assert.strictEqual(typeof estudante, 'object');
-// assert.strictEqual(typeof estudante.feedback, 'function');
+ assert.strictEqual(typeof estudante.feedback, 'function');
 // assert.strictEqual(estudante.name, 'Leandrão, o Lobo Solitário');
 // assert.strictEqual(estudante.feedback(), 'Eita pessoa boa!');
 
