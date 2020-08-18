@@ -28,6 +28,4 @@ const circle = (circleRadius) => {
   return { radius: circleRadius, area: circleArea, circumference: circleCircumference };
 };
 
-console.log(circle(2));
-
 module.exports = circle;
