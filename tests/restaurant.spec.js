@@ -163,6 +163,7 @@ describe('#createMenu', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
+    
     const menuTest8 = {
       food: {'coxinha': 3.9, 'sopa': 9.9,},
       drink: {'agua': 3.9,'cerveja': 6.9,},
@@ -174,8 +175,8 @@ describe('#createMenu', () => {
     // 12,87
     const inputTest8 = restaurantTest8.pay();
     const expectedTest8 = 12.78;
-    assert.strictEqual = inputTest8, expectedTest8);
-
+    assert.strictEqual = (inputTest8, expectedTest8);
+    
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
