@@ -94,14 +94,10 @@ const createMenu = (obj) => {
   const objeto = {
     fetchMenu: obj,
     consumption: [],
-    order: order,
-    pay: pay,
+    order,
+    pay,
   };
   return objeto;
 };
-const ultimoObjeto = createMenu( {food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9}});
-ultimoObjeto.order('coxinha');
-ultimoObjeto.order('coxinha');
-console.log(ultimoObjeto);
-console.log(ultimoObjeto.pay());
+
 module.exports = createMenu;
