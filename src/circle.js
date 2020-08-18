@@ -18,14 +18,16 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const circle = (radius) => {
+const circle = (circleRadius) => {
   const PI = 3.14;
-  if (!radius) { return undefined; }
-  return {
-    radius,
-    area: PI * radius * radius,
-    circumference: 2 * PI * radius,
-  };
+  const circleArea = parseFloat((PI * circleRadius * circleRadius).toPrecision(2));
+  const circleCircumference = parseFloat((2 * PI * circleRadius).toPrecision(2));
+  if (!circleRadius) {
+    return undefined;
+  }
+  return { radius: circleRadius, area: circleArea, circumference: circleCircumference };
 };
+
+console.log(Object.entries(circle(3)));
 
 module.exports = circle;
