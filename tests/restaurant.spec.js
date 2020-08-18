@@ -115,6 +115,11 @@ describe('#createMenu', () => {
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
+    objetoRetornado2.consumption = [];
+    objetoRetornado2.order('coxinha');
+    objetoRetornado2.order('agua');
+    objetoRetornado2.order('coxinha');
+    assert.deepStrictEqual(objetoRetornado2.consumption, ['coxinha', 'agua', 'coxinha']);
     // ```
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
@@ -124,6 +129,12 @@ describe('#createMenu', () => {
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
+    objetoRetornado2.consumption = [];
+    objetoRetornado2.order('coxinha');
+    objetoRetornado2.order('agua');
+    objetoRetornado2.order('coxinha');
+    assert.strict(objetoRetornado2.pay, 12.87);
+
     // ```
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
