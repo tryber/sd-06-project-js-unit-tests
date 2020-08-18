@@ -80,14 +80,10 @@ const createMenu = (menu) => {
     },
     pay() {
       let amount = 0;
-      const categories = Object.keys(objeto.fetchMenu());
       for (let i = 0; i < objeto.consumption.length; i += 1) {
         const itemConsumed = objeto.consumption[i];
-        for (let j = 0; j < categories.length; j += 1) {
-          const category = categories[j];
-          if (objeto.fetchMenu()[category][itemConsumed]) {
-            amount += objeto.fetchMenu()[category][itemConsumed];
-          }
+        if (objeto.fetchMenu()['food'][itemConsumed]) {
+          amount += objeto.fetchMenu()['food'][itemConsumed];
         }
       }
       return amount * 1.10;
