@@ -11,7 +11,28 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+// parametric
+// const assert = require('assert'); veio junto com o codigo, eu apaguei
+// array for test
+// const array = [1, 2, 3, 4] alterei algumas vezes
+// insert function
+const average = (array) => {
+  let sum = 0;
+  let avg = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
+    sum += array[i];
+  }
+  avg = ((sum) / (array.length));
+  return Math.round(avg);
+};
 
-const average = () => {};
+// console.log (average(array))
 
+// No modify
 module.exports = average;
