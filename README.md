@@ -115,7 +115,7 @@ Você só deve alterar os arquivos indicados nos requisitos. **Os arquivos que n
 
 ### ok 5 - Implemente a função do arquivo `src/createStudent.js`
 
-### 6 - Implemente os casos de teste no arquivo `tests/productDetails.spec.js`
+### ok 6 - Implemente os casos de teste no arquivo `tests/productDetails.spec.js`
 
 ### 7 - Implemente a função do arquivo `src/objCalculator.js`
 

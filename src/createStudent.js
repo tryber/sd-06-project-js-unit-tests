@@ -16,12 +16,12 @@
 */
  const assert = require('assert');
 
-  const createStudent = (nameOfStudent) => {
+ const createStudent = (nameOfStudent) => {
   const student = {
     name: nameOfStudent,
     feedback: () => 'Eita pessoa boa!',
   };
-  return student;
+    return student;
   };
 //  console.log(createStudent('Leandrão, o Lobo Solitário'))
 
@@ -31,4 +31,4 @@
 // assert.strictEqual(estudante.name, 'Leandrão, o Lobo Solitário');
 // assert.strictEqual(estudante.feedback(), 'Eita pessoa boa!');
 
-  module.exports = createStudent;
+module.exports = createStudent;
