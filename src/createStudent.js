@@ -18,11 +18,11 @@
 
 const createStudent = (nameOfStudent) => {
   const student = {
-   name: nameOfStudent,
-   feedback: () => 'Eita pessoa boa!',
-};
-  return student;
-};
+    name: nameOfStudent,
+    feedback: () => 'Eita pessoa boa!',
+    };
+    return student;
+    };
 //  console.log(createStudent('Leandrão, o Lobo Solitário'))
 
 // const estudante = createStudent('Leandrão, o Lobo Solitário');
