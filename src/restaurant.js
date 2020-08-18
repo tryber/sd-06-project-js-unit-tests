@@ -81,7 +81,12 @@ const createMenu = (menu) => {
     pay() {
       let amount = 0;
       objeto.consumption.forEach(item => {
-
+        if (objeto.fetchMenu().food.hasOwnProperty(item)) {
+          amount += objeto.fetchMenu()['food'].item;
+        }
+        if (objeto.fetchMenu().food.hasOwnProperty(item)) {
+          amount += objeto.fetchMenu()['drink'].item;
+        }
       });
       return (amount * 1.10).toFixed(2);
     },
