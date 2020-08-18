@@ -15,6 +15,16 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (studentName) => {
+  const studentReport = {
+    name: studentName,
+    feedback: () => 'Eita pessoa boa!',
+  };
+  return studentReport;
+};
+
+const estudante = createStudent('Leandro, o Lobo Solitário');
+console.log(estudante.name);
+console.log(estudante.feedback());
 
 module.exports = createStudent;
