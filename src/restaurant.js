@@ -52,7 +52,6 @@
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
-
 //------------------------------------------------------------------------------------------
 
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
@@ -71,6 +70,34 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+
+function order(string) {
+  this.consumption.push(string);
+}
+
+function pay() {
+  let resultado = 0;
+  this.consumption.forEach((element) => {
+    const tamanhoObj = Object.keys(this.fetchMenu).length;
+    for (let i = 0; i < tamanhoObj; i += 1) {
+      if (element === Object.keys(this.fetchMenu.food)[i]) {
+        resultado += Object.values(this.fetchMenu.food)[i];
+      } else if (element === Object.keys(this.fetchMenu.drink)[i]) {
+        resultado += Object.values(this.fetchMenu.drink)[i];
+      }
+    }
+  });
+  return resultado * 1.1;
+}
+
+const createMenu = (obj) => {
+  const objeto = {
+    fetchMenu: obj,
+    consumption: [],
+    order,
+    pay,
+  };
+  return objeto;
+};
 
 module.exports = createMenu;
