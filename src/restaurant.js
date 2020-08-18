@@ -75,17 +75,19 @@
   //menuRestaurante.consumption.push(request);
 //}
 
-const menuRestaurante = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+const restaurant = {};
 
 const createMenu = (menuRestaurante) => {
-  const restaurant = {
-    fetchMenu: menuRestaurante,
-    consumption: [],
-    order: (request) => {
-      restaurant.consumption.push(request);
-    }  
-  }
+    restaurant.fetchMenu = menuRestaurante;
+    restaurant.consumption = [];
+    restaurant.order = orderFromMenu;
   return restaurant;
-};
-console.log(createMenu(menuRestaurante));
+}
+
+function orderFromMenu(request) {
+  restaurant.consumption.push(request);
+}
+
+
+console.log(createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }));
 module.exports = createMenu;

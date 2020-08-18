@@ -99,6 +99,12 @@ describe('#createMenu', () => {
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
+    objetoRetornado2.consumption = [];
+    objetoRetornado2.order('coxinha');
+    objetoRetornado2.order('agua');
+    objetoRetornado2.order('sopa');
+    objetoRetornado2.order('sashimi');
+    assert.deepStrictEqual(objetoRetornado2.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     // ```
     // objetoRetornado.order("coxinha");
     // objetoRetornado.order("agua");
