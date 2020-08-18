@@ -76,28 +76,30 @@ function orderFromMenu(food) {
 }
 function payFromMenu() {
   let payValue = 0;
-  const foodObject = this.fetchMenu.food;
-  const foodObjArray = Object.entries(foodObject);
-  for (let j = 0; j < this.consumption.length; j += 1) {
-    for (let i = 0; i < foodObjArray.length; i += 1) {
-      if (this.consumption[j] === foodObjArray[i][0]) {
-        payValue += foodObjArray[i][1];
 
+  const itemNames = [
+    Object.entries(this.fetchMenu.food)[0][0],
+    Object.entries(this.fetchMenu.food)[1][0],
+    Object.entries(this.fetchMenu.drinks)[0][0],
+    Object.entries(this.fetchMenu.drinks)[1][0]
+  ];
+  const itemPrices = [
+    Object.entries(this.fetchMenu.food)[0][1],
+    Object.entries(this.fetchMenu.food)[1][1],
+    Object.entries(this.fetchMenu.drinks)[0][1],
+    Object.entries(this.fetchMenu.drinks)[1][1]
+  ];
+
+  this.consumption.forEach(item => {
+    for (let i in itemNames) {
+      if (item === itemNames[i]) {
+        payValue += itemPrices[i]
       }
     }
-  }
-  const drinkObject = this.fetchMenu.drinks;
-  const drinkObjArray = Object.entries(drinkObject);
-  for (let j = 0; j < this.consumption.length; j += 1) {
-    for (let i = 0; i < drinkObjArray.length; i += 1) {
-      if (this.consumption[j] === drinkObjArray[i][0]) {
-        payValue += drinkObjArray[i][1];
+  });
 
-      }
-    }
-  }
   const payWithTaxes = payValue + (payValue * 0.10);
-  console.log(`O valor acrescido de 10% é de ${payWithTaxes}.`)
+  //console.log(payWithTaxes);
   return payWithTaxes;
 }
 
@@ -111,13 +113,13 @@ const createMenu = obj => ({
 
 module.exports = createMenu;
 
-// const myObj3 = createMenu({
-//   food: { 'coxinha': 3.90, 'sanduiche': 9.90 },
-//   drinks: { 'agua': 3.90, 'cerveja': 6.90 }
-// });
+const myObj3 = createMenu({
+  food: { 'coxinha': 3.90, 'sanduiche': 9.90 },
+  drinks: { 'agua': 3.90, 'cerveja': 6.90 }
+});
 
-// myObj3.order('coxinha');
-// myObj3.order('agua');
-// myObj3.order('coxinha');
+myObj3.order('coxinha');
+myObj3.order('agua');
+myObj3.order('coxinha');
 
-// myObj3.pay();
+myObj3.pay();
