@@ -33,12 +33,20 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
+    /* https://www.w3schools.com/jsref/jsref_isarray.asp */
+    assert.strictEqual(Array.isArray(productDetails('caneta', 'caneca')), true);
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(productDetails.length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.strictEqual(typeof productDetails('caneta', 'caneca'), 'object');
     // Teste que os dois objetos são diferentes entre si.
+    assert.notEqual(productDetails('caneta', ''), productDetails('', 'caneca'));
     // (Difícil) Teste que os dois productIds terminam com 123.
+    /*https://www.javascriptprogressivo.net/2019/01/Como-Fazer-Busca-Pesquisa-Array-Metodo-indexOf.html#:~:text=Como%20Buscar%20um%20Elemento%20em,elemento%20que%20voc%C3%AA%20deseja%20buscar.
+    https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Trabalhando_com_Objetos*/
+    assert.notEqual(productDetails('caneta', 'caneca')[0, 1].details.productId.lastIndexOf('123'), -1);
   });
 });
