@@ -82,8 +82,8 @@ const createMenu = (menu) => {
       let amount = 0;
       for (let i = 0; i < objeto.consumption.length; i += 1) {
         const itemConsumed = objeto.consumption[i];
-        if (objeto.fetchMenu()['food'][itemConsumed]) {
-          amount += objeto.fetchMenu()['food'][itemConsumed];
+        if (objeto.fetchMenu().food.itemConsumed) {
+          amount += objeto.fetchMenu().food.itemConsumed;
         }
       }
       return amount * 1.10;
