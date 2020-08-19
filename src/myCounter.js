@@ -22,13 +22,13 @@ const myCounter = () => {
     myArray.push(counter);
     // primeiro for usado para iniciar um array de 0 a 3
     // console.log(myArray)
-    for (counterTwo = 2; counterTwo <=3; counterTwo += 1) {
+    for (counterTwo = 2; counterTwo <= 3; counterTwo += 1) {
       // segundo for usado para empurrar os valores de acordo com os indices do counterTwo
-    myArray.push(counterTwo);
+      myArray.push(counterTwo);
+    }
   }
-    };
   return myArray;
-}
+};
 // codigo baseado no link https://codingrooms.com/nested-loops-javascript/
 // const expectedOutput = [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 // assert.deepEqual(myCounter(), expectedOutput);
