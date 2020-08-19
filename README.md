@@ -129,6 +129,8 @@ Você só deve alterar os arquivos indicados nos requisitos. **Os arquivos que n
 
 ### DURANTE O DESENVOLVIMENTO
 
+* Nos testes unitários que não estão implementados, vocês verão um `assert.fail();`. Esse código deve ser removido a partir do momento que vocês começarem a escrever o teste unitário. Ele só existe para fazer o teste falhar. Se o `assert.fail();` não estivesse nos blocos em que não há testes unitários implementados ainda, o teste iria passar com sucesso, pois não haveria nada para ser testado dentro.
+
 * Faça `commits` das alterações que você fizer no código regularmente
 
 * Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
