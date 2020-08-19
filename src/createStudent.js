@@ -22,5 +22,5 @@ const createStudent = (pessoa) => {
   };
   return objetoPessoa;
 };
-//const estudante = createStudent('Leandrão, o Lobo Solitário');
+const estudante = createStudent('Leandrão, o Lobo Solitário');
 module.exports = createStudent;
