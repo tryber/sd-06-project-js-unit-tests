@@ -40,4 +40,4 @@ assert.strictEqual(calculator.div(7, 2), 3);
 assert.strictEqual(calculator.sub(1, 3), -2);
 assert.strictEqual(calculator.sub(1, 9), -8);
 
-console.log(typeof calculator.add)
+console.log(typeof calculator.add);
