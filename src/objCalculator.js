@@ -19,6 +19,12 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  // ref math trunc https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
+  add: (n1, n2) => Math.trunc(n1 + n2),
+  mult: (n1, n2) => Math.trunc(n1 * n2),
+  div: (n1, n2) => Math.trunc(n1 / n2),
+  sub: (n1, n2) => Math.trunc(n1 - n2),
+};
 
 module.exports = calculator;
