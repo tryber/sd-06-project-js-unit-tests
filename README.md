@@ -105,17 +105,17 @@ Você só deve alterar os arquivos indicados nos requisitos. **Os arquivos que n
 
 ## Requisitos do projeto
 
-### 1 - Implemente a função do arquivo `src/average.js`
+### ok 1 - Implemente a função do arquivo `src/average.js` 
+ 
+### ok 2 - Implemente os casos de teste no arquivo `tests/numbers.spec.js`
 
-### 2 - Implemente os casos de teste no arquivo `tests/numbers.spec.js`
+### ok 3 - Implemente a função do arquivo `src/vqv.js`
 
-### 3 - Implemente a função do arquivo `src/vqv.js`
+### ok 4 - Implemente os casos de teste no arquivo `tests/circle.spec.js`
 
-### 4 - Implemente os casos de teste no arquivo `tests/circle.spec.js`
+### ok 5 - Implemente a função do arquivo `src/createStudent.js`
 
-### 5 - Implemente a função do arquivo `src/createStudent.js`
-
-### 6 - Implemente os casos de teste no arquivo `tests/productDetails.spec.js`
+### ok 6 - Implemente os casos de teste no arquivo `tests/productDetails.spec.js`
 
 ### 7 - Implemente a função do arquivo `src/objCalculator.js`
 

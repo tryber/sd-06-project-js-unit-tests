@@ -24,6 +24,8 @@
   ]
 */
 
+// const assert = require('assert');
+
 const productDetails = (firstProduct, secondProduct) => [
   {
     name: firstProduct,
@@ -40,3 +42,13 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
+
+// if(productDetails("milho", "arroz")
+// [0].details.productId.toString().endsWith("123") === true && productDetails("milho", "arroz")[1].
+// details.productId.toString().endsWith("123") === true){
+// var resultado = 'true';
+// utilizando o VAR intencionalmente para que o test possa identifica-lo
+// fora do bloco de codigo
+// console.log(resultado);
+// }
+// assert.strictEqual(resultado, 'true');
