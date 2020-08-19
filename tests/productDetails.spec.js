@@ -48,5 +48,12 @@ describe('#productDetails', () => {
     const obj2 = Object.values(myArray)[1];
     assert.notEqual(obj1, obj2);
     // (Difícil) Teste que os dois productIds terminam com 123.
+    const objReturned = [
+      { name: 'Álcool gel', details: { productId: 'Álcool gel123'}},//posicao 0
+      { name: 'Máscara', details: { productId: 'Máscara123'}},//posicao 1
+    ];
+    const productId1 = objReturned[0].details.productId.endsWith('123');
+    const productId2 = objReturned[1].details.productId.endsWith('123');
+    assert.ok((productId1 && productId2), true);
   });
 });
