@@ -16,9 +16,12 @@
 */
 
 const myCounter = () => {
+  // change 'var' to 'const'
   const myArray = [];
+  // change 'var' to 'let' to avoid hoisting with 2nd 'for'
   for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
+    // change name of variable to make the code clearer
     for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
       myArray.push(counter2);
     }
