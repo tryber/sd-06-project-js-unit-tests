@@ -22,13 +22,13 @@
 const assert = require('assert');
 
 const calculator = {
-  add: adicao = (a, b) => a + b,
-  mult: vezes = (a, b) => a * b,
-  div: dividido = (a, b) => {
-    const c = a / b;
-    return Math.floor(c);
-  },
-  sub: diminui = (a, b) => a - b,
+  add: (a, b) => a + b,
+
+  mult: (a, b) => a * b,
+
+  div: (a, b) => Math.floor(a / b),
+
+  sub: (a, b) => a - b,
 };
 
 assert.strictEqual(calculator.add(1, 3), 4);
@@ -41,3 +41,5 @@ assert.strictEqual(calculator.sub(1, 3), -2);
 assert.strictEqual(calculator.sub(1, 9), -8);
 
 console.log(typeof calculator.add);
+
+module.exports = calculator;
