@@ -4,6 +4,7 @@
 const assert = require('assert');
 const createMenu = require('../src/restaurant');
 
+
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
@@ -51,9 +52,9 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
-    // ```
+    
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
@@ -63,6 +64,9 @@ describe('#createMenu', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu // Retorno: { food: {}, drink: {}}
     // ```
+    assert.deepStrictEqual(createMenu({ food: {}, drink: {} }).fetchMenu(), { food: {}, drink: {}});
+
+
     // Agora faça o TESTE 3 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
@@ -70,6 +74,8 @@ describe('#createMenu', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu // Retorno: objetoQualquer
     // ```
+    const order = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+    assert.deepStrictEqual(createMenu(order).fetchMenu(), order);
     // Agora faça o TESTE 4 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
