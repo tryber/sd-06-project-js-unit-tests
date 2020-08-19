@@ -9,7 +9,36 @@
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
   Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. Eles guiarão você pelo desenvolvimento.
+*/
 
+
+/*
+const THINGS = {
+  food: {
+    'coxinha': 3.9,
+    'sopa': 9.9},
+  drink: {
+    'agua': 3.9,
+    'cerveja': 6.9,
+  }
+}
+ */
+
+/* let menureturned = createMenu(THINGS);
+const { fetchMenu } = menureturned;
+console.log('fetchMenu(): ' + fetchMenu());
+console.log('fetchMenu: ' + fetchMenu);
+console.log('menureturned: ' + menureturned);
+
+console.log(fetchMenu());
+console.log(fetchMenu);
+console.log(menureturned); */
+/* console.log(createMenu(THINGS).fetchMenu()); */
+
+/*
+{ fetchMenu: [Function: fetchMenu] }
+ */
+/*
   Parâmetros:
   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
   Comportamento:
@@ -51,6 +80,36 @@
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
+
+const createMenu = (menu) => {
+  const MENUOBJ = {
+    fetchMenu: () => { return menu; },
+    consumption: [],
+    order: function (items) {
+      items.forEach((item) => { MENUOBJ.consumption.push(item); });
+    },
+  };
+  return MENUOBJ;
+};
+
+/* const THINGS = {
+  food: {
+    'coxinha': 3.9,
+    'sopa': 9.9
+  },
+  drink: {
+    'agua': 3.9,
+    'cerveja': 6.9,
+  },
+};
+
+const menuReturned = createMenu(THINGS);
+console.log('      menuReturned');
+console.log(menuReturned);
+menuReturned.order(['coxinha', 'agua']);
+
+console.log('     orderReturned outside anything:');
+console.log(orderReturned); */
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -68,9 +127,8 @@
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
-
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+//const createMenu = () => {};
 
 module.exports = createMenu;
