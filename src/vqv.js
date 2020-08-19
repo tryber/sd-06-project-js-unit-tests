@@ -7,7 +7,7 @@
 
   Parâmetros:
     - Uma string;
-    - Um número.
+    - Um número.""
   Comportamento:
     vqv(Tunico, 30) // Retorna:
       'Oi, meu nome é Tunico!
@@ -16,6 +16,12 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  if (nome === undefined || idade === undefined) return undefined;
+  return `Oi, meu nome é ${nome}!\n` +
+  `Tenho ${idade} anos,\n` +
+  'trabalho na Trybe e mando muito em programação!\n' +
+  '#VQV!';
+};
 
 module.exports = vqv;
