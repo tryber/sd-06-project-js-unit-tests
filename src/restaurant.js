@@ -73,19 +73,19 @@
 
 const createMenu = (menu) => {
   const objeto = {
-    fetchMenu: () => menu,
+    fetchMenu: menu,
     consumption: [],
     order(item) {
       objeto.consumption.push(item);
     },
     pay() {
       let amount = 0;
-      objeto.consumption.forEach(item => {
-        if (objeto.fetchMenu().food.hasOwnProperty(item)) {
-          amount += objeto.fetchMenu()['food'][item];
+      objeto.consumption.forEach((item) => {
+        if (objeto.fetchMenu.food.item) {
+          amount += objeto.fetchMenu.food[item];
         }
-        if (objeto.fetchMenu().food.hasOwnProperty(item)) {
-          amount += objeto.fetchMenu()['drink'][item];
+        if (objeto.fetchMenu.drink.item) {
+          amount += objeto.fetchMenu.drink[item];
         }
       });
       return (amount * 1.10).toFixed(2);
