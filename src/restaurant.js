@@ -91,7 +91,7 @@ function payFromMenu() {
   ];
 
   this.consumption.forEach((item) => {
-    for (const i = 0; i < itemNames.length; i += 1) {
+    for (let i = 0; i < itemNames.length; i += 1) {
       if (item === itemNames[i]) {
         payValue += itemPrices[i];
       }
