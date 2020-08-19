@@ -22,13 +22,22 @@
 const assert = require('assert');
 
 const calculator = {
-  add:adicao = (a, b) => 4,
-  mult:vezes = (a, b) => 30,
-  div:dividido = (a, b) => 2,
-  sub:diminui = (a, b) => -2,
+  add: adicao = (a, b) => a + b,
+  mult: vezes = (a, b) => a * b,
+  div: dividido = (a, b) => {
+    const c = a / b;
+    return Math.floor(c);
+  },
+  sub: diminui = (a, b) => a - b,
 };
 
 assert.strictEqual(calculator.add(1, 3), 4);
+assert.strictEqual(calculator.add(2, 9), 11);
 assert.strictEqual(calculator.mult(10, 3), 30);
+assert.strictEqual(calculator.mult(4, 7), 28);
 assert.strictEqual(calculator.div(5, 2), 2);
+assert.strictEqual(calculator.div(7, 2), 3);
 assert.strictEqual(calculator.sub(1, 3), -2);
+assert.strictEqual(calculator.sub(1, 9), -8);
+
+console.log(typeof calculator.add)
