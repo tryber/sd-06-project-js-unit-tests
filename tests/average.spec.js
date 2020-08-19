@@ -17,6 +17,23 @@ const average = require('../src/average');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+const average = (array) => {
+  let soma = 0;
+  let media = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    if (Number.isInteger(array[i])) {
+      soma += array[i];
+    } else {
+      return undefined;
+    }
+    media = soma / array.length;
+  }
+  return Math.round(media);
+};
+
 
 describe('#average', () => {
   it("tests function average's behaviour as specified", () => {
