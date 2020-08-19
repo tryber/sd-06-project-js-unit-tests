@@ -172,9 +172,9 @@ describe('#createMenu', () => {
     restaurantTest8.order('coxinha');
     restaurantTest8.order('agua');
     restaurantTest8.order('coxinha');
-    // 12,87
+    // 12.87
     const inputTest8 = restaurantTest8.pay();
-    const expectedTest8 = 12.78;
+    const expectedTest8 = 12.87;
     assert.strictEqual(inputTest8, expectedTest8);
     
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
