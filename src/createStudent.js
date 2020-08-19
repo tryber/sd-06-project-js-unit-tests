@@ -16,11 +16,11 @@
 */
 
 const createStudent = (pessoa) => {
-  const objetoPessoa = {
-  name: pessoa,
-  feedback: () => 'Eita pessoa boa!'
-  };
-   return objetoPessoa;
+    const objetoPessoa = {
+    name: pessoa,
+    feedback: () => 'Eita pessoa boa!'
+    };
+ return objetoPessoa;
 };
 //const estudante = createStudent('Leandrão, o Lobo Solitário');
 module.exports = createStudent;
