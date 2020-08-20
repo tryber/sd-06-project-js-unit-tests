@@ -14,10 +14,11 @@
       Tenho 30 anos,
       trabalho na Trybe e mando muito em programação!
       #VQV!'
+      ***Ideia usar 'typeof' do aurelioScarante
 */
 
 const vqv = (age, name) => {
-  if ((age === undefined) || (name === undefined)) {
+  if ((typeof age !== 'number') || (typeof name !== 'string')) {
     return undefined;
   }
   return `Oi, meu nome é ${name}!
