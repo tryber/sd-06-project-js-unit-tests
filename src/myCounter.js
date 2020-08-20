@@ -20,7 +20,7 @@ const myCounter = () => {
   const myArray = [];
   for (let i = 0; i <= 3; i += 1) {
     myArray.push(i);
-    for (let i2 = 2; i2 <= 3; i += 1) {
+    for (let i2 = 2; i2 <= 3; i2 += 1) {
       myArray.push(i2);
     }
   }
