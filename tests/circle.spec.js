@@ -25,13 +25,12 @@ const circle = require('../src/circle');
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     assert.equal(typeof (circle(1)), 'object');
     assert.deepEqual(circle(5), {radius: 5, area: 78.5, circumference: 31.40});
     assert.equal(circle(2).circumference.toFixed(2), 12.56);
     assert.deepEqual(circle(2), { radius: 2, area: 12.56, circumference: 12.56 });
     assert.equal(parseFloat(Object.values(circle(3))[1]).toPrecision(4), 28.26);
-    assert.deepEqual(circle(3), { radius: 3, area: 28.26, circumference: 18.84 }, "C=18.84");
+    assert.deepEqual(circle(3), { radius: 3, area: 28.26, circumference: 18.84 }, "C=18.84 u.m");
   });
 });
