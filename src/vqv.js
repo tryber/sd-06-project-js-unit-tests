@@ -17,8 +17,8 @@
       ***Ideia usar 'typeof' do aurelioScarante
 */
 
-const vqv = (age, name) => {
-  if ((typeof age !== 'number') || (typeof name !== 'string')) {
+const vqv = (name, age) => {
+  if ((typeof name !== 'string') || (typeof age !== 'number')) {
     return undefined;
   }
   return `Oi, meu nome é ${name}!
