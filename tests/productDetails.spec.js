@@ -45,5 +45,6 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepEqual(resu[0], resu[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
+    assert.deepStrictEqual(resu[0].details.productId.substr(-3) === 123, resu[1].details.productId.substr(-3) === 123, true);
   });
 });
