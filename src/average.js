@@ -13,19 +13,19 @@
 */
 
 const average = (array) => {
-   let contNumb = 0;
-   if (array.legth === 0) {
-     return undefined;
-   }
-   for (index in array){
-     control = array[index]
-     if (typeof control === 'number') {
-       contNumb += array[index]
-     } else {
-       return undefined;
-     }
-   }
-   return Math.round(contNumb/array.legth);
+  let contNumb = 0;
+  if (array.legth === 0) {
+    return undefined;
+  }
+  for (index in array) {
+    control = array[index];
+    if (typeof control === 'number') {
+      contNumb += array[index];
+    } else {
+      return undefined;
+    }
+  }
+  return Math.round(contNumb / array.legth);
 };
 
 module.exports = average;
