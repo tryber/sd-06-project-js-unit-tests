@@ -28,10 +28,10 @@ describe('#circle', () => {
     assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     assert.equal(typeof (circle(1)), 'object');
-    // Teste se o objeto retornado tem 3 entradas.
+    assert.deepEqual(circle(5), {radius: 5, area: 78.5, circumference: 31.40});
     assert.equal(circle(2).circumference.toFixed(2), 12.56);
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.deepEqual(circle(2), { radius: 2, area: 12.56, circumference: 12.56 });
     assert.equal(parseFloat(Object.values(circle(3))[1]).toPrecision(4), 28.26);
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    assert.deepEqual(circle(3), { radius: 3, area: 28.26, circumference: 18.84 }, "C=18.84");
   });
 });
