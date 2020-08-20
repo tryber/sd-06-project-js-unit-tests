@@ -29,8 +29,8 @@ describe('#circle', () => {
     assert.strictEqual(typeof (circle(1)), 'object');
     assert.strictEqual(Object.keys(circle(1)).length, 3)
     assert.strictEqual(circle(), 'undefined');
-    assert.strictEqual(circle(2).circumference, 12.56);
-    assert.strictEqual(circle(3).area, Number(parseFloat(3.14*9)));
-    assert.deepStrictEqual(circle(3), {radius: 3, area: (3.14*9), circumference: 18.84});
+    assert.deepStrictEqual(circle(2).circumference, 12.56);
+    assert.deepStrictEqual(circle(3).area, 28.259999999999998);
+    assert.deepStrictEqual(Object.values(circle(3)), [3, 28.259999999999998, 18.84]);
   });
 });
