@@ -14,13 +14,13 @@
   Comportamento:
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
-
+//Solução de usar dois contadores diferentes de Paulo Cheloni
 const myCounter = () => {
   const myArray = [];
   for (let i = 0; i <= 3; i += 1) {
     myArray.push(i);
-    for (let i = 2; i <= 3; i += 1) {
-      myArray.push(i);
+    for (let i2 = 2; i2 <= 3; i += 1) {
+      myArray.push(i2);
     }
   }
   return myArray;
