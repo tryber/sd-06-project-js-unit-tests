@@ -27,10 +27,10 @@ describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     assert.equal(typeof (circle(1)), 'object');
-    assert.strictEqual(Object.keys(circle(1)).length, 3, "Não possui 3 entradas");
-    assert.strictEqual(typeof(circle()), 'undefined');
+    assert.equal(Object.entries(circle(5)).length, 3)
+    assert.strictEqual(circle(), 'undefined');
     assert.deepEqual(circle(2).circumference, 12.56);
-    assert.equal(circle(3).area, 28.26);
-    assert.deepStrictEqual(circle(3), {radius: 3, area: 28.26, circumference: 18.84});
+    assert.equal(circle(3).area, Number(parseFloat(3.14*9);
+    assert.deepStrictEqual(circle(3), {radius: 3, area: (3.14*9), circumference: 18.84});
   });
 });
