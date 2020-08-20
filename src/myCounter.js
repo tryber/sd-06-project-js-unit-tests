@@ -23,8 +23,7 @@ const myCounter = () => {
       myArray.push(counterB);
     }
   }
-  return myArray;
-  
+  return myArray; 
 };
 
 module.exports = myCounter;
