@@ -9,9 +9,9 @@
     - numbers([2, 'errado', 5]); // Retorna: false
 */
 
-const numbers = (myArray) => {
-  for (let i = 0; i < myArray.length; i += 1) {
-    if (typeof myArray[i] !== 'number'|| myArray[i]='') {
+const numbers = (arr) => {
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] !== 'number'|| arr[i] = '') {
       return false;
     }
   }
