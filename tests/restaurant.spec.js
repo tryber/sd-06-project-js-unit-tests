@@ -53,7 +53,10 @@ describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     // assert.fail();
     const menu = {
-      food: {'coxinha': 3.90, 'sanduiche': 9.90},
+      food: {
+        'coxinha': 3.90,
+        'sanduiche': 9.90
+      },
       drinks: {'agua': 3.90, 'cerveja': 6.90}
     };
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
