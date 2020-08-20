@@ -21,7 +21,7 @@
 
 const calculator = {
   add: adicao = (number1, number2) => Math.floor(number1 + number2),
-    mult: multipicacao = (number1, number2) => Math.floor(number1 * number2),
+  mult: multipicacao = (number1, number2) => Math.floor(number1 * number2),
   div: divisao = (number1, number2) => Math.floor(number1 / number2),
   sub: subtracao = (number1, number2) => Math.floor(number1 - number2),
 };
