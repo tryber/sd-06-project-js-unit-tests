@@ -77,6 +77,18 @@ const createMenu = object => ({
   order(order) {
     this.consumption.push(order);
   },
+  pay() {
+    let price = 0;
+    this.consumption.forEach((item) => {
+      if (item in this.fetchMenu.food) {
+        price += this.fetchMenu.food[item];
+      }
+      if (item in this.fetchMenu.drink) {
+        price += this.fetchMenu.drink[item];
+      }
+    });
+    return parseFloat((price * 1.1).toFixed(2));
+  },
 });
 
 module.exports = createMenu;
