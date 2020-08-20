@@ -51,8 +51,47 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
+    // test 1 , checks if createMenu() returns an object
+    assert.deepStrictEqual(createMenu({'object':'oi'}), {fetchMenu:{'object':'oi'}}, 'format of the return of creatMenu() is not correct');
+    let menu = {
+      food : {},
+      drinks : {}
+    };
+    let restaurant = createMenu(menu);
+    //test 2 , check the format of the return of restaurant.fetchMenu
+    assert.deepStrictEqual(Object.keys(restaurant.fetchMenu), [ 'food', 'drinks'], 'format of restaurant.fetchMenu is not correct' );    
+    //test 3 , compares the return of atribute fetchMenu with initial function parameters 
+    assert.deepStrictEqual(restaurant.fetchMenu, menu, 'fetchMenu does not match input');
+    // test 4 -- Tests the return of consumption atribute
+    menu = {
+      food : {'coxinha' : 3.50 , 'sanduiche': 9.90},
+      drinks : {'agua' : 4.50, 'cerveja' : 6.90},
+    }    
+    restaurant = createMenu(menu);
+    assert.deepEqual(restaurant.consumption , [], 'invalid consumption for this Menu');
+
+    // test 5 -- check Order method
+    restaurant.order('coxinha');
+    assert.deepEqual(restaurant.consumption, ['coxinha'],'order not computed');
+
+    // test 6 -- check Payment method
+    restaurant.order('agua');
+    restaurant.order('cerveja');
+    restaurant.order('coxinha');
+
+    // test 6.1 checks the type of the return of Pay() method
+    assert.ok(typeof(restaurant.pay()) === 'number', 'return of pay() is not type number');
+    // test 6.2 checks the length of consumptions
+    assert.ok((restaurant.consumption).length === 4, 'incorret number of elements in consumption');
+
+    // test 6.2 checks SumValue of the return of Pay() method
+    assert.ok(restaurant.pay() === 18.40 + 1.84, `valor de ${restaurant.pay()} está incorreto`);
+    
+    //
+
+
     // ```
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
     // ```
