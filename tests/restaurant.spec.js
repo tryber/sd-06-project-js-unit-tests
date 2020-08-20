@@ -131,5 +131,6 @@ describe('#createMenu', () => {
     meuRestaurante4.order("coxinha");
     assert.deepStrictEqual(meuRestaurante4.pay(), 12.87);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    // Outro push para corrigir a questão de recuperação.
   });
 });
