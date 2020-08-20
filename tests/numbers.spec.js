@@ -3,6 +3,7 @@
 
 const assert = require('assert');
 const numbers = require('../src/numbers');
+const { AssertionError } = require('assert');
 
 /*
   A função numbers recebe um array (tamanho variável) e retorna true se todos os parâmetros forem do tipo 'number' e false caso contrário.
@@ -18,10 +19,14 @@ const numbers = require('../src/numbers');
 
 describe('#numbers', () => {
   it('should return an array and return if it has only numbers or not', () => {
-    assert.fail();
+    // assert.fail();
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
+    assert.deepStrictEqual(numbers([1, 2, 3, 4, 5]), true);
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
+    assert.deepStrictEqual(numbers([1, 2, '3', 4, 5]), false);
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
+    assert.deepStrictEqual(numbers([1, 'a', 3]), false);
     // Escreva um teste em que a função recebe [' '] e retorna false
+    assert.deepStrictEqual(numbers([' ']), false);
   });
 });
