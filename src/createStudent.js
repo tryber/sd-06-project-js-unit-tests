@@ -14,7 +14,14 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-
-const createStudent = () => {};
+//  Como colocar funcao dentro de objeto
+//  https://www.w3schools.com/js/js_object_methods.asp
+const createStudent = (nome) => {
+  const student = {
+    name: nome,
+    feedback: () => 'Eita pessoa boa!',
+  };
+  return student;
+};
 
 module.exports = createStudent;
