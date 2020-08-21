@@ -131,31 +131,27 @@ const createMenu = (menu) => {
     fetchMenu: () => menu,
     consumption: [],
     order: items => items.forEach(item => MENUOBJ.consumption.push(item)),
-    getItemPrice: (acc, current) => (MENUOBJ.fetchMenu.food[current]),//{
-      /* 
-      if (current in Object.keys(MENUOBJ.fetchMenu.food)) {
-        return Object.values(MENUOBJ.fetchMenu.food[current]);
-      }
-      return Object.values(MENUOBJ.fetchMenu.drink[current]);
-    }, */
+    getItemPrice: (acc, current) => (MENUOBJ.fetchMenu.food[current]),
     pay: () => {
       let sum = 0;
-      const {consumption} = MENUOBJ;
+      const { consumption } = MENUOBJ;
       const FOOD_MENU = MENUOBJ.fetchMenu().food;
       const DRINK_MENU = MENUOBJ.fetchMenu().drink;
-      consumption.forEach(item => {
+      consumption.forEach((item) => {
         if (item in FOOD_MENU) {
-          return sum += FOOD_MENU[item];
+          sum += FOOD_MENU[item];
+          return sum;
         }
-        return sum += DRINK_MENU.drink[item];
-      })
+        sum += DRINK_MENU[item];
+        return sum;
+      });
       return sum;
     },
   };
   return MENUOBJ;
 };
 
-/*console.log(menuReturned);
+/* console.log(menuReturned);
 const EMPTYTHINGS = {
   food: {},
   drink: {},

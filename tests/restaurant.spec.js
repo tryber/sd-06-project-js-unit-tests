@@ -101,10 +101,10 @@ describe('#createMenu', () => {
     // ```
     
     table3.order(['coxinha']);
-    table3.order(['sopa']);
+    table3.order(['agua']);
     table3.order(['coxinha']);
     //table3.pay();
-    assert.deepStrictEqual(table3.pay(), 17.7)
+    assert.deepStrictEqual(table3.pay(), 11.7)
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
 
