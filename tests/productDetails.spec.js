@@ -38,9 +38,8 @@ describe('#productDetails', () => {
     assert.strictEqual(productDetails().length, 2);
     assert.deepEqual(typeof productDetails('produto A', 'produto B'), 'object');
     assert.deepStrictEqual(productDetails()[0], productDetails()[1]);
-    const first = productDetails('s1','s2')[0].details.productId.endsWith('123');
-    const second = productDetails('s1','s2')[1].details.productId.endsWith('123');
-    assert.strictEqual((first && second), true); 
-    
+    const first = productDetails('string1','string2')[0].details.productId.endsWith('123');
+    const second = productDetails('string1','string2')[1].details.productId.endsWith('123');
+    assert.strictEqual((first && second), true);
   });
 });
