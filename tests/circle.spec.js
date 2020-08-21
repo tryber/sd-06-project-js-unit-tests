@@ -25,13 +25,21 @@ const circle = require('../src/circle');
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    assert.fail();
+    // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
+    let circleTest = circle(1);
+    assert.deepStrictEqual(typeof(circleTest), 'object');
     // Teste se o objeto retornado tem 3 entradas.
+    assert.equal(Object.keys(circleTest).length, 3);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    assert.equal(circle(), undefined);
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.equal(circle(2).circumference, 2 * 3.14 * 2);
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    assert.equal(circle(3).area, 3.14 * 3 * 3);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    const variables = {radius: 3, area: 3.14 * 3 * 3, circumference: 2 * 3.14 * 3};
+    assert.deepEqual(circle(3), variables);
   });
 });
