@@ -47,7 +47,7 @@
 
 function createMenu(obj) {
   return fetchMenu(obj);
-};
+}
 //
 // Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
 
@@ -91,4 +91,4 @@ module.exports = createMenu;
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
-    // 
+    
