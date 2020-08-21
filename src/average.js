@@ -13,7 +13,7 @@
 */
 
 const average = (list) => {
-  let soma = 0
+  let soma = 0;
   if (list.length === 0) {
     return undefined;
   }
@@ -29,5 +29,5 @@ const average = (list) => {
   const media = soma / list.length;
   return Math.round(media);
 };
-console.log(average([2]))
+
 module.exports = average;
