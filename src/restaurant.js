@@ -60,13 +60,13 @@
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
 // DICA: para criar isso, você vai precisar definir a função `createMenu()`, definir o objeto que a `createMenu()` define separadamente dela e, depois, a função que será definida em `order`.
 // ```
-const restaurant = {}
+const restaurant = {};
 
-const orderFromMenu = (request) => restaurant.consumption.push(request);
+const orderFromMenu = request => restaurant.consumption.push(request);
 
 const myRestaurantMenu = {
-  food: {'coxinha': 3.90, 'sanduiche': 9.90},
-  drink: {'agua': 3.90, 'cerveja': 6.90},
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drink: { agua: 3.90, cerveja: 6.90 },
 };
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 
@@ -94,7 +94,7 @@ const totalBill = () => {
   }
   sumtotal = sumFood + sumDrink;
   return (sumtotal * 1.1).toFixed(2);
-}
+};
 
 const createMenu = (myMenu) => {
   // change inner logic after read step 3 information
