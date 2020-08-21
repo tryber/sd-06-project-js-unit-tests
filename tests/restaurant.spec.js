@@ -50,9 +50,10 @@ const createMenu = require('../src/restaurant');
 */
 
 const menu = {
-  food: {'coxinha': 3.90, 'sanduiche': 9.90},
-  drink: {'agua': 3.90, 'cerveja': 6.90},
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drink: { agua: 3.90, cerveja: 6.90 },
 };
+
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
