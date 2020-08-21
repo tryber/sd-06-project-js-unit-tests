@@ -80,18 +80,11 @@ const createMenu = (menu) => {
   const meuRestaurant = {};
   meuRestaurant.fetchMenu = menu;
   meuRestaurant.consumption = [];
-  meuRestaurant.order = (string) => meuRestaurant.consumption.push(string);;
+  meuRestaurant.order = (string) => meuRestaurant.consumption.push(string);
   meuRestaurant.pay = () => {
-    let price = 0;
-    for (let index = 0; index < meuRestaurant.consumption.length; index += 1) {
-      if (meuRestaurant.consumption[index] in meuRestaurant.fetchMenu.food) {
-        price += meuRestaurant.fetchMenu.food[meuRestaurant.fetchMenu.food[0][1]];
-      } else if (meuRestaurant.consumption[index] in meuRestaurant.fetchMenu.drink) {
-        price += meuRestaurant.fetchMenu.drink[meuRestaurant.fetchMenu.drink[0][1]];
-      }
-    };
-    return price;
-  };
+    return meuRestaurant.consumption.reduce((acc, current) => 
+    acc + meuRestaurant.fetchMenu.food[element] || meuRestaurant.fetchMenu.drink[element], 0)
+  }
   return meuRestaurant;
 };
 

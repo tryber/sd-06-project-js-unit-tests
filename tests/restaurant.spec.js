@@ -112,9 +112,6 @@ describe('#createMenu', () => {
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
-    objetoRetornado.order('coxinha');
-    objetoRetornado.order('agua');
-    objetoRetornado.order('coxinha');
     assert.deepStrictEqual(objetoRetornado.pay(), 3.90 * 3);
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
