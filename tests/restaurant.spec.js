@@ -103,16 +103,19 @@ describe('#createMenu', () => {
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
-    objetoRetornado.consumption = [];
-    objetoRetornado.order('coxinha');
-    objetoRetornado.order('agua');
-    objetoRetornado.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha', 'agua', 'coxinha']);
+    const objeto = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+    const objetoReturned = createMenu(objeto);
+    objetoReturned.consumption = [];
+    objetoReturned.order('coxinha');
+    objetoReturned.order('agua');
+    objetoReturned.order('coxinha');
+    console.log(objetoReturned)
+    assert.deepStrictEqual(objetoReturned.consumption, ['coxinha', 'agua', 'coxinha']);
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
-    assert.deepStrictEqual(objetoRetornado.pay(), 3.90 * 3);
+    assert.deepStrictEqual(objetoReturned.pay(), 3.90 * 3);
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
