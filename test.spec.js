@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
-const productDetails = require('../src/productDetails');
+const productDetails = require('/src/productDetails');
 
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
@@ -36,11 +36,11 @@ describe('#productDetails', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     assert.strictEqual(Array.isArray(productDetails('produto A', 'produto B')), true);
     assert.strictEqual(productDetails().length, 2);
-    assert.deepEqual(typeof productDetails('produto A', 'produto B'), 'object');
+    assert.deepEqual(typeof productDetails('produto A', 'produto B', 'object'));
     assert.deepStrictEqual(productDetails()[0], productDetails()[1]);
-    const first = productDetails('s1','s2')[0].details.productId.endsWith('123');
-    const second = productDetails('s1','s2')[1].details.productId.endsWith('123');
-    assert.strictEqual((first && second), true); 
-    
+    const first = productDetails('s1','s2')[0].details.productId
+    const second = productDetails('s1','s2')[1].details.productId
+    //assert.strictEqual((first && second), true); 
+    console.log(first)
   });
-});
+})
