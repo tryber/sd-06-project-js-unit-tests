@@ -81,17 +81,6 @@ console.log(menureturned); */
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
 
-const createMenu = (menu) => {
-  const MENUOBJ = {
-    fetchMenu: () => { return menu; },
-    consumption: [],
-    order: function (items) {
-      items.forEach((item) => { MENUOBJ.consumption.push(item); });
-    },
-  };
-  return MENUOBJ;
-};
-
 /* const THINGS = {
   food: {
     'coxinha': 3.9,
@@ -119,6 +108,68 @@ console.log(orderReturned); */
 // ```
 // const restaurant = {}
 
+/* const THINGS = {
+  food: {
+    'coxinha': 3.9,
+    'sopa': 9.9},
+  drink: {
+    'agua': 3.9,
+    'cerveja': 6.9,
+  }
+};
+const MENU_TO_USE = createMenu(THINGS);
+
+const getItemPrice = (acc, current) => {
+  if (current in Object.keys(MENU_TO_USE.fetchMenu.food)) {
+    return Object.values(MENU_TO_USE.fetchMenu.food[current]);
+  }
+  return Object.values(MENU_TO_USE.fetchMenu.drink[current]);
+};
+ */
+const createMenu = (menu) => {
+  const MENUOBJ = {
+    fetchMenu: () => menu,
+    consumption: [],
+    order: items => items.forEach(item => MENUOBJ.consumption.push(item)),
+    getItemPrice: (acc, current) => (MENUOBJ.fetchMenu.food[current]),//{
+      /* 
+      if (current in Object.keys(MENUOBJ.fetchMenu.food)) {
+        return Object.values(MENUOBJ.fetchMenu.food[current]);
+      }
+      return Object.values(MENUOBJ.fetchMenu.drink[current]);
+    }, */
+    pay: () => {
+      let sum = 0;
+      const {consumption} = MENUOBJ;
+      const FOOD_MENU = MENUOBJ.fetchMenu().food;
+      const DRINK_MENU = MENUOBJ.fetchMenu().drink;
+      consumption.forEach(item => {
+        if (item in FOOD_MENU) {
+          return sum += FOOD_MENU[item];
+        }
+        return sum += DRINK_MENU.drink[item];
+      })
+      return sum;
+    },
+  };
+  return MENUOBJ;
+};
+
+/*console.log(menuReturned);
+const EMPTYTHINGS = {
+  food: {},
+  drink: {},
+};
+
+const EMPTYCONSUMPTION = []; */
+/* const orderFromMenu = (request) => {
+  const OBJETORETORNADO = {
+    consumption: [],
+    order: (items) => {
+      items.forEach((item) => { consumption.push(item); });
+    },};
+  return OBJETORETORNADO;
+}; */
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 //
@@ -129,6 +180,6 @@ console.log(orderReturned); */
 //------------------------------------------------------------------------------------------
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-//const createMenu = () => {};
+// const createMenu = () => {};
 
 module.exports = createMenu;
