@@ -7,8 +7,11 @@
   Comportamento:
     - numbers([2, 3, 4]); // Retorna: true
     - numbers([2, 'errado', 5]); // Retorna: false
+     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
+    // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
+    // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
+    // Escreva um teste em que a função recebe [' '] e retorna false
 */
-
 const numbers = (myArray) => {
   for (let i = 0; i < myArray.length; i += 1) {
     if (typeof myArray[i] !== 'number') {

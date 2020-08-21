@@ -40,3 +40,7 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
+
+// const testReturn = Object.values(productDetails('firstProduct', 'secondProduct'));
+// const str = Object.values(testReturn).details.productId
+// console.log(str.endsWith('123'));
