@@ -12,8 +12,6 @@
     - average([1, '2']) // Retorno: undefined; a
 */
 
-
-
 const average = (numbers) => {
   let sum = 0;
   let media = 0;
@@ -26,6 +24,5 @@ const average = (numbers) => {
   media = sum / numbers.length;
   return Math.round(media);
 }
-
 
 module.exports = average;
