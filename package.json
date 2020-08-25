@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/betrybe/sd-0x-block8-project-js-unit-test#readme",
   "devDependencies": {
+    "acorn": "^8.0.1",
     "jest": "^24.9.0",
-    "acorn": ">=5.7.4",
     "minimist": ">=1.2.2"
   }
 }
