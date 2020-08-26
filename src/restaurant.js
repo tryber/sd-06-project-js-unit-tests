@@ -9,7 +9,7 @@
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
   Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. Eles guiarão você pelo desenvolvimento.
-
+ 
   Parâmetros:
   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
   Comportamento:
@@ -44,10 +44,42 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: objetoPassadoPorParametro }.
-//
+
+
 // Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
 
+//------------------------------------------------------------------ivo `tests/restaurant.spec.js`.
+
 //------------------------------------------------------------------------------------------
+
+// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+
+const createMenu = () => {
+  // solution inspired by Dilenio's approach: https://github.com/tryber/sd-06-project-js-unit-tests/tree/8e9e3f8f23e4e93387d86e731296f6d1ffea328a
+  const restaurant = {};
+const createMenu = (myMenu) => {
+  restaurant.fetchMenu = myMenu;
+  restaurant.consumption = [];
+  restaurant.order = (item) => {
+    restaurant.consumption.push(item);
+  };
+  restaurant.pay = () => {
+    let sum = 0;
+    for (let index = 0; index < Object.keys(restaurant.consumption).length; index += 1) {
+      switch (restaurant.consumption[index]) {
+        case 'coxinha': sum += restaurant.fetchMenu.food.coxinha; break;
+        case 'sopa': sum += restaurant.fetchMenu.food.sopa; break;
+        case 'agua': sum += restaurant.fetchMenu.drink.agua; break;
+        case 'cerveja': sum += restaurant.fetchMenu.drink.cerveja; break;
+        default: break;
+      }
+    }
+    return (sum * 1.1).toFixed(2);
+  };
+  return restaurant;
+};
+}
+module.exports = createMenu;
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
@@ -65,12 +97,4 @@
 //
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. Essa função deve ser associada à chave `order` de `restaurant`
 // ```
-// Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
-
-//------------------------------------------------------------------------------------------
-
-// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
-const createMenu = () => {};
-
-module.exports = createMenu;
+// Agora faça o TESTE 6 no arquivos
