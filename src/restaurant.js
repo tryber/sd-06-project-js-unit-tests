@@ -9,7 +9,6 @@
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
   Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. Eles guiarão você pelo desenvolvimento.
- 
   Parâmetros:
   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
   Comportamento:
@@ -57,7 +56,6 @@
 const createMenu = () => {
   // solution inspired by Dilenio's approach: https://github.com/tryber/sd-06-project-js-unit-tests/tree/8e9e3f8f23e4e93387d86e731296f6d1ffea328a
   const restaurant = {};
-const createMenu = (myMenu) => {
   restaurant.fetchMenu = myMenu;
   restaurant.consumption = [];
   restaurant.order = (item) => {
@@ -78,7 +76,6 @@ const createMenu = (myMenu) => {
   };
   return restaurant;
 };
-}
 module.exports = createMenu;
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
