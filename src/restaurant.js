@@ -57,7 +57,7 @@ const createMenu = (objectmenu) => {
   };
   menu.pay = () => {
     let sum = 0;
-      menu.consumption.forEach(element => {
+    menu.consumption.forEach(element => {
     switch (element) {
         case 'coxinha': sum += menu.fetchMenu.food.coxinha; break;
         case 'sanduiche': sum += menu.fetchMenu.food.sanduiche; break;
