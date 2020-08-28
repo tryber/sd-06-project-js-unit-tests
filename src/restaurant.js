@@ -57,15 +57,24 @@ const createMenu = (objectmenu) => {
   };
   menu.pay = () => {
     let sum = 0;
-    menu.consumption.forEach(element => {
-    switch (element) {
-        case 'coxinha': sum += menu.fetchMenu.food.coxinha; break;
-        case 'sanduiche': sum += menu.fetchMenu.food.sanduiche; break;
-        case 'agua' : sum += menu.fetchMenu.drinks.agua; break;
-        case 'cerveja': sum += menu.fetchMenu.drinks.cerveja; break;
-        default: break;
+    menu.consumption.forEach((element) => {
+      switch (element) {
+        case "coxinha":
+          sum += menu.fetchMenu.food.coxinha;
+          break;
+        case "sanduiche":
+          sum += menu.fetchMenu.food.sanduiche;
+          break;
+        case "agua":
+          sum += menu.fetchMenu.drinks.agua;
+          break;
+        case "cerveja":
+          sum += menu.fetchMenu.drinks.cerveja;
+          break;
+        default:
+          break;
       }
-  });
+    });
     return (sum * 1.1).toFixed(2);
   };
   return menu;
