@@ -12,9 +12,47 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
+function sumAllValues(numberAray) {
+  return numberAray.reduce((accum, curr) => accum + curr);
+}
 
+function checkNumber(element) {
+  return typeof element === 'number';
+}
 
+function areAllNumbers(numberAray) {
+  let result = false;
+  const filtered = numberAray.filter(checkNumber);
+  if (numberAray.length === filtered.length) {
+    result = true;
+  }
+  return result;
+}
+
+function checkEmpty(numberArray) {
+  let result = false;
+  if (!Array.isArray(numberArray) || !numberArray.length) {
+    result = true;
+  }
+  return result;
+}
+
+const average = (numberArray) => {
+  // Armazenar o valor da soma
+  let result;
+  const total = sumAllValues(numberArray);
+  // Percorrer um array
+  switch (true) {
+    case (checkEmpty(numberArray) || !areAllNumbers(numberArray)):
+      result = undefined;
+      break;
+    case (total <= 1 && total > 0):
+      result = 0;
+      break;
+    default:
+      result = Math.round(total / numberArray.length);
+  }
+  return result;
 };
 
 module.exports = average;
