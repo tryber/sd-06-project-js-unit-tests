@@ -12,7 +12,18 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+function checkEmpty(numberArray) {
+  let result = false;
+  if (!Array.isArray(numberArray) || !numberArray.length) {
+    result = true;
+  }
+  return result;
+}
+
 function sumAllValues(numberAray) {
+  if (checkEmpty(numberArray)) {
+    return undefined;
+  }
   return numberAray.reduce((accum, curr) => accum + curr);
 }
 
@@ -24,14 +35,6 @@ function areAllNumbers(numberAray) {
   let result = false;
   const filtered = numberAray.filter(checkNumber);
   if (numberAray.length === filtered.length) {
-    result = true;
-  }
-  return result;
-}
-
-function checkEmpty(numberArray) {
-  let result = false;
-  if (!Array.isArray(numberArray) || !numberArray.length) {
     result = true;
   }
   return result;
