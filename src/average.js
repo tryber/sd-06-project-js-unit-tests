@@ -20,21 +20,21 @@ function checkEmpty(numberArray) {
   return result;
 }
 
-function sumAllValues(numberAray) {
+function sumAllValues(numberArray) {
   if (checkEmpty(numberArray)) {
     return undefined;
   }
-  return numberAray.reduce((accum, curr) => accum + curr);
+  return numberArray.reduce((accum, curr) => accum + curr);
 }
 
 function checkNumber(element) {
   return typeof element === 'number';
 }
 
-function areAllNumbers(numberAray) {
+function areAllNumbers(numberArray) {
   let result = false;
-  const filtered = numberAray.filter(checkNumber);
-  if (numberAray.length === filtered.length) {
+  const filtered = numberArray.filter(checkNumber);
+  if (numberArray.length === filtered.length) {
     result = true;
   }
   return result;
