@@ -18,18 +18,18 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-//const formatter = number => Math.round(number * 1e2) / 1e2;
-
-
 const circle = (radius) => {
+
+  const formatter = number => Math.round(number * 1e2) / 1e2;
+
   const PI = 3.14;
   if (!radius) {
     return undefined;
   }
   return {
-    radiusProp: Math.round(radius * 1e2) / 1e2,
-    area: Math.round((PI * radius * radius) * 1e2) / 1e2,
-    circumference: Math.round((2 * PI * radius) * 1e2) / 1e2,
+    radiusProp: formatter(radius),
+    area: formatter((PI * radius * radius)),
+    circumference: formatter((2 * PI * radius)),
   };
 };
 
