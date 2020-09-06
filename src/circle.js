@@ -19,15 +19,18 @@
 */
 
 const circle = (radius) => {
-  const formatter = number => Math.round(number * 1e2) / 1e2;
+  const parseF = number => {
+    let newNumber = parseFloat(number);
+    return +newNumber.toFixed(2);
+  };
   const PI = 3.14;
   if (!radius) {
     return undefined;
   }
   return {
-    radiusProp: formatter(radius),
-    area: formatter((PI * radius * radius)),
-    circumference: formatter((2 * PI * radius)),
+    radiusProp: parseF(radius),
+    area: parseF((PI * radius * radius)),
+    circumference: parseF((2 * PI * radius)),
   };
 };
 
