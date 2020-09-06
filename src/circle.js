@@ -19,9 +19,7 @@
 */
 
 const circle = (radius) => {
-
   const formatter = number => Math.round(number * 1e2) / 1e2;
-
   const PI = 3.14;
   if (!radius) {
     return undefined;
