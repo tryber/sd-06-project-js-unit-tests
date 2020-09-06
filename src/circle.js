@@ -18,9 +18,9 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const formatter = (number) => {
+let formatter = (number) => {
   return Number(parseFloat(number).toFixed(2));
-}
+};
 
 const circle = (radius) => {
   const PI = 3.14;
@@ -30,7 +30,7 @@ const circle = (radius) => {
   return {
     radiusProp: formatter(radius),
     area: formatter(PI * radius * radius),
-    circumference: formatter(2 * PI * radius)
+    circumference: formatter(2 * PI * radius),
   };
 };
 
