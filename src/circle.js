@@ -18,7 +18,7 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const formatter = number => Number(parseFloat(number).toFixed(2));
+const formatter = number => Math.round(number * 1e2) / 1e2;
 
 
 const circle = (radius) => {
