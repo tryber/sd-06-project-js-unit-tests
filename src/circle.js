@@ -19,8 +19,8 @@
 */
 
 const circle = (radius) => {
-  const parseF = number => {
-    let newNumber = parseFloat(number);
+  const parseF = (number) => {
+    const newNumber = parseFloat(number);
     return +newNumber.toFixed(2);
   };
   const PI = 3.14;
