@@ -18,13 +18,19 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
+const formatter = (number) => {
+  return Number(parseFloat(number).toFixed(2));
+}
+
 const circle = (radius) => {
   const PI = 3.14;
-  if (!radius) { return undefined; }
+  if (!radius) {
+    return undefined;
+  }
   return {
-    radius,
-    area: PI * radius * radius,
-    circumference: 2 * PI * radius,
+    radiusProp: formatter(radius),
+    area: formatter(PI * radius * radius),
+    circumference: formatter(2 * PI * radius)
   };
 };
 
