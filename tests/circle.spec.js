@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
-
 const assert = require('assert');
 const circle = require('../src/circle');
 
@@ -23,15 +22,25 @@ const circle = require('../src/circle');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
+const parseF = (number) => {
+  const newNumber = parseFloat(number);
+  return +newNumber.toFixed(2);
+};
+
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
+    assert(circle(1) instanceof Object);
     // Teste se o objeto retornado tem 3 entradas.
+    assert.strictEqual(Object.keys(circle(1)).length, parseF(3.00));
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    assert.strictEqual(circle(), undefined);
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.strictEqual(parseF(circle(2).circumference), parseF(12.56));
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    assert.strictEqual(parseF(circle(3).area), parseF(28.26));
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    assert.deepEqual({ radius: parseF(circle(3).radius), area: parseF(circle(3).area), circumference: parseF(circle(3).circumference) }, { radius: parseF(3.00), area: parseF(28.26), circumference: parseF(18.84) });
   });
 });
