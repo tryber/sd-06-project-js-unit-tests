@@ -41,6 +41,6 @@ describe('#circle', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(parseF(circle(3).area), parseF(28.26));
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.deepEqual(circle(3), { radiusProp: parseF(3.00), area: parseF(28.26), circumference: parseF(18.84) });
+    assert.deepEqual({ radiusProp: parseF(circle(3).radiusProp), area: parseF(circle(3).area), circumference: parseF(circle(3).circumference) }, { radiusProp: parseF(3.00), area: parseF(28.26), circumference: parseF(18.84) });
   });
 });
