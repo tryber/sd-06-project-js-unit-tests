@@ -28,7 +28,7 @@ const circle = (radius) => {
     return undefined;
   }
   return {
-    radiusProp: parseF(radius),
+    radius: parseF(radius),
     area: parseF((PI * radius * radius)),
     circumference: parseF((2 * PI * radius)),
   };
